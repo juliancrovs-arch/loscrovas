@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img/catalogo"
+public_folder: "/img/catalogo"
+
+collections:
+  - name: "pipas"
+    label: "Pipas"
+    folder: "_data/pipas"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre", name: "nombre", widget: "string" }
+      - { label: "Categoría", name: "categoria", widget: "string" }
+      - { label: "Descripción", name: "descripcion", widget: "text" }
+      - { label: "Precio", name: "precio", widget: "number", required: false }
+      - { label: "Disponible", name: "disponible", widget: "boolean", default: true }
+      - { label: "Fotos", name: "fotos", widget: "list", field: { label: "Foto", name: "foto", widget: "image" } }
