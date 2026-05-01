@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://loscrovas.com.ar/sitemap.xml
