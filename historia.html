@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestra Historia — Los Crovas · Pipas Artesanales Patagónicas</title>
+<meta name="description" content="La historia de Javier Crova y su taller de pipas artesanales en el Alto Río Percy, Esquel, Patagonia. El proceso, las herramientas, la familia.">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1A1208;--parch:#F0E9D6;--parch2:#E4D9BC;
+  --ember:#9E3A12;--gold:#A67820;--moss:#3D5228;--smoke:#7A6A54;
+  --border:rgba(80,50,20,0.15);--deep:#140E06;
+}
+html{scroll-behavior:smooth}
+body{background:var(--parch);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;line-height:1.75;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1rem 4rem;background:rgba(240,233,214,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav-brand{font-family:'IM Fell English',serif;font-size:1.25rem;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:0.5rem}
+.nav-brand em{font-style:italic;color:var(--ember)}
+.nav-back{font-size:0.76rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--smoke);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.2s}
+.nav-back:hover{color:var(--ember)}
+
+/* HERO */
+.hero{padding-top:66px;min-height:60vh;display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
+.hero-l{display:flex;flex-direction:column;justify-content:center;padding:5rem;border-right:1px solid var(--border)}
+.hero-eyebrow{font-size:0.7rem;letter-spacing:0.36em;text-transform:uppercase;color:var(--moss);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;opacity:0.85}
+.hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--moss);opacity:0.5}
+.hero-h1{font-family:'IM Fell English',serif;font-size:clamp(2.5rem,5vw,5rem);line-height:1;color:var(--ink);margin-bottom:1rem}
+.hero-h1 em{font-style:italic;color:var(--ember)}
+.hero-p{font-size:1.05rem;font-style:italic;color:#5C4838;max-width:440px;line-height:2}
+.hero-r{overflow:hidden;background:var(--deep)}
+.hero-r img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;opacity:0.85}
+
+/* SECCIÓN */
+.sep{display:flex;align-items:center;gap:1.5rem;padding:1.6rem 5rem;border-bottom:1px solid var(--border)}
+.sep-line{flex:1;height:1px;background:var(--border)}
+.sep-glyph{font-family:'IM Fell English',serif;font-size:0.9rem;color:var(--gold);opacity:0.4;letter-spacing:0.6em}
+
+/* TEXTO */
+.texto{max-width:720px;margin:0 auto;padding:5rem 2rem}
+.texto h2{font-family:'IM Fell English',serif;font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.2;margin-bottom:1.5rem;color:var(--ink)}
+.texto h2 em{font-style:italic;color:var(--ember)}
+.texto p{font-size:1.05rem;color:#5C4838;line-height:2;margin-bottom:1.5rem}
+.pull{margin:2rem 0;padding:1.5rem 2rem;background:var(--parch2);border-left:3px solid var(--ember);font-family:'IM Fell English',serif;font-size:1.1rem;font-style:italic;color:var(--ink);line-height:1.75}
+
+/* GALERÍA TALLER */
+.galeria-taller{padding:0 0 5rem;border-bottom:1px solid var(--border)}
+.gal-header{padding:3rem 5rem 2rem;border-bottom:1px solid var(--border);margin-bottom:0}
+.gal-header h2{font-family:'IM Fell English',serif;font-size:clamp(1.8rem,3vw,2.8rem);color:var(--ink)}
+.gal-header h2 em{font-style:italic;color:var(--ember)}
+
+/* Grid masonry-style */
+.taller-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--border)}
+.taller-item{overflow:hidden;border:1px solid var(--border);margin:-1px 0 0 -1px;position:relative}
+.taller-item img{width:100%;height:320px;object-fit:cover;display:block;transition:transform 0.4s}
+.taller-item:hover img{transform:scale(1.03)}
+.taller-item.tall img{height:480px}
+.taller-item.wide{grid-column:span 2}
+.taller-item.wide img{height:320px}
+.taller-caption{position:absolute;bottom:0;left:0;right:0;padding:0.8rem 1rem;background:linear-gradient(transparent,rgba(20,14,6,0.7));font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,233,214,0.8)}
+
+/* FOOTER */
+footer{background:var(--deep);padding:2rem 5rem;display:flex;justify-content:space-between;align-items:center}
+.foot-brand{font-family:'IM Fell English',serif;font-size:1.05rem;color:rgba(240,233,214,0.55)}
+.foot-brand em{font-style:italic;color:#C8922A}
+footer p{font-size:0.68rem;letter-spacing:0.12em;color:rgba(240,233,214,0.25)}
+
+/* ANIM */
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.hero-l>*{animation:fadeIn 0.75s ease forwards;opacity:0}
+.hero-l>*:nth-child(1){animation-delay:0.05s}
+.hero-l>*:nth-child(2){animation-delay:0.18s}
+.hero-l>*:nth-child(3){animation-delay:0.3s}
+
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  .hero{grid-template-columns:1fr}
+  .hero-r{min-height:50vw}
+  .hero-l{padding:3rem 1.8rem}
+  .sep{padding:1.5rem 1.8rem}
+  .texto{padding:3rem 1.8rem}
+  .gal-header{padding:2rem 1.8rem}
+  .taller-grid{grid-template-columns:1fr 1fr}
+  .taller-item.wide{grid-column:span 2}
+  .taller-item img{height:220px}
+  .taller-item.tall img{height:320px}
+  footer{flex-direction:column;gap:1rem;text-align:center;padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/">
+    <img src="img/logo.png" alt="Los Crovas logo" style="width:30px;height:30px;object-fit:contain">
+    Los <em>Crovas</em>
+  </a>
+  <a class="nav-back" href="/">← Volver al inicio</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-l">
+    <div class="hero-eyebrow">Alto Río Percy · Esquel · Patagonia</div>
+    <h1 class="hero-h1">El taller<br>y la <em>familia</em></h1>
+    <p class="hero-p">La historia de cómo un docente rural en el fin del mundo se convirtió en artesano de pipas. Con sus propias manos, sus propias herramientas, y su familia al lado.</p>
+  </div>
+  <div class="hero-r">
+    <img src="img/taller_javier_torno.jpg" alt="Javier Crova trabajando en el torno en su taller del Alto Río Percy">
+  </div>
+</section>
+
+<div class="sep"><div class="sep-line"></div><span class="sep-glyph">✦ ✦ ✦</span><div class="sep-line"></div></div>
+
+<!-- TEXTO -->
+<div class="texto">
+  <h2>Vine de Mar del Plata<br>y me quedé <em>para siempre</em></h2>
+  <p>Llegué a la Patagonia en el '91 y me enamoré. En 2001 me quedé definitivamente en el Alto Río Percy con mi esposa Teresita y nuestros tres hijos. Acá trabajé como docente, en el SENASA, en el INTA. Este lugar es nuestro mundo.</p>
+  <p>En la pandemia le pedí prestada una pipa a mi cuñado y quise imitarla. Empecé a jugar en el taller. Lo que nació como un hobby se fue convirtiendo de a poco en un oficio. Hoy cada pipa me lleva entre 6 y 8 días. Las herramientas que uso —desde la fragua hasta la lijadora— las hice yo mismo.</p>
+  <div class="pull">"Todo es artesanal en todo sentido. No trabajamos en serie. Yo no solamente hago la pipa, sino que hago todo lo que está alrededor de la pipa."</div>
+  <p>Teresita cose las bolsitas. Los chicos, cuando vienen, se ponen a hacer boquillas y a lijar. Esto es de toda la familia, nacido en el fondo de casa, a 13 km de Esquel, en el fin del mundo.</p>
+</div>
+
+<div class="sep"><div class="sep-line"></div><span class="sep-glyph">✦ ✦ ✦</span><div class="sep-line"></div></div>
+
+<!-- GALERÍA TALLER -->
+<section class="galeria-taller">
+  <div class="gal-header">
+    <h2>El <em>taller</em></h2>
+  </div>
+  <div class="taller-grid">
+
+    <div class="taller-item wide">
+      <img src="img/taller_herramientas.jpg" alt="El taller de Javier Crova — herramientas artesanales en el Alto Río Percy" style="object-position:center 30%">
+    </div>
+
+    <div class="taller-item tall">
+      <img src="img/javier_sierra.jpg" alt="Javier Crova trabajando con la sierra" style="object-position:center top">
+    </div>
+
+    <div class="taller-item">
+      <img src="img/taller_herramientas2.jpg" alt="Herramientas del taller Los Crovas">
+    </div>
+
+    <div class="taller-item">
+      <img src="img/manos_midiendo.jpg" alt="Las manos de Javier midiendo una pieza de madera" style="object-position:center center">
+    </div>
+
+    <div class="taller-item tall">
+      <img src="img/javier_torno.jpg" alt="Javier Crova en el torno del taller" style="object-position:center top">
+    </div>
+
+    <div class="taller-item">
+      <img src="img/taller_interior.jpg" alt="Interior del taller de Los Crovas" style="object-position:center top">
+    </div>
+
+    <div class="taller-item">
+      <img src="img/hijo_sierra.jpg" alt="El hijo de Javier trabajando en el taller" style="object-position:center top">
+    </div>
+
+    <div class="taller-item wide">
+      <img src="img/javier_julian.jpg" alt="Javier y Julián Crova en la puerta del taller — El Puesto de Tomás">
+    </div>
+
+    <div class="taller-item">
+      <img src="img/taller_exterior.jpg" alt="El taller de Los Crovas desde afuera" style="object-position:center top">
+    </div>
+
+    <div class="taller-item wide">
+      <img src="img/casa_otono.jpg" alt="La casa y el taller en otoño patagónico" style="object-position:center 40%">
+    </div>
+
+    <div class="taller-item">
+      <img src="img/percy_camino.jpg" alt="El camino al Alto Río Percy" style="object-position:center center">
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <span class="foot-brand">Los <em>Crovas</em></span>
+  <p>Alto Río Percy · Esquel, Chubut · Patagonia Argentina</p>
+  <a href="/" style="font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,233,214,0.35);text-decoration:none">← Volver al inicio</a>
+</footer>
+
+</body>
+</html>
