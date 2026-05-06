@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": "asdasda-1778068906854",
+    "nombre": "asdasda",
+    "categoria": "Mamba",
+    "descripcion": "asdad",
+    "precio": 122221,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/asdasda-1778068906854-0.jpg"
+    ]
+  }
+]
