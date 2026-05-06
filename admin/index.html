@@ -2,189 +2,334 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nuestra Historia — Los Crovas · Pipas Artesanales Patagónicas</title>
-<meta name="description" content="La historia de Javier Crova y su taller de pipas artesanales en el Alto Río Percy, Esquel, Patagonia. El proceso, las herramientas, la familia.">
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Los Crovas — Panel de Javier</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --ink:#1A1208;--parch:#F0E9D6;--parch2:#E4D9BC;
-  --ember:#9E3A12;--gold:#A67820;--moss:#3D5228;--smoke:#7A6A54;
-  --border:rgba(80,50,20,0.15);--deep:#140E06;
-}
-html{scroll-behavior:smooth}
-body{background:var(--parch);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;line-height:1.75;overflow-x:hidden}
-
-nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1rem 4rem;background:rgba(240,233,214,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
-.nav-brand{font-family:'IM Fell English',serif;font-size:1.25rem;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:0.5rem}
-.nav-brand em{font-style:italic;color:var(--ember)}
-.nav-back{font-size:0.76rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--smoke);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.2s}
-.nav-back:hover{color:var(--ember)}
-
-/* HERO */
-.hero{padding-top:66px;min-height:60vh;display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
-.hero-l{display:flex;flex-direction:column;justify-content:center;padding:5rem;border-right:1px solid var(--border)}
-.hero-eyebrow{font-size:0.7rem;letter-spacing:0.36em;text-transform:uppercase;color:var(--moss);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;opacity:0.85}
-.hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--moss);opacity:0.5}
-.hero-h1{font-family:'IM Fell English',serif;font-size:clamp(2.5rem,5vw,5rem);line-height:1;color:var(--ink);margin-bottom:1rem}
-.hero-h1 em{font-style:italic;color:var(--ember)}
-.hero-p{font-size:1.05rem;font-style:italic;color:#5C4838;max-width:440px;line-height:2}
-.hero-r{overflow:hidden;background:var(--deep)}
-.hero-r img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;opacity:0.85}
-
-/* SECCIÓN */
-.sep{display:flex;align-items:center;gap:1.5rem;padding:1.6rem 5rem;border-bottom:1px solid var(--border)}
-.sep-line{flex:1;height:1px;background:var(--border)}
-.sep-glyph{font-family:'IM Fell English',serif;font-size:0.9rem;color:var(--gold);opacity:0.4;letter-spacing:0.6em}
-
-/* TEXTO */
-.texto{max-width:720px;margin:0 auto;padding:5rem 2rem}
-.texto h2{font-family:'IM Fell English',serif;font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.2;margin-bottom:1.5rem;color:var(--ink)}
-.texto h2 em{font-style:italic;color:var(--ember)}
-.texto p{font-size:1.05rem;color:#5C4838;line-height:2;margin-bottom:1.5rem}
-.pull{margin:2rem 0;padding:1.5rem 2rem;background:var(--parch2);border-left:3px solid var(--ember);font-family:'IM Fell English',serif;font-size:1.1rem;font-style:italic;color:var(--ink);line-height:1.75}
-
-/* GALERÍA TALLER */
-.galeria-taller{padding:0 0 5rem;border-bottom:1px solid var(--border)}
-.gal-header{padding:3rem 5rem 2rem;border-bottom:1px solid var(--border);margin-bottom:0}
-.gal-header h2{font-family:'IM Fell English',serif;font-size:clamp(1.8rem,3vw,2.8rem);color:var(--ink)}
-.gal-header h2 em{font-style:italic;color:var(--ember)}
-
-/* Grid masonry-style */
-.taller-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--border)}
-.taller-item{overflow:hidden;border:1px solid var(--border);margin:-1px 0 0 -1px;position:relative}
-.taller-item img{width:100%;height:320px;object-fit:cover;display:block;transition:transform 0.4s}
-.taller-item:hover img{transform:scale(1.03)}
-.taller-item.tall img{height:480px}
-.taller-item.wide{grid-column:span 2}
-.taller-item.wide img{height:320px}
-.taller-caption{position:absolute;bottom:0;left:0;right:0;padding:0.8rem 1rem;background:linear-gradient(transparent,rgba(20,14,6,0.7));font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,233,214,0.8)}
-
-/* FOOTER */
-footer{background:var(--deep);padding:2rem 5rem;display:flex;justify-content:space-between;align-items:center}
-.foot-brand{font-family:'IM Fell English',serif;font-size:1.05rem;color:rgba(240,233,214,0.55)}
-.foot-brand em{font-style:italic;color:#C8922A}
-footer p{font-size:0.68rem;letter-spacing:0.12em;color:rgba(240,233,214,0.25)}
-
-/* ANIM */
-@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.hero-l>*{animation:fadeIn 0.75s ease forwards;opacity:0}
-.hero-l>*:nth-child(1){animation-delay:0.05s}
-.hero-l>*:nth-child(2){animation-delay:0.18s}
-.hero-l>*:nth-child(3){animation-delay:0.3s}
-
-@media(max-width:900px){
-  nav{padding:1rem 1.5rem}
-  .hero{grid-template-columns:1fr}
-  .hero-r{min-height:50vw}
-  .hero-l{padding:3rem 1.8rem}
-  .sep{padding:1.5rem 1.8rem}
-  .texto{padding:3rem 1.8rem}
-  .gal-header{padding:2rem 1.8rem}
-  .taller-grid{grid-template-columns:1fr 1fr}
-  .taller-item.wide{grid-column:span 2}
-  .taller-item img{height:220px}
-  .taller-item.tall img{height:320px}
-  footer{flex-direction:column;gap:1rem;text-align:center;padding:2rem 1.5rem}
-}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1A1208;--parch:#F0E9D6;--parch2:#E4D9BC;--ember:#9E3A12;--gold:#A67820;--smoke:#7A6A54;--border:rgba(80,50,20,0.2);--deep:#140E06;--green:#2D6A2D;--red:#8B1A1A}
+body{background:var(--parch);color:var(--ink);font-family:Georgia,serif;font-size:16px;min-height:100vh}
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;background:var(--deep)}
+.login-box{background:var(--parch);padding:3rem 2.5rem;max-width:380px;width:100%;text-align:center}
+.login-logo{font-size:3rem;margin-bottom:0.5rem}
+.login-title{font-size:1.4rem;font-style:italic;color:var(--ember);margin-bottom:0.3rem}
+.login-sub{font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--smoke);margin-bottom:2rem}
+.login-box input{width:100%;padding:0.9rem 1rem;border:1px solid var(--border);background:var(--parch);font-family:Georgia,serif;font-size:1rem;color:var(--ink);margin-bottom:1rem;outline:none}
+.login-box input:focus{border-color:var(--ember)}
+.btn-primary{width:100%;padding:0.9rem;background:var(--ink);color:var(--parch);border:none;font-family:Georgia,serif;font-size:0.85rem;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;transition:background 0.2s}
+.btn-primary:hover{background:var(--ember)}
+.login-error{color:var(--red);font-size:0.85rem;margin-top:0.8rem;display:none}
+.panel{display:none;min-height:100vh;flex-direction:column}
+header{background:var(--deep);padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.header-brand{font-style:italic;color:#C8922A;font-size:1.1rem}
+.btn-salir{background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(240,233,214,0.6);padding:0.4rem 1rem;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:Georgia,serif}
+.btn-salir:hover{border-color:var(--ember);color:var(--ember)}
+.panel-body{padding:1.5rem;flex:1}
+.tabs{display:flex;gap:0;margin-bottom:1.5rem;border:1px solid var(--border)}
+.tab{flex:1;padding:0.8rem;text-align:center;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;background:var(--parch2);color:var(--smoke);border:none;font-family:Georgia,serif;transition:all 0.2s}
+.tab.active{background:var(--ink);color:var(--parch)}
+.section{display:none}
+.section.active{display:block}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--smoke);margin-bottom:0.4rem}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:0.85rem 1rem;border:1px solid var(--border);background:var(--parch);font-family:Georgia,serif;font-size:1rem;color:var(--ink);outline:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--ember)}
+.form-group textarea{min-height:80px;resize:vertical}
+.foto-upload{border:2px dashed var(--border);padding:2rem;text-align:center;cursor:pointer;background:var(--parch2);position:relative}
+.foto-upload input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.foto-upload-icon{font-size:2.5rem;margin-bottom:0.5rem}
+.foto-upload-text{font-size:0.82rem;color:var(--smoke)}
+.foto-preview{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;margin-top:1rem}
+.foto-preview-item{position:relative;aspect-ratio:1;overflow:hidden;background:var(--parch2)}
+.foto-preview-item img{width:100%;height:100%;object-fit:contain;display:block}
+.foto-preview-item button{position:absolute;top:2px;right:2px;background:var(--red);color:white;border:none;width:20px;height:20px;font-size:0.7rem;cursor:pointer}
+.toggle-wrap{display:flex;align-items:center;gap:1rem}
+.toggle{position:relative;width:48px;height:26px}
+.toggle input{opacity:0;width:0;height:0}
+.toggle-slider{position:absolute;inset:0;background:var(--border);cursor:pointer;transition:0.3s;border-radius:26px}
+.toggle-slider::before{content:'';position:absolute;height:20px;width:20px;left:3px;bottom:3px;background:white;transition:0.3s;border-radius:50%}
+.toggle input:checked + .toggle-slider{background:var(--green)}
+.toggle input:checked + .toggle-slider::before{transform:translateX(22px)}
+.status{padding:1rem;margin-bottom:1rem;font-size:0.9rem;display:none;border-left:3px solid}
+.status.ok{border-color:var(--green);background:#f0fff0;color:var(--green)}
+.status.err{border-color:var(--red);background:#fff0f0;color:var(--red)}
+.status.loading{border-color:var(--gold);background:#fffdf0;color:var(--gold)}
+.pipas-lista{display:flex;flex-direction:column;gap:0}
+.pipa-item{display:grid;grid-template-columns:70px 1fr auto;gap:0.8rem;align-items:center;padding:0.8rem;border:1px solid var(--border);margin-top:-1px;background:var(--parch)}
+.pipa-thumb{width:70px;height:70px;object-fit:contain;background:var(--parch2);display:block}
+.pipa-nombre{font-style:italic;font-size:1rem;color:var(--ink)}
+.pipa-cat-mini{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--smoke);margin-top:0.2rem}
+.pipa-precio-mini{font-size:0.85rem;color:var(--ember);font-style:italic;margin-top:0.2rem}
+.pipa-disponible{font-size:0.65rem;padding:0.2rem 0.5rem;margin-top:0.3rem;display:inline-block}
+.pipa-disponible.si{background:#e8f5e8;color:var(--green)}
+.pipa-disponible.no{background:#f5e8e8;color:var(--red)}
+.pipa-actions{display:flex;flex-direction:column;gap:0.3rem}
+.btn-accion{padding:0.3rem 0.6rem;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--border);background:transparent;cursor:pointer;font-family:Georgia,serif;white-space:nowrap}
+.btn-accion.vender{border-color:var(--red);color:var(--red)}
+.btn-accion.activar{border-color:var(--green);color:var(--green)}
+.btn-accion.eliminar{border-color:var(--smoke);color:var(--smoke)}
+.empty-state{text-align:center;padding:3rem;color:var(--smoke);font-style:italic}
+.config-info{padding:1rem;background:var(--parch2);border:1px solid var(--border);font-size:0.85rem;color:var(--smoke);line-height:1.7;margin-bottom:1.5rem}
 </style>
 </head>
 <body>
 
-<nav>
-  <a class="nav-brand" href="/">
-    <img src="img/logo.png" alt="Los Crovas logo" style="width:30px;height:30px;object-fit:contain">
-    Los <em>Crovas</em>
-  </a>
-  <a class="nav-back" href="/">← Volver al inicio</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-l">
-    <div class="hero-eyebrow">Alto Río Percy · Esquel · Patagonia</div>
-    <h1 class="hero-h1">El taller<br>y la <em>familia</em></h1>
-    <p class="hero-p">La historia de cómo un docente rural en el fin del mundo se convirtió en artesano de pipas. Con sus propias manos, sus propias herramientas, y su familia al lado.</p>
+<div class="login-wrap" id="login">
+  <div class="login-box">
+    <div class="login-logo">🧙</div>
+    <div class="login-title">Los Crovas</div>
+    <div class="login-sub">Panel de administración</div>
+    <input type="password" id="pass-input" placeholder="Contraseña" onkeydown="if(event.key==='Enter')login()">
+    <button class="btn-primary" onclick="login()">Entrar</button>
+    <div class="login-error" id="login-error">Contraseña incorrecta</div>
   </div>
-  <div class="hero-r">
-    <img src="img/taller_javier_torno.jpg" alt="Javier Crova trabajando en el torno en su taller del Alto Río Percy">
-  </div>
-</section>
-
-<div class="sep"><div class="sep-line"></div><span class="sep-glyph">✦ ✦ ✦</span><div class="sep-line"></div></div>
-
-<!-- TEXTO -->
-<div class="texto">
-  <h2>Vine de Mar del Plata<br>y me quedé <em>para siempre</em></h2>
-  <p>Llegué a la Patagonia en el '91 y me enamoré. En 2001 me quedé definitivamente en el Alto Río Percy con mi esposa Teresita y nuestros tres hijos. Acá trabajé como docente, en el SENASA, en el INTA. Este lugar es nuestro mundo.</p>
-  <p>En la pandemia le pedí prestada una pipa a mi cuñado y quise imitarla. Empecé a jugar en el taller. Lo que nació como un hobby se fue convirtiendo de a poco en un oficio. Hoy cada pipa me lleva entre 6 y 8 días. Las herramientas que uso —desde la fragua hasta la lijadora— las hice yo mismo.</p>
-  <div class="pull">"Todo es artesanal en todo sentido. No trabajamos en serie. Yo no solamente hago la pipa, sino que hago todo lo que está alrededor de la pipa."</div>
-  <p>Teresita cose las bolsitas. Los chicos, cuando vienen, se ponen a hacer boquillas y a lijar. Esto es de toda la familia, nacido en el fondo de casa, a 13 km de Esquel, en el fin del mundo.</p>
 </div>
 
-<div class="sep"><div class="sep-line"></div><span class="sep-glyph">✦ ✦ ✦</span><div class="sep-line"></div></div>
+<div class="panel" id="panel">
+  <header>
+    <span class="header-brand">Los Crovas — Admin</span>
+    <button class="btn-salir" onclick="salir()">Salir</button>
+  </header>
+  <div class="panel-body">
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('nueva')">+ Nueva pipa</button>
+      <button class="tab" onclick="switchTab('lista')">Mis pipas</button>
+      <button class="tab" onclick="switchTab('config')">⚙ Config</button>
+    </div>
 
-<!-- GALERÍA TALLER -->
-<section class="galeria-taller">
-  <div class="gal-header">
-    <h2>El <em>taller</em></h2>
+    <div class="section active" id="tab-nueva">
+      <div class="status" id="status-nueva"></div>
+      <div class="form-group">
+        <label>Fotos de la pipa</label>
+        <div class="foto-upload">
+          <input type="file" accept="image/*" multiple onchange="agregarFotos(this.files)">
+          <div class="foto-upload-icon">📷</div>
+          <div class="foto-upload-text">Tocá para elegir fotos<br><small>Podés subir varias a la vez</small></div>
+        </div>
+        <div class="foto-preview" id="foto-preview"></div>
+      </div>
+      <div class="form-group">
+        <label>Nombre de la pipa</label>
+        <input type="text" id="pip-nombre" placeholder="Ej: Gandalf Patagónico">
+      </div>
+      <div class="form-group">
+        <label>Categoría</label>
+        <select id="pip-cat">
+          <option value="">Elegir categoría...</option>
+          <option>Gandalf</option><option>Cóndor</option><option>Chubby</option>
+          <option>Apple</option><option>Cauquen</option><option>Billard</option>
+          <option>Dublin</option><option>Churchwarden</option><option>Mamba</option>
+          <option>Dogo</option><option>Tomahawk</option><option>Rhodesian</option>
+          <option>Free Hand</option><option>Otra</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Descripción</label>
+        <textarea id="pip-desc" placeholder="Ej: Cazoleta en incienso tallada, boquilla en fresno, 30cm largo, 75gr"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Precio (en pesos)</label>
+        <input type="number" id="pip-precio" placeholder="Ej: 95000">
+      </div>
+      <div class="form-group">
+        <div class="toggle-wrap">
+          <label class="toggle">
+            <input type="checkbox" id="pip-disponible" checked>
+            <span class="toggle-slider"></span>
+          </label>
+          <span>Disponible para vender</span>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="publicarPipa()">Publicar pipa en la web</button>
+    </div>
+
+    <div class="section" id="tab-lista">
+      <div class="status" id="status-lista"></div>
+      <div class="pipas-lista" id="pipas-lista">
+        <div class="empty-state">Cargando pipas...</div>
+      </div>
+    </div>
+
+    <div class="section" id="tab-config">
+      <div class="config-info">
+        <strong>Cómo funciona:</strong> Cuando publicás una pipa, las fotos se suben a GitHub y la página se actualiza sola en 2 minutos.<br><br>
+        Para cambiar la contraseña escribile a Julián.
+      </div>
+      <div class="form-group">
+        <label>Token de GitHub</label>
+        <input type="password" id="cfg-token" placeholder="ghp_..." oninput="guardarConfig()">
+      </div>
+      <div class="form-group">
+        <label>Repositorio</label>
+        <input type="text" id="cfg-repo" placeholder="juliancrovs-arch/loscrovas" oninput="guardarConfig()">
+      </div>
+      <p style="font-size:0.8rem;color:var(--smoke);font-style:italic;margin-top:1rem">Esta config se guarda solo en este dispositivo.</p>
+    </div>
   </div>
-  <div class="taller-grid">
+</div>
 
-    <div class="taller-item wide">
-      <img src="img/taller_herramientas.jpg" alt="El taller de Javier Crova — herramientas artesanales en el Alto Río Percy" style="object-position:center 30%">
-    </div>
+<script>
+const PASSWORD='percy2024';
+const REPO='juliancrovs-arch/loscrovas';
 
-    <div class="taller-item tall">
-      <img src="img/javier_sierra.jpg" alt="Javier Crova trabajando con la sierra" style="object-position:center top">
-    </div>
+function login(){
+  if(document.getElementById('pass-input').value===PASSWORD){
+    document.getElementById('login').style.display='none';
+    document.getElementById('panel').style.display='flex';
+    cargarPipas();cargarConfig();
+  }else{document.getElementById('login-error').style.display='block';}
+}
+function salir(){
+  document.getElementById('login').style.display='flex';
+  document.getElementById('panel').style.display='none';
+  document.getElementById('pass-input').value='';
+}
+function switchTab(tab){
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',['nueva','lista','config'][i]===tab));
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  if(tab==='lista')cargarPipas();
+}
 
-    <div class="taller-item">
-      <img src="img/taller_herramientas2.jpg" alt="Herramientas del taller Los Crovas">
-    </div>
+let fotosSeleccionadas=[];
+function agregarFotos(files){
+  Array.from(files).forEach(file=>{
+    if(fotosSeleccionadas.length>=5)return;
+    const reader=new FileReader();
+    reader.onload=e=>{fotosSeleccionadas.push({file,dataUrl:e.target.result});renderFotoPreview();};
+    reader.readAsDataURL(file);
+  });
+}
+function renderFotoPreview(){
+  document.getElementById('foto-preview').innerHTML=fotosSeleccionadas.map((f,i)=>`
+    <div class="foto-preview-item">
+      <img src="${f.dataUrl}">
+      <button onclick="quitarFoto(${i})">✕</button>
+    </div>`).join('');
+}
+function quitarFoto(i){fotosSeleccionadas.splice(i,1);renderFotoPreview();}
 
-    <div class="taller-item">
-      <img src="img/manos_midiendo.jpg" alt="Las manos de Javier midiendo una pieza de madera" style="object-position:center center">
-    </div>
+async function publicarPipa(){
+  const nombre=document.getElementById('pip-nombre').value.trim();
+  const cat=document.getElementById('pip-cat').value;
+  const desc=document.getElementById('pip-desc').value.trim();
+  const precio=document.getElementById('pip-precio').value;
+  const disponible=document.getElementById('pip-disponible').checked;
+  const token=localStorage.getItem('gh_token')||'';
+  const repo=localStorage.getItem('gh_repo')||REPO;
+  if(!nombre)return mostrarStatus('nueva','Falta el nombre','err');
+  if(!cat)return mostrarStatus('nueva','Elegí una categoría','err');
+  if(fotosSeleccionadas.length===0)return mostrarStatus('nueva','Agregá al menos una foto','err');
+  if(!token)return mostrarStatus('nueva','Falta el token en ⚙ Config','err');
+  mostrarStatus('nueva','Subiendo fotos...','loading');
+  try{
+    const slug=nombre.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
+    const ts=Date.now();
+    const fotosUrls=[];
+    for(let i=0;i<fotosSeleccionadas.length;i++){
+      const f=fotosSeleccionadas[i];
+      const ext=f.file.name.split('.').pop()||'jpg';
+      const fn=`${slug}-${ts}-${i}.${ext}`;
+      const b64=f.dataUrl.split(',')[1];
+      const res=await fetch(`https://api.github.com/repos/${repo}/contents/img/catalogo/${fn}`,{
+        method:'PUT',headers:{'Authorization':`token ${token}`,'Content-Type':'application/json'},
+        body:JSON.stringify({message:`Foto de ${nombre}`,content:b64})
+      });
+      if(!res.ok)throw new Error(`Error foto: ${res.statusText}`);
+      fotosUrls.push(`/img/catalogo/${fn}`);
+      mostrarStatus('nueva',`Subiendo fotos... (${i+1}/${fotosSeleccionadas.length})`,'loading');
+    }
+    mostrarStatus('nueva','Guardando en el catálogo...','loading');
+    const catRes=await fetch(`https://api.github.com/repos/${repo}/contents/catalogo.json`,{
+      headers:{'Authorization':`token ${token}`}
+    });
+    const catData=await catRes.json();
+    const pipas=JSON.parse(atob(catData.content.replace(/\n/g,'')));
+    pipas.push({id:`${slug}-${ts}`,nombre,categoria:cat,descripcion:desc,precio:precio?parseInt(precio):null,disponible:disponible?'SI':'NO',fotos:fotosUrls});
+    const saveRes=await fetch(`https://api.github.com/repos/${repo}/contents/catalogo.json`,{
+      method:'PUT',headers:{'Authorization':`token ${token}`,'Content-Type':'application/json'},
+      body:JSON.stringify({message:`Agregar pipa: ${nombre}`,content:btoa(unescape(encodeURIComponent(JSON.stringify(pipas,null,2)))),sha:catData.sha})
+    });
+    if(!saveRes.ok)throw new Error('Error guardando');
+    mostrarStatus('nueva',`✅ ${nombre} publicada! Aparece en 2 minutos.`,'ok');
+    fotosSeleccionadas=[];renderFotoPreview();
+    document.getElementById('pip-nombre').value='';
+    document.getElementById('pip-cat').value='';
+    document.getElementById('pip-desc').value='';
+    document.getElementById('pip-precio').value='';
+    document.getElementById('pip-disponible').checked=true;
+  }catch(err){mostrarStatus('nueva',`Error: ${err.message}`,'err');}
+}
 
-    <div class="taller-item tall">
-      <img src="img/javier_torno.jpg" alt="Javier Crova en el torno del taller" style="object-position:center top">
-    </div>
+async function cargarPipas(){
+  const token=localStorage.getItem('gh_token')||'';
+  const repo=localStorage.getItem('gh_repo')||REPO;
+  const lista=document.getElementById('pipas-lista');
+  try{
+    const res=await fetch(`https://api.github.com/repos/${repo}/contents/catalogo.json`,{
+      headers:token?{'Authorization':`token ${token}`}:{}
+    });
+    const data=await res.json();
+    const pipas=JSON.parse(atob(data.content.replace(/\n/g,'')));
+    window._catalogoSha=data.sha;window._pipas=pipas;
+    if(pipas.length===0){lista.innerHTML='<div class="empty-state">No hay pipas publicadas todavía</div>';return;}
+    lista.innerHTML=pipas.map((p,i)=>`
+      <div class="pipa-item">
+        <img class="pipa-thumb" src="${p.fotos?.[0]||'/img/sticker.png'}" onerror="this.src='/img/sticker.png'">
+        <div>
+          <div class="pipa-nombre">${p.nombre}</div>
+          <div class="pipa-cat-mini">${p.categoria||''}</div>
+          <div class="pipa-precio-mini">${p.precio?'$'+p.precio.toLocaleString('es-AR'):'Consultar'}</div>
+          <span class="pipa-disponible ${p.disponible==='SI'?'si':'no'}">${p.disponible==='SI'?'✅ Disponible':'❌ Vendida'}</span>
+        </div>
+        <div class="pipa-actions">
+          ${p.disponible==='SI'
+            ?`<button class="btn-accion vender" onclick="cambiarDisponible(${i},'NO')">Vendida</button>`
+            :`<button class="btn-accion activar" onclick="cambiarDisponible(${i},'SI')">Activar</button>`}
+          <button class="btn-accion eliminar" onclick="eliminarPipa(${i})">Borrar</button>
+        </div>
+      </div>`).join('');
+  }catch(err){lista.innerHTML='<div class="empty-state">Error cargando. Verificá el token en ⚙ Config.</div>';}
+}
 
-    <div class="taller-item">
-      <img src="img/taller_interior.jpg" alt="Interior del taller de Los Crovas" style="object-position:center top">
-    </div>
+async function cambiarDisponible(i,estado){
+  const token=localStorage.getItem('gh_token')||'';
+  const repo=localStorage.getItem('gh_repo')||REPO;
+  mostrarStatus('lista','Guardando...','loading');
+  try{window._pipas[i].disponible=estado;await guardarCatalogo(token,repo,window._pipas);mostrarStatus('lista','✅ Actualizado','ok');cargarPipas();}
+  catch(err){mostrarStatus('lista',`Error: ${err.message}`,'err');}
+}
 
-    <div class="taller-item">
-      <img src="img/hijo_sierra.jpg" alt="El hijo de Javier trabajando en el taller" style="object-position:center top">
-    </div>
+async function eliminarPipa(i){
+  if(!confirm('¿Eliminar esta pipa?'))return;
+  const token=localStorage.getItem('gh_token')||'';
+  const repo=localStorage.getItem('gh_repo')||REPO;
+  mostrarStatus('lista','Eliminando...','loading');
+  try{window._pipas.splice(i,1);await guardarCatalogo(token,repo,window._pipas);mostrarStatus('lista','✅ Eliminada','ok');cargarPipas();}
+  catch(err){mostrarStatus('lista',`Error: ${err.message}`,'err');}
+}
 
-    <div class="taller-item wide">
-      <img src="img/javier_julian.jpg" alt="Javier y Julián Crova en la puerta del taller — El Puesto de Tomás">
-    </div>
+async function guardarCatalogo(token,repo,pipas){
+  const res=await fetch(`https://api.github.com/repos/${repo}/contents/catalogo.json`,{
+    method:'PUT',headers:{'Authorization':`token ${token}`,'Content-Type':'application/json'},
+    body:JSON.stringify({message:'Actualizar catálogo',content:btoa(unescape(encodeURIComponent(JSON.stringify(pipas,null,2)))),sha:window._catalogoSha})
+  });
+  if(!res.ok)throw new Error('Error guardando');
+  const data=await res.json();window._catalogoSha=data.content.sha;
+}
 
-    <div class="taller-item">
-      <img src="img/taller_exterior.jpg" alt="El taller de Los Crovas desde afuera" style="object-position:center top">
-    </div>
-
-    <div class="taller-item wide">
-      <img src="img/casa_otono.jpg" alt="La casa y el taller en otoño patagónico" style="object-position:center 40%">
-    </div>
-
-    <div class="taller-item">
-      <img src="img/percy_camino.jpg" alt="El camino al Alto Río Percy" style="object-position:center center">
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  <span class="foot-brand">Los <em>Crovas</em></span>
-  <p>Alto Río Percy · Esquel, Chubut · Patagonia Argentina</p>
-  <a href="/" style="font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,233,214,0.35);text-decoration:none">← Volver al inicio</a>
-</footer>
-
+function guardarConfig(){
+  localStorage.setItem('gh_token',document.getElementById('cfg-token').value);
+  localStorage.setItem('gh_repo',document.getElementById('cfg-repo').value);
+}
+function cargarConfig(){
+  document.getElementById('cfg-token').value=localStorage.getItem('gh_token')||'';
+  document.getElementById('cfg-repo').value=localStorage.getItem('gh_repo')||REPO;
+}
+function mostrarStatus(tab,msg,tipo){
+  const el=document.getElementById('status-'+tab);
+  el.textContent=msg;el.className='status '+tipo;el.style.display='block';
+  if(tipo==='ok')setTimeout(()=>el.style.display='none',4000);
+}
+</script>
 </body>
 </html>
-
