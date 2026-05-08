@@ -678,6 +678,20 @@ function renderCatalogo(filtro = 'todas') {
     return;
   }
 
+  const ordenadas = [
+    ...pipas.filter(p => p.disponible?.toString().toUpperCase().trim() === 'SI'),
+    ...pipas.filter(p => p.disponible?.toString().toUpperCase().trim() !== 'SI'),
+  ];
+
+  // Solo mostrar las primeras 4 en la preview
+  const preview = ordenadas.slice(0, 4);
+
+  grid.innerHTML = preview.map((p, i) => crearTarjeta(p, i)).join('');
+  grid.querySelectorAll('img').forEach(img => {
+    if (img.complete) img.classList.add('loaded');
+    else img.addEventListener('load', () => img.classList.add('loaded'));
+  });
+}
   // Pipas disponibles primero, vendidas al final
   const ordenadas = [
     ...pipas.filter(p => p.disponible?.toString().toUpperCase().trim() === 'SI'),
