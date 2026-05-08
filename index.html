@@ -633,17 +633,21 @@ function mensajeWA(nombre, descripcion, foto) {
 // Almacén de datos de pipas para el modal
 const pipasStore = [];
 
-function crearTarjeta(pipa, index) {
-  const { nombre, categoria, descripcion, precio, disponible, foto } = pipa;
+function crearTarjeta(pipa, index) {function crearTarjeta(pipa, index) {
+  const { nombre, categoria, descripcion, precio, disponible } = pipa;
   const vendida = disponible?.toString().toUpperCase().trim() !== 'SI';
   const precioTexto = formatearPrecio(precio);
-  const fotos = foto
-    ? foto.split(',').map(f => convertirLinkDrive(f.trim())).filter(Boolean)
-    : ['img/sticker.png'];
-  const imgPrincipal = fotos[0];
 
-  // Guardamos en el store con index
-  pipasStore[index] = { nombre, categoria, descripcion, precio, disponible, fotos };
+  let fotosArray = [];
+  if (Array.isArray(pipa.fotos) && pipa.fotos.length > 0) {
+    fotosArray = pipa.fotos;
+  } else if (pipa.foto) {
+    fotosArray = pipa.foto.split(',').map(f => convertirLinkDrive(f.trim())).filter(Boolean);
+  }
+  if (fotosArray.length === 0) fotosArray = ['img/sticker.png'];
+
+  const imgPrincipal = fotosArray[0];
+  pipasStore[index] = { nombre, categoria, descripcion, precio, disponible, fotos: fotosArray };
 
   return `
     <div class="pip ${vendida ? 'pip-vendida' : ''}" onclick="abrirModal(${index})">
@@ -657,6 +661,7 @@ function crearTarjeta(pipa, index) {
         <p class="pip-price-small">${vendida ? 'Vendida' : precioTexto}</p>
       </div>
     </div>`;
+}
 }
 
 function renderCatalogo(filtro = 'todas') {
