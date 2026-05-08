@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo — Los Crovas</title>
+<meta name="description" content="Catálogo completo de pipas artesanales Los Crovas. Hechas a mano en el Alto Río Percy, Esquel, Patagonia.">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1A1208;--parch:#F0E9D6;--parch2:#E4D9BC;--ember:#9E3A12;--gold:#A67820;--moss:#3D5228;--smoke:#7A6A54;--border:rgba(80,50,20,0.15);--deep:#140E06}
+html{scroll-behavior:smooth}
+body{background:var(--parch);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;min-height:100vh}
+img{opacity:0;transition:opacity 0.4s}
+img.loaded{opacity:1}
+nav{position:sticky;top:0;z-index:100;background:rgba(240,233,214,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0.9rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.nav-brand{font-family:'IM Fell English',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:0.4rem;flex-shrink:0}
+.nav-brand em{font-style:italic;color:var(--ember)}
+.nav-back{font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--smoke);text-decoration:none;white-space:nowrap}
+.nav-back:hover{color:var(--ember)}
+.nav-ig{display:flex;align-items:center;gap:0.35rem;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ember);text-decoration:none;white-space:nowrap}
+.cat-header{padding:2rem 1.5rem 1rem;border-bottom:1px solid var(--border)}
+.cat-header h1{font-family:'IM Fell English',serif;font-size:clamp(1.8rem,6vw,3rem);line-height:1;color:var(--ink)}
+.cat-header h1 em{font-style:italic;color:var(--ember)}
+.cat-header p{font-size:0.85rem;font-style:italic;color:var(--smoke);margin-top:0.5rem}
+.filtros-wrap{position:sticky;top:57px;z-index:90;background:rgba(240,233,214,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0.75rem 1.5rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.filtros-wrap::-webkit-scrollbar{display:none}
+.filtros-inner{display:flex;gap:0.5rem;width:max-content}
+.filtro{padding:0.35rem 1rem;border:1px solid var(--border);font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--smoke);cursor:pointer;background:transparent;font-family:'Cormorant Garamond',serif;border-radius:2px;transition:all 0.2s;white-space:nowrap}
+.filtro:hover,.filtro.active{border-color:var(--ember);color:var(--ember);background:rgba(158,58,18,0.06)}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.pip{background:var(--parch);cursor:pointer;transition:background 0.2s;overflow:hidden}
+.pip:hover,.pip:active{background:var(--parch2)}
+.pip-thumb{position:relative;overflow:hidden;background:var(--parch2);line-height:0;aspect-ratio:1}
+.pip-thumb img{width:100%;height:100%;object-fit:contain;background:var(--parch2);display:block;transition:transform 0.3s;padding:8px}
+.pip:hover .pip-thumb img{transform:scale(1.03)}
+.pip-thumb-overlay{position:absolute;inset:0;background:rgba(20,14,6,0);transition:background 0.2s}
+.pip:hover .pip-thumb-overlay{background:rgba(20,14,6,0.08)}
+.pip-info{padding:0.75rem 0.85rem;border-top:1px solid var(--border)}
+.pip-cat{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--smoke);margin-bottom:0.2rem}
+.pip-name{font-family:'IM Fell English',serif;font-size:0.95rem;color:var(--ink);line-height:1.2}
+.pip-price{font-family:'IM Fell English',serif;font-style:italic;color:var(--ember);font-size:0.82rem;margin-top:0.2rem}
+.pip-vendida{opacity:0.5}
+.cat-empty{grid-column:span 2;text-align:center;padding:4rem 2rem;font-style:italic;color:var(--smoke)}
+.ig-cta{padding:2rem 1.5rem;text-align:center;border-top:1px solid var(--border);background:var(--parch2)}
+.ig-cta p{font-size:0.85rem;font-style:italic;color:var(--smoke);margin-bottom:1rem}
+.ig-btn{display:inline-flex;align-items:center;gap:0.6rem;padding:0.8rem 2rem;border:1px solid var(--border);font-family:'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ember);text-decoration:none;transition:all 0.2s}
+.ig-btn:hover{border-color:var(--ember);background:var(--parch)}
+footer{padding:1.5rem;text-align:center;background:var(--deep)}
+footer p{font-size:0.65rem;letter-spacing:0.12em;color:rgba(240,233,214,0.2);text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(20,14,6,0.8);z-index:1000;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.25s;backdrop-filter:blur(4px)}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{background:var(--parch);width:100%;max-width:600px;max-height:92vh;overflow-y:auto;border-radius:12px 12px 0 0;animation:slideUp 0.3s ease;position:relative}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-handle{display:flex;justify-content:center;padding:0.75rem;cursor:pointer}
+.modal-handle::before{content:'';width:40px;height:4px;background:var(--border);border-radius:2px}
+.modal-close-btn{position:absolute;top:0.5rem;right:0.75rem;background:var(--ink);color:var(--parch);border:none;width:30px;height:30px;font-size:1rem;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center}
+.modal-imgs{position:relative;background:var(--parch2);line-height:0}
+.modal-slides{display:flex;transition:transform 0.35s ease}
+.modal-slide{min-width:100%;display:flex;align-items:center;justify-content:center;padding:1.5rem;background:var(--parch2)}
+.modal-slide img{max-width:100%;max-height:280px;object-fit:contain;display:block}
+.modal-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(240,233,214,0.9);border:1px solid var(--border);width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;color:var(--ink);z-index:5}
+.modal-btn.prev{left:8px}
+.modal-btn.next{right:8px}
+.modal-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:4px}
+.modal-dot{width:5px;height:5px;border-radius:50%;background:rgba(26,18,8,0.25);cursor:pointer;border:none;transition:background 0.2s}
+.modal-dot.active{background:var(--ember)}
+.modal-detail{padding:1.5rem}
+.modal-cat{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--smoke);margin-bottom:0.3rem}
+.modal-name{font-family:'IM Fell English',serif;font-size:1.6rem;color:var(--ink);line-height:1.1;margin-bottom:0.5rem}
+.modal-desc{font-size:0.9rem;color:#5C4838;font-style:italic;line-height:1.8;margin-bottom:0.75rem}
+.modal-precio{font-family:'IM Fell English',serif;font-size:1.3rem;font-style:italic;color:var(--ember);margin-bottom:1rem}
+.modal-wa{display:flex;align-items:center;justify-content:center;gap:0.7rem;padding:1rem 2rem;background:var(--ink);color:var(--parch);font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;border:none;cursor:pointer;width:100%}
+.modal-wa:hover,.modal-wa:active{background:var(--ember)}
+.modal-vendida-txt{padding:0.8rem 1rem;background:var(--parch2);border-left:3px solid var(--smoke);font-size:0.85rem;font-style:italic;color:var(--smoke);margin-bottom:1rem}
+.modal-pagos{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
+.modal-pagos-title{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--smoke);margin-bottom:0.6rem}
+.modal-pagos-items{display:flex;flex-wrap:wrap;gap:0.5rem}
+.modal-pago-item{display:flex;align-items:center;gap:0.35rem;font-size:0.75rem;color:var(--smoke);font-style:italic}
+@media(min-width:700px){
+  nav{padding:1rem 3rem}
+  .cat-header{padding:3rem 3rem 1.5rem}
+  .filtros-wrap{padding:0.75rem 3rem;top:61px}
+  .cat-grid{grid-template-columns:repeat(3,1fr)}
+  .cat-empty{grid-column:span 3}
+  .modal-overlay{align-items:center}
+  .modal-box{border-radius:4px;max-height:85vh}
+  .modal-handle{display:none}
+  .modal-slide img{max-height:380px}
+  .ig-cta{padding:3rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/"><img src="img/logo.png" alt="Los Crovas" style="width:26px;height:26px;object-fit:contain;opacity:0.9;margin-right:0.3rem">Los <em>Crovas</em></a>
+  <a class="nav-back" href="/">← Inicio</a>
+  <a class="nav-ig" href="https://www.instagram.com/los.crovas/" target="_blank" rel="noopener">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+    @los.crovas
+  </a>
+</nav>
+
+<div class="cat-header">
+  <h1>Catálogo <em>actual</em></h1>
+  <p>Todas las pipas disponibles · Alto Río Percy, Patagonia</p>
+</div>
+
+<div class="filtros-wrap">
+  <div class="filtros-inner" id="filtros-inner">
+    <button class="filtro active" onclick="activarFiltro(this,'todas')">Todas</button>
+  </div>
+</div>
+
+<div class="cat-grid" id="cat-grid">
+  <div class="cat-empty">Cargando catálogo...</div>
+</div>
+
+<div class="ig-cta">
+  <p>¿Querés ver más? Seguí a Javier en Instagram</p>
+  <a class="ig-btn" href="https://www.instagram.com/los.crovas/" target="_blank" rel="noopener">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg>
+    Ver Instagram →
+  </a>
+</div>
+
+<footer><p>Sitio creado por Crova Studio</p></footer>
+
+<div class="modal-overlay" id="modal" onclick="cerrarModalBg(event)">
+  <div class="modal-box" id="modal-box">
+    <div class="modal-handle" onclick="cerrarModal()"></div>
+    <button class="modal-close-btn" onclick="cerrarModal()">✕</button>
+    <div class="modal-imgs">
+      <div class="modal-slides" id="modal-slides"></div>
+      <button class="modal-btn prev" id="modal-prev" onclick="modalSlide(-1)">&#8249;</button>
+      <button class="modal-btn next" id="modal-next" onclick="modalSlide(1)">&#8250;</button>
+      <div class="modal-dots" id="modal-dots"></div>
+    </div>
+    <div class="modal-detail">
+      <p class="modal-cat" id="modal-cat"></p>
+      <h2 class="modal-name" id="modal-name"></h2>
+      <p class="modal-desc" id="modal-desc"></p>
+      <p class="modal-precio" id="modal-precio"></p>
+      <div id="modal-action"></div>
+      <div class="modal-pagos">
+        <p class="modal-pagos-title">Métodos de pago</p>
+        <div class="modal-pagos-items">
+          <div class="modal-pago-item"><svg width="18" height="18" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#009EE3"/><text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="8" font-family="Arial" font-weight="bold">MP</text></svg><span>Mercado Pago</span></div>
+          <div class="modal-pago-item"><svg width="18" height="18" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#2C3E50"/><path d="M8 20h24M20 8v24" stroke="white" stroke-width="3" stroke-linecap="round"/></svg><span>Transferencia</span></div>
+          <div class="modal-pago-item"><svg width="18" height="18" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#00457C"/><text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="7" font-family="Arial" font-weight="bold">PayPal</text></svg><span>PayPal</span></div>
+          <div class="modal-pago-item"><svg width="18" height="18" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#3D5228"/><text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="8" font-family="Arial" font-weight="bold">$</text></svg><span>Efectivo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const WA = '5492945555812';
+let todasLasPipas = [];
+const pipasStore = [];
+let modalCurrentSlide = 0;
+let modalTotalSlides = 0;
+
+function formatearPrecio(precio) {
+  if (!precio) return 'Consultar';
+  const num = parseInt(precio.toString().replace(/\D/g, ''));
+  if (isNaN(num)) return 'Consultar';
+  return '$' + num.toLocaleString('es-AR');
+}
+
+function mensajeWA(nombre, descripcion) {
+  const msg = 'Hola Javier! Me interesa la *' + nombre + '* (' + descripcion + '). La vi en loscrovas.com.ar';
+  return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+}
+
+function crearTarjeta(pipa, index) {
+  const { nombre, categoria, descripcion, precio, disponible } = pipa;
+  const vendida = disponible?.toString().toUpperCase().trim() !== 'SI';
+  const precioTexto = formatearPrecio(precio);
+  let fotosArray = Array.isArray(pipa.fotos) && pipa.fotos.length > 0 ? pipa.fotos : [];
+  if (!fotosArray.length && pipa.foto) fotosArray = pipa.foto.split(',').map(f => f.trim()).filter(Boolean);
+  if (!fotosArray.length) fotosArray = ['img/sticker.png'];
+  const imgPrincipal = fotosArray[0];
+  pipasStore[index] = { nombre, categoria, descripcion, precio, disponible, fotos: fotosArray };
+  return '<div class="pip ' + (vendida ? 'pip-vendida' : '') + '" onclick="abrirModal(' + index + ')">' +
+    '<div class="pip-thumb"><img src="' + imgPrincipal + '" alt="' + nombre + '" loading="lazy" onerror="this.src='img/sticker.png'">' +
+    '<div class="pip-thumb-overlay"></div></div>' +
+    '<div class="pip-info"><p class="pip-cat">' + categoria + '</p>' +
+    '<p class="pip-name">' + nombre + '</p>' +
+    '<p class="pip-price">' + (vendida ? 'Vendida' : precioTexto) + '</p></div></div>';
+}
+
+function renderCatalogo(filtro) {
+  filtro = filtro || 'todas';
+  const grid = document.getElementById('cat-grid');
+  const pipas = filtro === 'todas' ? todasLasPipas : todasLasPipas.filter(p => p.categoria?.toLowerCase() === filtro.toLowerCase());
+  if (!pipas.length) { grid.innerHTML = '<div class="cat-empty">No hay pipas en esta categoría.</div>'; return; }
+  const ordenadas = [...pipas.filter(p => p.disponible?.toString().toUpperCase().trim() === 'SI'), ...pipas.filter(p => p.disponible?.toString().toUpperCase().trim() !== 'SI')];
+  grid.innerHTML = ordenadas.map((p, i) => crearTarjeta(p, i)).join('');
+  grid.querySelectorAll('img').forEach(img => {
+    if (img.complete) img.classList.add('loaded');
+    else img.addEventListener('load', () => img.classList.add('loaded'));
+  });
+}
+
+function activarFiltro(btn, cat) {
+  document.querySelectorAll('.filtro').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCatalogo(cat);
+}
+
+async function cargarCatalogo() {
+  const grid = document.getElementById('cat-grid');
+  try {
+    const res = await fetch('/catalogo.json');
+    if (!res.ok) throw new Error('sin catalogo');
+    const pipas = await res.json();
+    if (!pipas || !pipas.length) { grid.innerHTML = '<div class="cat-empty">El catálogo se está actualizando, volvé pronto.</div>'; return; }
+    todasLasPipas = pipas.filter(p => p.nombre);
+    const cats = [...new Set(todasLasPipas.map(p => p.categoria).filter(Boolean))];
+    const fi = document.getElementById('filtros-inner');
+    fi.innerHTML = '<button class="filtro active" onclick="activarFiltro(this,'todas')">Todas</button>' +
+      cats.map(c => '<button class="filtro" onclick="activarFiltro(this,'' + c + '')">' + c + '</button>').join('');
+    renderCatalogo('todas');
+  } catch(e) {
+    grid.innerHTML = '<div class="cat-empty">Error cargando. Visitá nuestro <a href="https://www.instagram.com/los.crovas/" style="color:var(--ember)">Instagram</a>.</div>';
+  }
+}
+
+function abrirModal(index) {
+  const pipa = pipasStore[index];
+  if (!pipa) return;
+  const { nombre, categoria, descripcion, precio, disponible, fotos } = pipa;
+  const vendida = disponible?.toString().toUpperCase().trim() !== 'SI';
+  document.getElementById('modal-cat').textContent = categoria;
+  document.getElementById('modal-name').textContent = nombre;
+  document.getElementById('modal-desc').textContent = descripcion;
+  document.getElementById('modal-precio').textContent = vendida ? '' : formatearPrecio(precio);
+  modalCurrentSlide = 0;
+  modalTotalSlides = fotos.length;
+  document.getElementById('modal-slides').innerHTML = fotos.map((src, i) =>
+    '<div class="modal-slide"><img src="' + src + '" alt="' + nombre + ' ' + (i+1) + '" onerror="this.src='img/sticker.png'"></div>'
+  ).join('');
+  document.getElementById('modal-slides').style.transform = 'translateX(0)';
+  document.getElementById('modal-slides').querySelectorAll('img').forEach(img => {
+    if(img.complete) img.classList.add('loaded');
+    else img.addEventListener('load', () => img.classList.add('loaded'));
+  });
+  document.getElementById('modal-dots').innerHTML = fotos.length > 1
+    ? fotos.map((_,i) => '<button class="modal-dot ' + (i===0?'active':'') + '" onclick="irModalSlide(' + i + ')"></button>').join('') : '';
+  document.getElementById('modal-prev').style.display = fotos.length > 1 ? 'flex' : 'none';
+  document.getElementById('modal-next').style.display = fotos.length > 1 ? 'flex' : 'none';
+  const waLink = mensajeWA(nombre, descripcion);
+  document.getElementById('modal-action').innerHTML = vendida
+    ? '<div class="modal-vendida-txt">Esta pipa ya encontró dueño. Escribinos para ver opciones similares.</div>'
+    : '<a href="' + waLink + '" target="_blank" rel="noopener" class="modal-wa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Consultar por WhatsApp</a>';
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function cerrarModalBg(e) {
+  if (e.target === document.getElementById('modal')) cerrarModal();
+}
+
+function modalSlide(dir) {
+  modalCurrentSlide = (modalCurrentSlide + dir + modalTotalSlides) % modalTotalSlides;
+  document.getElementById('modal-slides').style.transform = 'translateX(-' + (modalCurrentSlide * 100) + '%)';
+  document.querySelectorAll('.modal-dot').forEach((d,i) => d.classList.toggle('active', i === modalCurrentSlide));
+}
+
+function irModalSlide(i) {
+  modalCurrentSlide = i;
+  document.getElementById('modal-slides').style.transform = 'translateX(-' + (i * 100) + '%)';
+  document.querySelectorAll('.modal-dot').forEach((d,j) => d.classList.toggle('active', j === i));
+}
+
+document.addEventListener('keydown', e => { if(e.key === 'Escape') cerrarModal(); });
+cargarCatalogo();
+</script>
+</body>
+</html>
