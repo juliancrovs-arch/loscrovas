@@ -756,6 +756,10 @@ function abrirModal(index) {
     `<div class="modal-slide"><img src="${src}" alt="${nombre} ${i+1}" onerror="this.src='img/sticker.png'"></div>`
   ).join('');
   document.getElementById('modal-slides').style.transform = 'translateX(0)';
+  document.getElementById('modal-slides').querySelectorAll('img').forEach(img => {
+  if(img.complete) img.classList.add('loaded');
+  else img.addEventListener('load', () => img.classList.add('loaded'));
+});
 
   // Dots
   document.getElementById('modal-dots').innerHTML = fotos.length > 1
