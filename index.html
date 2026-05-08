@@ -633,7 +633,7 @@ function mensajeWA(nombre, descripcion, foto) {
 // Almacén de datos de pipas para el modal
 const pipasStore = [];
 
-function crearTarjeta(pipa, index) {function crearTarjeta(pipa, index) {
+function crearTarjeta(pipa, index) {
   const { nombre, categoria, descripcion, precio, disponible } = pipa;
   const vendida = disponible?.toString().toUpperCase().trim() !== 'SI';
   const precioTexto = formatearPrecio(precio);
@@ -662,7 +662,7 @@ function crearTarjeta(pipa, index) {function crearTarjeta(pipa, index) {
       </div>
     </div>`;
 }
-}
+
 
 function renderCatalogo(filtro = 'todas') {
   const grid = document.getElementById('cat-grid');
