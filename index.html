@@ -545,7 +545,7 @@ function abrirModal(index) {
   modalCurrentSlide = 0;
   modalTotalSlides = fotos.length;
   var slidesEl = document.getElementById('modal-slides');
-  slidesEl.innerHTML = '';
+  if (slidesEl) slidesEl.innerHTML = '';
   fotos.forEach(function(src){
     var div = document.createElement('div');
     div.className = 'modal-slide';
@@ -559,7 +559,7 @@ function abrirModal(index) {
   slidesEl.style.transform = 'translateX(0)';
   lazyLoad(slidesEl);
   var dotsEl = document.getElementById('modal-dots');
-  dotsEl.innerHTML = '';
+  if (dotsEl) dotsEl.innerHTML = '';
   if (fotos.length > 1) {
     fotos.forEach(function(_, i){
       var btn = document.createElement('button');
