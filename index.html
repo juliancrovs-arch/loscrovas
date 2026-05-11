@@ -748,7 +748,7 @@ async function cargarCatalogo() {
     if (cats.length > 1) renderFiltros(cats);
 
     renderCatalogo('todas');
-
+console.log('catalogo cargado:', todasLasPipas.length, 'pipas');
   } catch (err) {
     console.error('Error cargando catálogo:', err);
     grid.innerHTML = '<div class="cat-loading">El catálogo se está actualizando. Mientras tanto visitá nuestro <a href="https://www.instagram.com/los.crovas/" style="color:var(--ember)">Instagram</a>.</div>';
