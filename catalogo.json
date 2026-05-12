@@ -317,5 +317,16 @@
     "fotos": [
       "/img/catalogo/lord-of-the-mountain-1778629643489-0.png"
     ]
+  },
+  {
+    "id": "bosque-encantado-1778629853679",
+    "nombre": "bosque encantado",
+    "categoria": "Gandalf",
+    "descripcion": "Hermoso ejemplar en cazoleta de olivo tallada, laqueada y rusticada, con boquilla en fresno, realizada conservando las tecnicas celtas, peso 69 grs; levemente curvada; largo:30 cm; ancho:45 mm, altura 52 mm, profundidad 33mm, apertura de boca 19 mm terminando en 16 mm.Este ejemplar incluye un atacador garra de tigre y un blend herbal patagonico d eregalo",
+    "precio": 160000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/bosque-encantado-1778629853679-0.jpeg"
+    ]
   }
 ]
