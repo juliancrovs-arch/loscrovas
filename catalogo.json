@@ -328,5 +328,16 @@
     "fotos": [
       "/img/catalogo/bosque-encantado-1778629853679-0.jpeg"
     ]
+  },
+  {
+    "id": "peloso-1778629941087",
+    "nombre": "Peloso",
+    "categoria": "Gandalf",
+    "descripcion": "Esta realizada en su boquilla en bambu muy delicada, la cazoleta en algarrobo azul con un shape digno para amantes de la saga, tallada y pulida sin agregado de tintes siendo este su tono natural, la pipa tiene un largo de 28 cm, siendo para lectura ideal. peso: 73 grs; ancho 46 mm x 40 mm ; altura: 48 mm, profundidad: 42 mm y ancho de boca 20 mm.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/peloso-1778629941087-0.jpg"
+    ]
   }
 ]
