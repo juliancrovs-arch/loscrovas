@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://loscrovas.com.ar/img/pipa_oto1.jpg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Los Crovas","description":"Pipas artesanales hechas a mano en el Alto Río Percy, Esquel, Patagonia Argentina","url":"https://loscrovas.com.ar","image":"https://loscrovas.com.ar/img/pipa_oto1.jpg","address":{"@type":"PostalAddress","streetAddress":"Alto Río Percy","addressLocality":"Esquel","addressRegion":"Chubut","addressCountry":"AR"},"geo":{"@type":"GeoCoordinates","latitude":-42.9,"longitude":-71.3},"telephone":"+5492945555812","sameAs":["https://www.instagram.com/los.crovas/"],"openingHours":"Mo-Su 09:00-20:00","priceRange":"$$"}
-<\/script>
+</script>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
@@ -103,6 +103,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .pip-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
 .pip-precio{font-family:'IM Fell English',serif;font-style:italic;color:var(--ember);font-size:0.95rem}
 .pip-badge{font-size:0.62rem;letter-spacing:0.13em;text-transform:uppercase;padding:0.2rem 0.65rem;border:1px solid var(--border);color:var(--smoke)}
+.cat-cta{text-align:center;padding:3rem 0 1rem;border-top:1px solid var(--border);margin-top:0}
+.cat-cta a{display:inline-flex;align-items:center;gap:0.8rem;padding:1.1rem 2.8rem;background:var(--ink);color:var(--parch);font-family:'Cormorant Garamond',serif;font-size:0.82rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;transition:background 0.25s,gap 0.25s}
+.cat-cta a:hover{background:var(--ember);gap:1.2rem}
 .pagos{background:var(--parch2);border-bottom:1px solid var(--border);padding:4rem 5rem}
 .pagos h2{font-family:'IM Fell English',serif;font-size:clamp(1.6rem,2.5vw,2.2rem);color:var(--ink);margin-bottom:2rem}
 .pagos h2 em{font-style:italic;color:var(--ember)}
@@ -185,6 +188,8 @@ img.loaded{opacity:1}
   .pip-body{padding:1rem}
   .pip-name{font-size:1rem}
   .pip-precio{font-size:0.85rem}
+  .cat-cta{padding:2rem 0 0.5rem}
+  .cat-cta a{padding:0.9rem 2rem;font-size:0.75rem}
   .pagos{padding:3rem 1.8rem}
   .pagos-grid{grid-template-columns:1fr}
   .contacto{grid-template-columns:1fr}
@@ -347,7 +352,10 @@ img.loaded{opacity:1}
   </div>
   <div class="cat-filtros" id="cat-filtros"></div>
   <div class="cat-grid" id="cat-grid">
-    <div class="cat-loading" style="grid-column:span 3;text-align:center;padding:4rem;font-style:italic;color:var(--smoke)">Cargando catálogo...</div>
+    <div class="cat-loading">Cargando catálogo...</div>
+  </div>
+  <div class="cat-cta">
+    <a href="/catalogo.html">Ver catálogo completo →</a>
   </div>
 </section>
 
@@ -428,191 +436,9 @@ img.loaded{opacity:1}
 </footer>
 <div class="crova-studio">Sitio creado por <strong>Crova Studio</strong></div>
 
-<script>
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('on') })
-}, { threshold: 0.07 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-document.querySelectorAll('img').forEach(img => {
-  if(img.complete) img.classList.add('loaded');
-  else img.addEventListener('load', () => img.classList.add('loaded'));
-});
-</script>
-
-<script>
-const WA = '5492945555812';
-let todasLasPipas = [];
-let categoriaActiva = 'todas';
-
-function formatearPrecio(precio) {
-  if (!precio) return 'Consultar';
-  const num = parseInt(precio.toString().replace(/\D/g, ''));
-  if (isNaN(num)) return 'Consultar';
-  return '$' + num.toLocaleString('es-AR');
-}
-
-function convertirLinkDrive(url) {
-  if (!url) return '';
-  const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-  if (match) return `https://drive.google.com/uc?export=view&id=${match[1]}`;
-  const match2 = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
-  if (match2) return `https://drive.google.com/uc?export=view&id=${match2[1]}`;
-  return url;
-}
-
-function mensajeWA(nombre, descripcion, foto) {
-  const msg = `Hola Javier! Me interesa la *${nombre}* (${descripcion}). La vi en loscrovas.com.ar`;
-  return `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
-}
-
-const pipasStore = [];
-
-function crearTarjeta(pipa, index) {
-  const { nombre, categoria, descripcion, precio, disponible } = pipa;
-  const vendida = disponible?.toString().toUpperCase().trim() !== 'SI';
-  const precioTexto = formatearPrecio(precio);
-  let fotosArray = [];
-  if (Array.isArray(pipa.fotos) && pipa.fotos.length > 0) {
-    fotosArray = pipa.fotos;
-  } else if (pipa.foto) {
-    fotosArray = pipa.foto.split(',').map(f => convertirLinkDrive(f.trim())).filter(Boolean);
-  }
-  if (fotosArray.length === 0) fotosArray = ['img/sticker.png'];
-  const imgPrincipal = fotosArray[0];
-  pipasStore[index] = { nombre, categoria, descripcion, precio, disponible, fotos: fotosArray };
-  return `
-    <div class="pip ${vendida ? 'pip-vendida' : ''}" onclick="abrirModal(${index})">
-      <div class="pip-thumb">
-        <img src="${imgPrincipal}" alt="${nombre} — pipa artesanal Los Crovas" loading="lazy" onerror="this.src='img/sticker.png'">
-        <div class="pip-thumb-overlay"></div>
-      </div>
-      <div class="pip-info">
-        <p class="pip-cat">${categoria}</p>
-        <p class="pip-name">${nombre}</p>
-        <p class="pip-price-small">${vendida ? 'Vendida' : precioTexto}</p>
-      </div>
-    </div>`;
-}
-
-function renderCatalogo(filtro = 'todas') {
-  const grid = document.getElementById('cat-grid');
-  const pipas = filtro === 'todas'
-    ? todasLasPipas
-    : todasLasPipas.filter(p => p.categoria?.toLowerCase() === filtro.toLowerCase());
-  if (pipas.length === 0) {
-    grid.innerHTML = '<div class="cat-loading">No hay pipas en esta categoría por el momento.</div>';
-    return;
-  }
-  const ordenadas = [
-    ...pipas.filter(p => p.disponible?.toString().toUpperCase().trim() === 'SI'),
-    ...pipas.filter(p => p.disponible?.toString().toUpperCase().trim() !== 'SI'),
-  ];
-  grid.innerHTML = ordenadas.map((p, i) => crearTarjeta(p, i)).join('');
-  grid.querySelectorAll('img').forEach(img => {
-    if (img.complete) img.classList.add('loaded');
-    else img.addEventListener('load', () => img.classList.add('loaded'));
-  });
-}
-
-function renderFiltros(categorias) {
-  const cont = document.getElementById('cat-filtros');
-  const todas = ['todas', ...categorias];
-  cont.innerHTML = todas.map(cat => `
-    <button class="filtro ${cat === 'todas' ? 'active' : ''}" onclick="activarFiltro(this, '${cat}')">
-      ${cat === 'todas' ? 'Todas' : cat}
-    </button>`).join('');
-}
-
-function activarFiltro(btn, cat) {
-  document.querySelectorAll('.filtro').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  categoriaActiva = cat;
-  renderCatalogo(cat);
-}
-
-async function cargarCatalogo() {
-  const grid = document.getElementById('cat-grid');
-  try {
-    const res = await fetch('/catalogo.json');
-    if (!res.ok) throw new Error('No hay catálogo todavía');
-    const pipas = await res.json();
-    if (!pipas || pipas.length === 0) {
-      grid.innerHTML = '<div class="cat-loading">El catálogo se está actualizando, volvé pronto.</div>';
-      return;
-    }
-    todasLasPipas = pipas.filter(p => p.nombre);
-    const cats = [...new Set(todasLasPipas.map(p => p.categoria).filter(Boolean))];
-    if (cats.length > 1) renderFiltros(cats);
-    renderCatalogo('todas');
-  } catch (err) {
-    console.error('Error cargando catálogo:', err);
-    grid.innerHTML = '<div class="cat-loading">El catálogo se está actualizando. Mientras tanto visitá nuestro <a href="https://www.instagram.com/los.crovas/" style="color:var(--ember)">Instagram</a>.</div>';
-  }
-}
-
-let modalCurrentSlide = 0;
-let modalTotalSlides = 0;
-
-function abrirModal(index) {
-  const pipa = pipasStore[index];
-  if (!pipa) return;
-  const { nombre, categoria, descripcion, precio, disponible, fotos } = pipa;
-  const vendida = disponible?.toString().toUpperCase().trim() !== 'SI';
-  const waLink = mensajeWA(nombre, descripcion, fotos[0]);
-  document.getElementById('modal-cat').textContent = categoria;
-  document.getElementById('modal-name').textContent = nombre;
-  document.getElementById('modal-desc').textContent = descripcion;
-  document.getElementById('modal-precio').textContent = vendida ? '' : formatearPrecio(precio);
-  modalCurrentSlide = 0;
-  modalTotalSlides = fotos.length;
-  document.getElementById('modal-slides').innerHTML = fotos.map((src, i) =>
-    `<div class="modal-slide"><img src="${src}" alt="${nombre} ${i+1}" onerror="this.src='img/sticker.png'"></div>`
-  ).join('');
-  document.getElementById('modal-slides').style.transform = 'translateX(0)';
-  document.getElementById('modal-slides').querySelectorAll('img').forEach(img => {
-    if(img.complete) img.classList.add('loaded');
-    else img.addEventListener('load', () => img.classList.add('loaded'));
-  });
-  document.getElementById('modal-dots').innerHTML = fotos.length > 1
-    ? fotos.map((_,i) => `<button class="modal-dot ${i===0?'active':''}" onclick="irModalSlide(${i})"></button>`).join('')
-    : '';
-  document.getElementById('modal-prev').style.display = fotos.length > 1 ? 'flex' : 'none';
-  document.getElementById('modal-next').style.display = fotos.length > 1 ? 'flex' : 'none';
-  document.getElementById('modal-action').innerHTML = vendida
-    ? '<div class="modal-vendida">Esta pipa ya encontró dueño. Escribinos para ver opciones similares.</div>'
-    : `<a href="${waLink}" target="_blank" rel="noopener" class="modal-wa">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        Consultar por WhatsApp
-      </a>`;
-  document.getElementById('modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function cerrarModal(e) {
-  if (e && e.target !== document.getElementById('modal')) return;
-  document.getElementById('modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function modalSlide(dir) {
-  modalCurrentSlide = (modalCurrentSlide + dir + modalTotalSlides) % modalTotalSlides;
-  document.getElementById('modal-slides').style.transform = `translateX(-${modalCurrentSlide * 100}%)`;
-  document.querySelectorAll('.modal-dot').forEach((d,i) => d.classList.toggle('active', i === modalCurrentSlide));
-}
-
-function irModalSlide(i) {
-  modalCurrentSlide = i;
-  document.getElementById('modal-slides').style.transform = `translateX(-${i * 100}%)`;
-  document.querySelectorAll('.modal-dot').forEach((d,j) => d.classList.toggle('active', j === i));
-}
-
-document.addEventListener('keydown', e => { if(e.key === 'Escape') cerrarModal({}); });
-cargarCatalogo();
-</script>
-
 <div class="modal-overlay" id="modal" onclick="cerrarModal(event)">
   <div class="modal-box" id="modal-box">
-    <button class="modal-close" onclick="cerrarModal()">✕</button>
+    <button class="modal-close" onclick="cerrarModal()">&#10005;</button>
     <div class="modal-imgs">
       <div class="modal-carousel" id="modal-carousel">
         <div class="modal-slides" id="modal-slides"></div>
@@ -628,41 +454,231 @@ cargarCatalogo();
       <p class="modal-precio" id="modal-precio"></p>
       <div id="modal-action"></div>
       <div class="modal-pagos">
-        <p class="modal-pagos-title">Métodos de pago</p>
+        <p class="modal-pagos-title">M&#233;todos de pago</p>
         <div class="modal-pagos-items">
-          <div class="modal-pago-item">
-            <svg width="20" height="20" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#009EE3"/><text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="8" font-family="Arial" font-weight="bold">MP</text></svg>
-            <span>Mercado Pago</span>
-          </div>
-          <div class="modal-pago-item">
-            <svg width="20" height="20" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#2C3E50"/><path d="M8 20h24M20 8v24" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>
-            <span>Transferencia</span>
-          </div>
-          <div class="modal-pago-item">
-            <svg width="20" height="20" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#00457C"/><text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="7" font-family="Arial" font-weight="bold">PayPal</text></svg>
-            <span>PayPal (exterior)</span>
-          </div>
-          <div class="modal-pago-item">
-            <svg width="20" height="20" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#3D5228"/><text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="8" font-family="Arial" font-weight="bold">$</text></svg>
-            <span>Efectivo</span>
-          </div>
+          <div class="modal-pago-item"><svg width="20" height="20" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#009EE3"/><text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="8" font-family="Arial" font-weight="bold">MP</text></svg><span>Mercado Pago</span></div>
+          <div class="modal-pago-item"><svg width="20" height="20" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#2C3E50"/><path d="M8 20h24M20 8v24" stroke="white" stroke-width="3" stroke-linecap="round"/></svg><span>Transferencia</span></div>
+          <div class="modal-pago-item"><svg width="20" height="20" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#00457C"/><text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="7" font-family="Arial" font-weight="bold">PayPal</text></svg><span>PayPal (exterior)</span></div>
+          <div class="modal-pago-item"><svg width="20" height="20" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#3D5228"/><text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="8" font-family="Arial" font-weight="bold">$</text></svg><span>Efectivo</span></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
+// Reveal on scroll
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('on'); });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+// Lazy image fade-in
+document.querySelectorAll('img').forEach(function(img){
+  if(img.complete) img.classList.add('loaded');
+  else img.addEventListener('load', function(){ img.classList.add('loaded'); });
+});
+</script>
+
+<script>
+var WA = '5492945555812';
+var todasLasPipas = [];
+var pipasStore = [];
+var modalCurrentSlide = 0;
+var modalTotalSlides = 0;
+
+function formatearPrecio(precio) {
+  if (precio === null || precio === undefined || precio === '') return 'Consultar';
+  var num = parseInt(precio.toString().replace(/[^0-9]/g, ''));
+  if (isNaN(num)) return 'Consultar';
+  return '$' + num.toLocaleString('es-AR');
+}
+
+function mensajeWA(nombre, descripcion) {
+  var msg = 'Hola Javier! Me interesa la ' + nombre + ' (' + descripcion + '). La vi en loscrovas.com.ar';
+  return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+}
+
+function getFotos(pipa) {
+  if (Array.isArray(pipa.fotos) && pipa.fotos.length > 0) return pipa.fotos;
+  if (pipa.foto) return pipa.foto.split(',').map(function(f){ return f.trim(); }).filter(Boolean);
+  return ['img/sticker.png'];
+}
+
+function imgError(img) { img.src = 'img/sticker.png'; }
+
+function lazyLoad(container) {
+  container.querySelectorAll('img').forEach(function(img){
+    if (img.complete) img.classList.add('loaded');
+    else img.addEventListener('load', function(){ img.classList.add('loaded'); });
+  });
+}
+
+function crearTarjeta(pipa, index) {
+  var nombre = pipa.nombre || '';
+  var categoria = pipa.categoria || '';
+  var precio = pipa.precio;
+  var disponible = pipa.disponible || 'NO';
+  var vendida = disponible.toString().toUpperCase().trim() !== 'SI';
+  var fotos = getFotos(pipa);
+  pipasStore[index] = { nombre: nombre, categoria: categoria, descripcion: pipa.descripcion || '', precio: precio, disponible: disponible, fotos: fotos };
+  var cls = vendida ? 'pip pip-vendida' : 'pip';
+  var priceHtml = vendida ? 'Vendida' : formatearPrecio(precio);
+  var html = '<div class="' + cls + '" onclick="abrirModal(' + index + ')">';
+  html += '<div class="pip-thumb">';
+  html += '<img src="' + fotos[0] + '" alt="' + nombre + ' &mdash; pipa artesanal Los Crovas" loading="lazy" onerror="imgError(this)">';
+  html += '<div class="pip-thumb-overlay"></div>';
+  html += '</div>';
+  html += '<div class="pip-info">';
+  html += '<p class="pip-cat">' + categoria + '</p>';
+  html += '<p class="pip-name">' + nombre + '</p>';
+  html += '<p class="pip-price-small">' + priceHtml + '</p>';
+  html += '</div></div>';
+  return html;
+}
+
+function renderCatalogo(filtro) {
+  filtro = filtro || 'todas';
+  var grid = document.getElementById('cat-grid');
+  if (!grid) return;
+  var pipas = filtro === 'todas' ? todasLasPipas : todasLasPipas.filter(function(p){
+    return p.categoria && p.categoria.toLowerCase() === filtro.toLowerCase();
+  });
+  if (!pipas.length) {
+    grid.innerHTML = '<div class="cat-loading">No hay pipas en esta categor&iacute;a por el momento.</div>';
+    return;
+  }
+  var disponibles = pipas.filter(function(p){ return p.disponible && p.disponible.toString().toUpperCase().trim() === 'SI'; });
+  var vendidas = pipas.filter(function(p){ return !p.disponible || p.disponible.toString().toUpperCase().trim() !== 'SI'; });
+  pipasStore = [];
+  grid.innerHTML = disponibles.concat(vendidas).map(function(p, i){ return crearTarjeta(p, i); }).join('');
+  lazyLoad(grid);
+}
+
+function renderFiltros(categorias) {
+  var cont = document.getElementById('cat-filtros');
+  if (!cont) return;
+  var todas = ['todas'].concat(categorias);
+  cont.innerHTML = todas.map(function(cat){
+    var label = cat === 'todas' ? 'Todas' : cat;
+    var active = cat === 'todas' ? ' active' : '';
+    return '<button class="filtro' + active + '" onclick="activarFiltro(this, \'' + cat + '\')">' + label + '</button>';
+  }).join('');
+}
+
+function activarFiltro(btn, cat) {
+  document.querySelectorAll('.filtro').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  renderCatalogo(cat);
+}
+
+function cargarCatalogo() {
+  var grid = document.getElementById('cat-grid');
+  if (!grid) return;
+  fetch('/catalogo.json')
+    .then(function(res){
+      if (!res.ok) throw new Error('no catalogo');
+      return res.json();
+    })
+    .then(function(pipas){
+      var grid2 = document.getElementById('cat-grid');
+      if (!grid2) return;
+      if (!pipas || !pipas.length) {
+        grid2.innerHTML = '<div class="cat-loading">El cat&aacute;logo se est&aacute; actualizando, volv&eacute; pronto.</div>';
+        return;
+      }
+      todasLasPipas = pipas.filter(function(p){ return p.nombre; });
+      var cats = [];
+      todasLasPipas.forEach(function(p){
+        if (p.categoria && cats.indexOf(p.categoria) === -1) cats.push(p.categoria);
+      });
+      if (cats.length > 1) renderFiltros(cats);
+      renderCatalogo('todas');
+    })
+    .catch(function(err){
+      console.error('Error cargando catalogo:', err);
+      var grid2 = document.getElementById('cat-grid');
+      if (grid2) {
+        grid2.innerHTML = '<div class="cat-loading">El cat&aacute;logo se est&aacute; actualizando. Mientras tanto visit&aacute; nuestro <a href="https://www.instagram.com/los.crovas/" style="color:var(--ember)">Instagram</a>.</div>';
       }
     });
+}
+
+function abrirModal(index) {
+  var pipa = pipasStore[index];
+  if (!pipa) return;
+  var fotos = pipa.fotos;
+  var vendida = pipa.disponible.toString().toUpperCase().trim() !== 'SI';
+  document.getElementById('modal-cat').textContent = pipa.categoria;
+  document.getElementById('modal-name').textContent = pipa.nombre;
+  document.getElementById('modal-desc').textContent = pipa.descripcion;
+  document.getElementById('modal-precio').textContent = vendida ? '' : formatearPrecio(pipa.precio);
+  modalCurrentSlide = 0;
+  modalTotalSlides = fotos.length;
+  var slidesEl = document.getElementById('modal-slides');
+  slidesEl.innerHTML = '';
+  fotos.forEach(function(src){
+    var div = document.createElement('div');
+    div.className = 'modal-slide';
+    var img = document.createElement('img');
+    img.src = src;
+    img.alt = pipa.nombre;
+    img.onerror = function(){ this.src = 'img/sticker.png'; };
+    div.appendChild(img);
+    slidesEl.appendChild(div);
+  });
+  slidesEl.style.transform = 'translateX(0)';
+  lazyLoad(slidesEl);
+  var dotsEl = document.getElementById('modal-dots');
+  dotsEl.innerHTML = '';
+  if (fotos.length > 1) {
+    fotos.forEach(function(_, i){
+      var btn = document.createElement('button');
+      btn.className = 'modal-dot' + (i === 0 ? ' active' : '');
+      btn.setAttribute('onclick', 'irModalSlide(' + i + ')');
+      dotsEl.appendChild(btn);
+    });
   }
+  document.getElementById('modal-prev').style.display = fotos.length > 1 ? 'flex' : 'none';
+  document.getElementById('modal-next').style.display = fotos.length > 1 ? 'flex' : 'none';
+  var actionEl = document.getElementById('modal-action');
+  if (vendida) {
+    actionEl.innerHTML = '<div class="modal-vendida">Esta pipa ya encontr&oacute; due&ntilde;o. Escribinos para ver opciones similares.</div>';
+  } else {
+    var a = document.createElement('a');
+    a.href = mensajeWA(pipa.nombre, pipa.descripcion);
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.className = 'modal-wa';
+    a.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> Consultar por WhatsApp';
+    actionEl.innerHTML = '';
+    actionEl.appendChild(a);
+  }
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarModal(e) {
+  if (e && e.target && e.target !== document.getElementById('modal')) return;
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function modalSlide(dir) {
+  modalCurrentSlide = (modalCurrentSlide + dir + modalTotalSlides) % modalTotalSlides;
+  document.getElementById('modal-slides').style.transform = 'translateX(-' + (modalCurrentSlide * 100) + '%)';
+  document.querySelectorAll('.modal-dot').forEach(function(d, i){ d.classList.toggle('active', i === modalCurrentSlide); });
+}
+
+function irModalSlide(i) {
+  modalCurrentSlide = i;
+  document.getElementById('modal-slides').style.transform = 'translateX(-' + (i * 100) + '%)';
+  document.querySelectorAll('.modal-dot').forEach(function(d, j){ d.classList.toggle('active', j === i); });
+}
+
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') cerrarModal({ target: document.getElementById('modal') }); });
+cargarCatalogo();
 </script>
+
 </body>
 </html>
