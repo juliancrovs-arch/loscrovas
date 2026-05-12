@@ -126,14 +126,16 @@ header{background:var(--deep);padding:1rem 1.5rem;display:flex;justify-content:s
       </div>
       <div class="form-group">
         <label>Categoría</label>
-        <select id="pip-cat">
+        <select id="pip-cat" onchange="onCategoriaChange()">
           <option value="">Elegir categoría...</option>
-          <option>Gandalf</option><option>Cóndor</option><option>Chubby</option>
-          <option>Apple</option><option>Cauquen</option><option>Billard</option>
-          <option>Dublin</option><option>Churchwarden</option><option>Mamba</option>
-          <option>Dogo</option><option>Tomahawk</option><option>Rhodesian</option>
-          <option>Free Hand</option><option>Otra</option>
         </select>
+        <div id="cat-nueva-wrap" style="display:none;margin-top:0.6rem">
+          <input type="text" id="pip-cat-nueva" placeholder="Nombre de la nueva categoría">
+          <div style="display:flex;gap:0.5rem;margin-top:0.5rem">
+            <button class="btn-secondary" onclick="agregarCategoria()" style="flex:1">Guardar categoría</button>
+            <button class="btn-secondary" onclick="cancelarCategoriaNueva()" style="flex:1">Cancelar</button>
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label>Descripción</label>
@@ -229,6 +231,7 @@ function mostrarPanel(){
   document.getElementById('panel').style.display='flex';
   cargarConfig();
   actualizarBannerToken();
+  renderCategoriasSelect();
   cargarPipas();
 }
 function salir(){
@@ -269,6 +272,68 @@ function onBannerClick(){
     switchTab('config');
     setTimeout(function(){ document.getElementById('cfg-token').focus(); }, 200);
   }
+}
+
+// ========= CATEGORÍAS =========
+var CATEGORIAS_DEFAULT = ['Gandalf','Cóndor','Chubby','Apple','Cauquen','Billard','Dublin','Churchwarden','Mamba','Dogo','Tomahawk','Rhodesian','Free Hand'];
+
+function getCategorias(){
+  var stored = getStored('categorias_custom');
+  var custom = [];
+  if (stored) {
+    try { custom = JSON.parse(stored); } catch(e){ custom = []; }
+  }
+  // unir default + custom sin duplicados
+  var todas = CATEGORIAS_DEFAULT.slice();
+  custom.forEach(function(c){ if (todas.indexOf(c) === -1) todas.push(c); });
+  return todas;
+}
+
+function renderCategoriasSelect(){
+  var sel = document.getElementById('pip-cat');
+  if (!sel) return;
+  var valActual = sel.value;
+  var cats = getCategorias();
+  var html = '<option value="">Elegir categoría...</option>';
+  cats.forEach(function(c){
+    html += '<option'+(c===valActual?' selected':'')+'>'+c+'</option>';
+  });
+  html += '<option value="__NUEVA__">+ Nueva categoría...</option>';
+  sel.innerHTML = html;
+}
+
+function onCategoriaChange(){
+  var sel = document.getElementById('pip-cat');
+  if (sel.value === '__NUEVA__') {
+    sel.value = '';
+    document.getElementById('cat-nueva-wrap').style.display = 'block';
+    setTimeout(function(){ document.getElementById('pip-cat-nueva').focus(); }, 100);
+  }
+}
+
+function agregarCategoria(){
+  var input = document.getElementById('pip-cat-nueva');
+  var nueva = input.value.trim();
+  if (!nueva) return;
+  // capitalizar primera letra
+  nueva = nueva.charAt(0).toUpperCase() + nueva.slice(1);
+  // chequear si ya existe
+  var existentes = getCategorias();
+  if (existentes.indexOf(nueva) === -1) {
+    var stored = getStored('categorias_custom');
+    var custom = [];
+    if (stored) { try { custom = JSON.parse(stored); } catch(e){} }
+    custom.push(nueva);
+    setStored('categorias_custom', JSON.stringify(custom));
+  }
+  renderCategoriasSelect();
+  document.getElementById('pip-cat').value = nueva;
+  cancelarCategoriaNueva();
+}
+
+function cancelarCategoriaNueva(){
+  document.getElementById('cat-nueva-wrap').style.display = 'none';
+  document.getElementById('pip-cat-nueva').value = '';
 }
 
 // ========= FOTOS =========
@@ -334,7 +399,7 @@ async function publicarPipa(){
     }
     mostrarStatus('nueva','Guardando en el catálogo...','loading');
     var catRes=await fetch('https://api.github.com/repos/'+repo+'/contents/catalogo.json?ref=main&t='+Date.now(),{
-      headers:{'Authorization':'token '+token,'Cache-Control':'no-cache'}
+      headers:{'Authorization':'token '+token}
     });
     if(!catRes.ok) throw new Error(describirErrorGH(catRes));
     var catData=await catRes.json();
@@ -363,7 +428,7 @@ async function cargarPipas(){
   var repo=getStored('gh_repo')||REPO;
   var lista=document.getElementById('pipas-lista');
   try{
-    var headers = token ? {'Authorization':'token '+token,'Cache-Control':'no-cache'} : {'Cache-Control':'no-cache'};
+    var headers = token ? {'Authorization':'token '+token} : {};
     var res=await fetch('https://api.github.com/repos/'+repo+'/contents/catalogo.json?ref=main&t='+Date.now(),{headers:headers});
     if(!res.ok){
       lista.innerHTML='<div class="empty-state">'+describirErrorGH(res)+'</div>';
@@ -435,7 +500,7 @@ async function refrescarSha(){
   var token=getStored('gh_token');
   var repo=getStored('gh_repo')||REPO;
   var res=await fetch('https://api.github.com/repos/'+repo+'/contents/catalogo.json?ref=main&t='+Date.now(),{
-    headers:{'Authorization':'token '+token,'Cache-Control':'no-cache'}
+    headers:{'Authorization':'token '+token}
   });
   if(!res.ok) throw new Error(describirErrorGH(res));
   var data=await res.json();
