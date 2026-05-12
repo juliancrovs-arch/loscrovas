@@ -218,5 +218,16 @@
     "fotos": [
       "/img/catalogo/osaka-1778607841121-0.png"
     ]
+  },
+  {
+    "id": "chemine-1778608657088",
+    "nombre": "cheminée",
+    "categoria": "Chimenea",
+    "descripcion": "Cazoleta tallada , pulida y laqueada resaltando el trazo natural de las vetas de la raiz de guayuvera, con su boquilla en derlim blaco",
+    "precio": 90000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/chemine-1778608657088-0.png"
+    ]
   }
 ]
