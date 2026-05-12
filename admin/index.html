@@ -17,12 +17,18 @@ body{background:var(--parch);color:var(--ink);font-family:Georgia,serif;font-siz
 .login-box input:focus{border-color:var(--ember)}
 .btn-primary{width:100%;padding:0.9rem;background:var(--ink);color:var(--parch);border:none;font-family:Georgia,serif;font-size:0.85rem;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;transition:background 0.2s}
 .btn-primary:hover{background:var(--ember)}
+.btn-secondary{padding:0.7rem 1.2rem;background:transparent;border:1px solid var(--border);color:var(--ink);font-family:Georgia,serif;font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
+.btn-secondary:hover{border-color:var(--ember);color:var(--ember)}
 .login-error{color:var(--red);font-size:0.85rem;margin-top:0.8rem;display:none}
 .panel{display:none;min-height:100vh;flex-direction:column}
 header{background:var(--deep);padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
 .header-brand{font-style:italic;color:#C8922A;font-size:1.1rem}
 .btn-salir{background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(240,233,214,0.6);padding:0.4rem 1rem;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:Georgia,serif}
 .btn-salir:hover{border-color:var(--ember);color:var(--ember)}
+.token-banner{padding:0.7rem 1.5rem;text-align:center;font-size:0.8rem;letter-spacing:0.05em;border-bottom:1px solid var(--border)}
+.token-banner.ok{background:#e8f5e8;color:var(--green)}
+.token-banner.bad{background:#fff0e6;color:var(--ember);cursor:pointer}
+.token-banner.bad:hover{background:#ffe6d6}
 .panel-body{padding:1.5rem;flex:1}
 .tabs{display:flex;gap:0;margin-bottom:1.5rem;border:1px solid var(--border)}
 .tab{flex:1;padding:0.8rem;text-align:center;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;background:var(--parch2);color:var(--smoke);border:none;font-family:Georgia,serif;transition:all 0.2s}
@@ -69,6 +75,12 @@ header{background:var(--deep);padding:1rem 1.5rem;display:flex;justify-content:s
 .btn-accion.eliminar{border-color:var(--smoke);color:var(--smoke)}
 .empty-state{text-align:center;padding:3rem;color:var(--smoke);font-style:italic}
 .config-info{padding:1rem;background:var(--parch2);border:1px solid var(--border);font-size:0.85rem;color:var(--smoke);line-height:1.7;margin-bottom:1.5rem}
+.config-info strong{color:var(--ink)}
+.config-actions{display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap}
+.token-status{padding:0.7rem 1rem;margin-top:0.5rem;font-size:0.85rem;display:none;border-left:3px solid}
+.token-status.ok{border-color:var(--green);background:#f0fff0;color:var(--green)}
+.token-status.err{border-color:var(--red);background:#fff0f0;color:var(--red)}
+.token-status.loading{border-color:var(--gold);background:#fffdf0;color:var(--gold)}
 </style>
 </head>
 <body>
@@ -89,6 +101,7 @@ header{background:var(--deep);padding:1rem 1.5rem;display:flex;justify-content:s
     <span class="header-brand">Los Crovas — Admin</span>
     <button class="btn-salir" onclick="salir()">Salir</button>
   </header>
+  <div class="token-banner" id="token-banner" onclick="onBannerClick()"></div>
   <div class="panel-body">
     <div class="tabs">
       <button class="tab active" onclick="switchTab('nueva')">+ Nueva pipa</button>
@@ -152,6 +165,7 @@ header{background:var(--deep);padding:1rem 1.5rem;display:flex;justify-content:s
     <div class="section" id="tab-config">
       <div class="config-info">
         <strong>Cómo funciona:</strong> Cuando publicás una pipa, las fotos se suben a GitHub y la página se actualiza sola en 2 minutos.<br><br>
+        <strong>Si te aparece "Error guardando"</strong>, lo más probable es que el token de GitHub se haya borrado o vencido. Generá uno nuevo en GitHub y pegalo abajo.<br><br>
         Para cambiar la contraseña escribile a Julián.
       </div>
       <div class="form-group">
@@ -162,173 +176,346 @@ header{background:var(--deep);padding:1rem 1.5rem;display:flex;justify-content:s
         <label>Repositorio</label>
         <input type="text" id="cfg-repo" placeholder="juliancrovs-arch/loscrovas" oninput="guardarConfig()">
       </div>
-      <p style="font-size:0.8rem;color:var(--smoke);font-style:italic;margin-top:1rem">Esta config se guarda solo en este dispositivo.</p>
+      <div class="config-actions">
+        <button class="btn-secondary" onclick="probarConexion()">Probar conexión</button>
+      </div>
+      <div class="token-status" id="token-status"></div>
+      <p style="font-size:0.8rem;color:var(--smoke);font-style:italic;margin-top:1rem">Esta config se guarda en este dispositivo por 1 año.</p>
     </div>
   </div>
 </div>
 
 <script>
-const PASSWORD='percy2024';
-const REPO='juliancrovs-arch/loscrovas';
+var PASSWORD='percy2024';
+var REPO='juliancrovs-arch/loscrovas';
 
+// ========= STORAGE: localStorage + cookie de 1 año =========
+function setStored(key, value){
+  try{ localStorage.setItem(key, value); }catch(e){}
+  try{
+    var d=new Date();
+    d.setTime(d.getTime() + 365*24*60*60*1000);
+    document.cookie = key + '=' + encodeURIComponent(value) + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+  }catch(e){}
+}
+function getStored(key){
+  var v = '';
+  try{ v = localStorage.getItem(key) || ''; }catch(e){}
+  if (v) return v;
+  // fallback a cookie
+  try{
+    var m = document.cookie.match(new RegExp('(?:^|; )' + key + '=([^;]*)'));
+    if (m) {
+      var fromCookie = decodeURIComponent(m[1]);
+      // re-sincronizar a localStorage
+      try{ localStorage.setItem(key, fromCookie); }catch(e){}
+      return fromCookie;
+    }
+  }catch(e){}
+  return '';
+}
+
+// ========= LOGIN =========
 function login(){
   if(document.getElementById('pass-input').value===PASSWORD){
-    document.getElementById('login').style.display='none';
-    document.getElementById('panel').style.display='flex';
-    cargarPipas();cargarConfig();
-  }else{document.getElementById('login-error').style.display='block';}
+    setStored('admin_logged','1');
+    mostrarPanel();
+  }else{
+    document.getElementById('login-error').style.display='block';
+  }
+}
+function mostrarPanel(){
+  document.getElementById('login').style.display='none';
+  document.getElementById('panel').style.display='flex';
+  cargarConfig();
+  actualizarBannerToken();
+  cargarPipas();
 }
 function salir(){
+  setStored('admin_logged','');
   document.getElementById('login').style.display='flex';
   document.getElementById('panel').style.display='none';
   document.getElementById('pass-input').value='';
 }
-function switchTab(tab){
-  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',['nueva','lista','config'][i]===tab));
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.getElementById('tab-'+tab).classList.add('active');
-  if(tab==='lista')cargarPipas();
+
+// auto-login si ya estaba dentro
+if (getStored('admin_logged') === '1') {
+  window.addEventListener('DOMContentLoaded', mostrarPanel);
 }
 
-let fotosSeleccionadas=[];
+// ========= TABS =========
+function switchTab(tab){
+  var keys = ['nueva','lista','config'];
+  document.querySelectorAll('.tab').forEach(function(t,i){ t.classList.toggle('active', keys[i]===tab); });
+  document.querySelectorAll('.section').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById('tab-'+tab).classList.add('active');
+  if(tab==='lista') cargarPipas();
+}
+
+// ========= BANNER DE TOKEN =========
+function actualizarBannerToken(){
+  var token = getStored('gh_token');
+  var banner = document.getElementById('token-banner');
+  if (token && token.length > 10) {
+    banner.className = 'token-banner ok';
+    banner.textContent = '✅ Conectado a GitHub';
+  } else {
+    banner.className = 'token-banner bad';
+    banner.textContent = '⚠️ Falta cargar el token de GitHub — tocá acá para configurarlo';
+  }
+}
+function onBannerClick(){
+  if (document.getElementById('token-banner').classList.contains('bad')) {
+    switchTab('config');
+    setTimeout(function(){ document.getElementById('cfg-token').focus(); }, 200);
+  }
+}
+
+// ========= FOTOS =========
+var fotosSeleccionadas=[];
 function agregarFotos(files){
-  Array.from(files).forEach(file=>{
+  Array.from(files).forEach(function(file){
     if(fotosSeleccionadas.length>=5)return;
-    const reader=new FileReader();
-    reader.onload=e=>{fotosSeleccionadas.push({file,dataUrl:e.target.result});renderFotoPreview();};
+    var reader=new FileReader();
+    reader.onload=function(e){
+      fotosSeleccionadas.push({file:file,dataUrl:e.target.result});
+      renderFotoPreview();
+    };
     reader.readAsDataURL(file);
   });
 }
 function renderFotoPreview(){
-  document.getElementById('foto-preview').innerHTML=fotosSeleccionadas.map((f,i)=>`
-    <div class="foto-preview-item">
-      <img src="${f.dataUrl}">
-      <button onclick="quitarFoto(${i})">✕</button>
-    </div>`).join('');
+  document.getElementById('foto-preview').innerHTML = fotosSeleccionadas.map(function(f,i){
+    return '<div class="foto-preview-item"><img src="'+f.dataUrl+'"><button onclick="quitarFoto('+i+')">&#10005;</button></div>';
+  }).join('');
 }
-function quitarFoto(i){fotosSeleccionadas.splice(i,1);renderFotoPreview();}
+function quitarFoto(i){ fotosSeleccionadas.splice(i,1); renderFotoPreview(); }
 
+// ========= ERROR HELPER =========
+function describirErrorGH(res){
+  if (res.status === 401) return 'El token de GitHub no es válido o venció. Andá a ⚙ Config y cargá uno nuevo.';
+  if (res.status === 403) return 'GitHub rechazó la operación. Probablemente el token no tiene permisos de "repo". Generá uno nuevo con esos permisos.';
+  if (res.status === 404) return 'No se encontró el archivo. ¿El repositorio en Config está bien escrito?';
+  if (res.status === 409) return 'Conflicto: alguien (o vos en otra pestaña) cambió el catálogo. Recargá la página y reintentá.';
+  if (res.status === 422) return 'Datos inválidos. Reintentá. Si sigue, hacé una foto del error y mandásela a Julián.';
+  return 'Error de GitHub (código '+res.status+'). Reintentá en un minuto.';
+}
+
+// ========= PUBLICAR PIPA =========
 async function publicarPipa(){
-  const nombre=document.getElementById('pip-nombre').value.trim();
-  const cat=document.getElementById('pip-cat').value;
-  const desc=document.getElementById('pip-desc').value.trim();
-  const precio=document.getElementById('pip-precio').value;
-  const disponible=document.getElementById('pip-disponible').checked;
-  const token=localStorage.getItem('gh_token')||'';
-  const repo=localStorage.getItem('gh_repo')||REPO;
+  var nombre=document.getElementById('pip-nombre').value.trim();
+  var cat=document.getElementById('pip-cat').value;
+  var desc=document.getElementById('pip-desc').value.trim();
+  var precio=document.getElementById('pip-precio').value;
+  var disponible=document.getElementById('pip-disponible').checked;
+  var token=getStored('gh_token');
+  var repo=getStored('gh_repo')||REPO;
   if(!nombre)return mostrarStatus('nueva','Falta el nombre','err');
   if(!cat)return mostrarStatus('nueva','Elegí una categoría','err');
   if(fotosSeleccionadas.length===0)return mostrarStatus('nueva','Agregá al menos una foto','err');
-  if(!token)return mostrarStatus('nueva','Falta el token en ⚙ Config','err');
+  if(!token){ mostrarStatus('nueva','Falta el token. Andá a ⚙ Config para cargarlo.','err'); switchTab('config'); return; }
   mostrarStatus('nueva','Subiendo fotos...','loading');
   try{
-    const slug=nombre.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
-    const ts=Date.now();
-    const fotosUrls=[];
-    for(let i=0;i<fotosSeleccionadas.length;i++){
-      const f=fotosSeleccionadas[i];
-      const ext=f.file.name.split('.').pop()||'jpg';
-      const fn=`${slug}-${ts}-${i}.${ext}`;
-      const b64=f.dataUrl.split(',')[1];
-      const res=await fetch(`https://api.github.com/repos/${repo}/contents/img/catalogo/${fn}`,{
-        method:'PUT',headers:{'Authorization':`token ${token}`,'Content-Type':'application/json'},
-        body:JSON.stringify({message:`Foto de ${nombre}`,content:b64})
+    var slug=nombre.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
+    var ts=Date.now();
+    var fotosUrls=[];
+    for(var i=0;i<fotosSeleccionadas.length;i++){
+      var f=fotosSeleccionadas[i];
+      var ext=(f.file.name.split('.').pop()||'jpg').toLowerCase();
+      var fn=slug+'-'+ts+'-'+i+'.'+ext;
+      var b64=f.dataUrl.split(',')[1];
+      var res=await fetch('https://api.github.com/repos/'+repo+'/contents/img/catalogo/'+fn,{
+        method:'PUT',headers:{'Authorization':'token '+token,'Content-Type':'application/json'},
+        body:JSON.stringify({message:'Foto de '+nombre,content:b64})
       });
-      if(!res.ok)throw new Error(`Error foto: ${res.statusText}`);
-      fotosUrls.push(`/img/catalogo/${fn}`);
-      mostrarStatus('nueva',`Subiendo fotos... (${i+1}/${fotosSeleccionadas.length})`,'loading');
+      if(!res.ok) throw new Error(describirErrorGH(res));
+      fotosUrls.push('/img/catalogo/'+fn);
+      mostrarStatus('nueva','Subiendo fotos... ('+(i+1)+'/'+fotosSeleccionadas.length+')','loading');
     }
     mostrarStatus('nueva','Guardando en el catálogo...','loading');
-    const catRes=await fetch(`https://api.github.com/repos/${repo}/contents/catalogo.json`,{
-      headers:{'Authorization':`token ${token}`}
+    var catRes=await fetch('https://api.github.com/repos/'+repo+'/contents/catalogo.json?ref=main&t='+Date.now(),{
+      headers:{'Authorization':'token '+token,'Cache-Control':'no-cache'}
     });
-    const catData=await catRes.json();
-    const pipas=JSON.parse(atob(catData.content.replace(/\n/g,'')));
-    pipas.push({id:`${slug}-${ts}`,nombre,categoria:cat,descripcion:desc,precio:precio?parseInt(precio):null,disponible:disponible?'SI':'NO',fotos:fotosUrls});
-    const saveRes=await fetch(`https://api.github.com/repos/${repo}/contents/catalogo.json`,{
-      method:'PUT',headers:{'Authorization':`token ${token}`,'Content-Type':'application/json'},
-      body:JSON.stringify({message:`Agregar pipa: ${nombre}`,content:btoa(unescape(encodeURIComponent(JSON.stringify(pipas,null,2)))),sha:catData.sha})
+    if(!catRes.ok) throw new Error(describirErrorGH(catRes));
+    var catData=await catRes.json();
+    var pipas=JSON.parse(decodeURIComponent(escape(atob(catData.content.replace(/\n/g,'')))));
+    pipas.push({id:slug+'-'+ts,nombre:nombre,categoria:cat,descripcion:desc,precio:precio?parseInt(precio):null,disponible:disponible?'SI':'NO',fotos:fotosUrls});
+    var saveRes=await fetch('https://api.github.com/repos/'+repo+'/contents/catalogo.json',{
+      method:'PUT',headers:{'Authorization':'token '+token,'Content-Type':'application/json'},
+      body:JSON.stringify({message:'Agregar pipa: '+nombre,content:btoa(unescape(encodeURIComponent(JSON.stringify(pipas,null,2)))),sha:catData.sha})
     });
-    if(!saveRes.ok)throw new Error('Error guardando');
-    mostrarStatus('nueva',`✅ ${nombre} publicada! Aparece en 2 minutos.`,'ok');
+    if(!saveRes.ok) throw new Error(describirErrorGH(saveRes));
+    mostrarStatus('nueva','✅ '+nombre+' publicada! Aparece en 2 minutos.','ok');
     fotosSeleccionadas=[];renderFotoPreview();
     document.getElementById('pip-nombre').value='';
     document.getElementById('pip-cat').value='';
     document.getElementById('pip-desc').value='';
     document.getElementById('pip-precio').value='';
     document.getElementById('pip-disponible').checked=true;
-  }catch(err){mostrarStatus('nueva',`Error: ${err.message}`,'err');}
+  }catch(err){
+    mostrarStatus('nueva','Error: '+err.message,'err');
+  }
 }
 
+// ========= CARGAR / EDITAR PIPAS =========
 async function cargarPipas(){
-  const token=localStorage.getItem('gh_token')||'';
-  const repo=localStorage.getItem('gh_repo')||REPO;
-  const lista=document.getElementById('pipas-lista');
+  var token=getStored('gh_token');
+  var repo=getStored('gh_repo')||REPO;
+  var lista=document.getElementById('pipas-lista');
   try{
-    const res=await fetch(`https://api.github.com/repos/${repo}/contents/catalogo.json`,{
-      headers:token?{'Authorization':`token ${token}`}:{}
-    });
-    const data=await res.json();
-    const pipas=JSON.parse(atob(data.content.replace(/\n/g,'')));
-    window._catalogoSha=data.sha;window._pipas=pipas;
-    if(pipas.length===0){lista.innerHTML='<div class="empty-state">No hay pipas publicadas todavía</div>';return;}
-    lista.innerHTML=pipas.map((p,i)=>`
-      <div class="pipa-item">
-        <img class="pipa-thumb" src="${p.fotos?.[0]||'/img/sticker.png'}" onerror="this.src='/img/sticker.png'">
-        <div>
-          <div class="pipa-nombre">${p.nombre}</div>
-          <div class="pipa-cat-mini">${p.categoria||''}</div>
-          <div class="pipa-precio-mini">${p.precio?'$'+p.precio.toLocaleString('es-AR'):'Consultar'}</div>
-          <span class="pipa-disponible ${p.disponible==='SI'?'si':'no'}">${p.disponible==='SI'?'✅ Disponible':'❌ Vendida'}</span>
-        </div>
-        <div class="pipa-actions">
-          ${p.disponible==='SI'
-            ?`<button class="btn-accion vender" onclick="cambiarDisponible(${i},'NO')">Vendida</button>`
-            :`<button class="btn-accion activar" onclick="cambiarDisponible(${i},'SI')">Activar</button>`}
-          <button class="btn-accion eliminar" onclick="eliminarPipa(${i})">Borrar</button>
-        </div>
-      </div>`).join('');
-  }catch(err){lista.innerHTML='<div class="empty-state">Error cargando. Verificá el token en ⚙ Config.</div>';}
+    var headers = token ? {'Authorization':'token '+token,'Cache-Control':'no-cache'} : {'Cache-Control':'no-cache'};
+    var res=await fetch('https://api.github.com/repos/'+repo+'/contents/catalogo.json?ref=main&t='+Date.now(),{headers:headers});
+    if(!res.ok){
+      lista.innerHTML='<div class="empty-state">'+describirErrorGH(res)+'</div>';
+      return;
+    }
+    var data=await res.json();
+    var pipas=JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g,'')))));
+    window._catalogoSha=data.sha;
+    window._pipas=pipas;
+    if(pipas.length===0){
+      lista.innerHTML='<div class="empty-state">No hay pipas publicadas todavía</div>';
+      return;
+    }
+    lista.innerHTML=pipas.map(function(p,i){
+      var foto = (p.fotos && p.fotos[0]) || '/img/sticker.png';
+      var precioTxt = p.precio ? '$'+p.precio.toLocaleString('es-AR') : 'Consultar';
+      var dispCls = p.disponible==='SI' ? 'si' : 'no';
+      var dispTxt = p.disponible==='SI' ? '✅ Disponible' : '❌ Vendida';
+      var btn = p.disponible==='SI'
+        ? '<button class="btn-accion vender" onclick="cambiarDisponible('+i+',\'NO\')">Vendida</button>'
+        : '<button class="btn-accion activar" onclick="cambiarDisponible('+i+',\'SI\')">Activar</button>';
+      return '<div class="pipa-item">'
+        +'<img class="pipa-thumb" src="'+foto+'" onerror="this.src=\'/img/sticker.png\'">'
+        +'<div>'
+        +'<div class="pipa-nombre">'+p.nombre+'</div>'
+        +'<div class="pipa-cat-mini">'+(p.categoria||'')+'</div>'
+        +'<div class="pipa-precio-mini">'+precioTxt+'</div>'
+        +'<span class="pipa-disponible '+dispCls+'">'+dispTxt+'</span>'
+        +'</div>'
+        +'<div class="pipa-actions">'+btn+'<button class="btn-accion eliminar" onclick="eliminarPipa('+i+')">Borrar</button></div>'
+        +'</div>';
+    }).join('');
+  }catch(err){
+    lista.innerHTML='<div class="empty-state">Error cargando. Verificá el token en ⚙ Config.</div>';
+  }
 }
 
 async function cambiarDisponible(i,estado){
-  const token=localStorage.getItem('gh_token')||'';
-  const repo=localStorage.getItem('gh_repo')||REPO;
+  if(!getStored('gh_token')){ mostrarStatus('lista','Falta el token. Andá a ⚙ Config.','err'); switchTab('config'); return; }
   mostrarStatus('lista','Guardando...','loading');
-  try{window._pipas[i].disponible=estado;await guardarCatalogo(token,repo,window._pipas);mostrarStatus('lista','✅ Actualizado','ok');cargarPipas();}
-  catch(err){mostrarStatus('lista',`Error: ${err.message}`,'err');}
+  try{
+    // refrescar SHA antes de escribir (clave para evitar 409)
+    await refrescarSha();
+    window._pipas[i].disponible=estado;
+    await guardarCatalogo(window._pipas);
+    mostrarStatus('lista','✅ Actualizado','ok');
+    cargarPipas();
+  }catch(err){
+    mostrarStatus('lista','Error: '+err.message,'err');
+  }
 }
 
 async function eliminarPipa(i){
   if(!confirm('¿Eliminar esta pipa?'))return;
-  const token=localStorage.getItem('gh_token')||'';
-  const repo=localStorage.getItem('gh_repo')||REPO;
+  if(!getStored('gh_token')){ mostrarStatus('lista','Falta el token. Andá a ⚙ Config.','err'); switchTab('config'); return; }
   mostrarStatus('lista','Eliminando...','loading');
-  try{window._pipas.splice(i,1);await guardarCatalogo(token,repo,window._pipas);mostrarStatus('lista','✅ Eliminada','ok');cargarPipas();}
-  catch(err){mostrarStatus('lista',`Error: ${err.message}`,'err');}
+  try{
+    await refrescarSha();
+    window._pipas.splice(i,1);
+    await guardarCatalogo(window._pipas);
+    mostrarStatus('lista','✅ Eliminada','ok');
+    cargarPipas();
+  }catch(err){
+    mostrarStatus('lista','Error: '+err.message,'err');
+  }
 }
 
-async function guardarCatalogo(token,repo,pipas){
-  const res=await fetch(`https://api.github.com/repos/${repo}/contents/catalogo.json`,{
-    method:'PUT',headers:{'Authorization':`token ${token}`,'Content-Type':'application/json'},
-    body:JSON.stringify({message:'Actualizar catálogo',content:btoa(unescape(encodeURIComponent(JSON.stringify(pipas,null,2)))),sha:window._catalogoSha})
+async function refrescarSha(){
+  var token=getStored('gh_token');
+  var repo=getStored('gh_repo')||REPO;
+  var res=await fetch('https://api.github.com/repos/'+repo+'/contents/catalogo.json?ref=main&t='+Date.now(),{
+    headers:{'Authorization':'token '+token,'Cache-Control':'no-cache'}
   });
-  if(!res.ok)throw new Error('Error guardando');
-  const data=await res.json();window._catalogoSha=data.content.sha;
+  if(!res.ok) throw new Error(describirErrorGH(res));
+  var data=await res.json();
+  window._catalogoSha=data.sha;
+  // sincronizar pipas con la versión más fresca de GitHub
+  try{
+    var freshPipas=JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g,'')))));
+    // sólo reemplazo si el array tiene la misma cantidad (sino estoy en medio de una operación)
+    if (freshPipas && freshPipas.length) window._pipasFresh = freshPipas;
+  }catch(e){}
 }
 
+async function guardarCatalogo(pipas){
+  var token=getStored('gh_token');
+  var repo=getStored('gh_repo')||REPO;
+  var res=await fetch('https://api.github.com/repos/'+repo+'/contents/catalogo.json',{
+    method:'PUT',
+    headers:{'Authorization':'token '+token,'Content-Type':'application/json'},
+    body:JSON.stringify({
+      message:'Actualizar catálogo',
+      content:btoa(unescape(encodeURIComponent(JSON.stringify(pipas,null,2)))),
+      sha:window._catalogoSha
+    })
+  });
+  if(!res.ok) throw new Error(describirErrorGH(res));
+  var data=await res.json();
+  // BUG FIX: la respuesta del PUT tiene la nueva info en data.content.sha
+  if (data && data.content && data.content.sha) {
+    window._catalogoSha = data.content.sha;
+  }
+}
+
+// ========= CONFIG =========
 function guardarConfig(){
-  localStorage.setItem('gh_token',document.getElementById('cfg-token').value);
-  localStorage.setItem('gh_repo',document.getElementById('cfg-repo').value);
+  setStored('gh_token', document.getElementById('cfg-token').value);
+  setStored('gh_repo', document.getElementById('cfg-repo').value);
+  actualizarBannerToken();
 }
 function cargarConfig(){
-  document.getElementById('cfg-token').value=localStorage.getItem('gh_token')||'';
-  document.getElementById('cfg-repo').value=localStorage.getItem('gh_repo')||REPO;
+  document.getElementById('cfg-token').value = getStored('gh_token') || '';
+  document.getElementById('cfg-repo').value = getStored('gh_repo') || REPO;
 }
+
+async function probarConexion(){
+  var token = document.getElementById('cfg-token').value.trim();
+  var repo = document.getElementById('cfg-repo').value.trim() || REPO;
+  var el = document.getElementById('token-status');
+  if (!token) {
+    el.className = 'token-status err';
+    el.textContent = '⚠️ Falta cargar el token.';
+    el.style.display = 'block';
+    return;
+  }
+  el.className = 'token-status loading';
+  el.textContent = 'Probando conexión...';
+  el.style.display = 'block';
+  try {
+    var res = await fetch('https://api.github.com/repos/'+repo, {
+      headers:{'Authorization':'token '+token}
+    });
+    if (res.ok) {
+      el.className = 'token-status ok';
+      el.textContent = '✅ Conexión OK. Ya podés publicar y editar pipas.';
+      actualizarBannerToken();
+    } else {
+      el.className = 'token-status err';
+      el.textContent = '❌ '+describirErrorGH(res);
+    }
+  } catch (err) {
+    el.className = 'token-status err';
+    el.textContent = '❌ No se pudo conectar. Revisá tu internet.';
+  }
+}
+
 function mostrarStatus(tab,msg,tipo){
-  const el=document.getElementById('status-'+tab);
-  el.textContent=msg;el.className='status '+tipo;el.style.display='block';
-  if(tipo==='ok')setTimeout(()=>el.style.display='none',4000);
+  var el=document.getElementById('status-'+tab);
+  el.textContent=msg;
+  el.className='status '+tipo;
+  el.style.display='block';
+  if(tipo==='ok') setTimeout(function(){ el.style.display='none'; },4000);
 }
 </script>
 </body>
