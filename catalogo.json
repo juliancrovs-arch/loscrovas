@@ -251,5 +251,16 @@
     "fotos": [
       "/img/catalogo/motoquera-1778609550235-0.png"
     ]
+  },
+  {
+    "id": "mamba-white-beak-1778628004270",
+    "nombre": "Mamba white beak",
+    "categoria": "Mamba",
+    "descripcion": "En este ejemplar realizado es mano, su cazoleta en raiz de olivo, con anilla de acrilico rojo y negro y boquilla en derlim blanco, perteneciente a la coleccion Mamba de Los Crova.",
+    "precio": 105000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/mamba-white-beak-1778628004270-0.png"
+    ]
   }
 ]
