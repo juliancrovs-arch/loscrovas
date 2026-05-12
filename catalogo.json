@@ -339,5 +339,16 @@
     "fotos": [
       "/img/catalogo/peloso-1778629941087-0.jpg"
     ]
+  },
+  {
+    "id": "la-forja-de-erebor-1778630253387",
+    "nombre": "La Forja de Erebor",
+    "categoria": "Gandalf",
+    "descripcion": "Esta pipa de la familia Lord of the mountain, tiene identidad bien patagonica, puesto que s erealizo con una madera muy especian de la cordilleta (pal azul) con tono natutal en amaillo que le da la belleza unica en su tallado y par armonizar el modelo tiene una boquilla d ebambu, con un peso de 63 grs, un largo de 25 cm, altura de 65 mm, ancho de cazoleta de 53 mm, profundidad de hornillo de 37 mm, y diametro de boca de 19,4 mm.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/la-forja-de-erebor-1778630253387-0.jpg"
+    ]
   }
 ]
