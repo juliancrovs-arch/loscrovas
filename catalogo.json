@@ -207,5 +207,16 @@
     "fotos": [
       "/img/catalogo/kioto-1778607708172-0.png"
     ]
+  },
+  {
+    "id": "osaka-1778607841121",
+    "nombre": "Osaka",
+    "categoria": "Japonesas",
+    "descripcion": "Ejemplar único enRaiz de nogal, tallada a mano y laqueada, que embellecen la calidad de su cazoleta, con un shape oriental inspirado en la casa Tsuge. Boquilla en tonos vredes y blancos. Realizada a mano .Unico en su tipo por las caracteristicas de su confeccion y materiales, un largo total de 15 cm, con ujn peso de 96 grs, su cazoleta con un ancho de 58 mm ; una altura de cazoleta de 45 mm, hornillo con una profundidad de 33 mm , apertura en boca de 17 mm ,su boquilla realizasa especialmente para este modelo con un degrade en tonos pasteles verdes y crema, siendo los tonos verdes los que mas resaltan",
+    "precio": 110000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/osaka-1778607841121-0.png"
+    ]
   }
 ]
