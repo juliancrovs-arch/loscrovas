@@ -130,5 +130,16 @@
     "fotos": [
       "/img/catalogo/tomahawk-dracula-1778606129998-0.jpeg"
     ]
+  },
+  {
+    "id": "tomahawk-black-1778606226729",
+    "nombre": "Tomahawk Black",
+    "categoria": "Tomahawk",
+    "descripcion": "Fusión perfecta entre el arte ancestral y la calidad de los materiales australes. Esta pipa modelo Tomahawk ha sido meticulosamente tallada a mano, lo que garantiza que cada pieza posea una veta y personalidad irrepetibles.\n\nCaracterísticas Principales:\n\nMaterial de la Cazoleta: Elaborada íntegramente en madera de Lenga patagónica, una especie noble de los bosques del sur conocida por su resistencia y su excepcional belleza estética.\nDiseño Tomahawk: Su forma está inspirada en las tradicionales hachas de las tribus nativas, ofreciendo un agarre ergonómico y una estética de colección muy apreciada por los aficionados.\nBoquilla de Alta Calidad: Presenta una boquilla curva en acrílico negro, diseñada para proporcionar una fumada cómoda y relajante, además de ser fácil de limpiar y duradera.\nAcabado Artesanal: El proceso de tallado y pulido resalta la veta natural de la madera, convirtiendo a esta pipa en una pieza funcional que también funciona como un objeto de arte.",
+    "precio": 105000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/tomahawk-black-1778606226729-0.jpeg"
+    ]
   }
 ]
