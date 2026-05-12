@@ -141,5 +141,16 @@
     "fotos": [
       "/img/catalogo/tomahawk-black-1778606226729-0.jpeg"
     ]
+  },
+  {
+    "id": "dogo-stone-1778606590409",
+    "nombre": "Dogo Stone",
+    "categoria": "Dogo",
+    "descripcion": "Descripción:Esta pieza de la familia Dogo/Bulldog redefine el concepto de robustez y distinción. Confeccionada íntegramente a mano, su cazoleta ha sido tallada en raíz de itín (o Palo Mataco), una madera autóctona argentina celebrada por su dureza extrema y su excepcional resistencia al calor. El acabado teñido en negro profundo resalta la textura orgánica de la raíz, creando un contraste magistral con la boquilla de Delrin blanco y su anillo de acrílico negro.Un ejemplar de diseño clásico, refinado y de gran carácter, pensado para ofrecer un fumado fresco y una durabilidad de por vida. El regalo definitivo para el conocedor que valora la nobleza de nuestras maderas nativas.",
+    "precio": 110000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/dogo-stone-1778606590409-0.jpeg"
+    ]
   }
 ]
