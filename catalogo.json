@@ -196,5 +196,16 @@
     "fotos": [
       "/img/catalogo/dogo-patagonia-1778607583039-0.jpeg"
     ]
+  },
+  {
+    "id": "kioto-1778607708172",
+    "nombre": "Kioto",
+    "categoria": "Japonesas",
+    "descripcion": "Los Crova\" somos una familia dedicada a la elaboración de piezas únicas e irrepetibles totalmente confeccionadas a mano, con maderas naturales de nuestra Patagonia y cosecha propia , (puesto que estamos en medio de la cordillera) y también empleamos maderas del norte argentino, que dejamos descansar por 2 años y realizamos el acondicionamiento para la extracción de los taninos, y que estas sean agradables al fumar, para que nuestros clientes disfruten .\n\nLa cazoleta de esta pipa esta hecha en hermosa madera de raiz de olivo, con un teñido en tonos rnegru y grises para llegar al color deceado ,un trabajo personalizado de pulido de la misma con diferentes ceras y finalizando con cera de carnauba.\n\nboquilla recta realizada a mano en tonos pastel, verde y celeste y la convinacion de ambos..\n\n\n\nLargo: 170 mm\n\nAltura de la cazoleta: 47 mm\n\nAncho de la cazoleta: 44 mm\n\nDiámetro de la cazoleta: 44 mm\n\nDiámetro del hornillo: 17 mm\n\nProfundidad del hornillo: 42 mm\n\nPeso: 70 grs.",
+    "precio": 110000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/kioto-1778607708172-0.png"
+    ]
   }
 ]
