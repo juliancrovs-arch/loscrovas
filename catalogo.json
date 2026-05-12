@@ -9,16 +9,5 @@
     "fotos": [
       "/img/catalogo/asdasda-1778068906854-0.jpg"
     ]
-  },
-  {
-    "id": "super-pipa-1778069490846",
-    "nombre": "super pipa",
-    "categoria": "Mamba",
-    "descripcion": "asdasda",
-    "precio": 95000,
-    "disponible": "SI",
-    "fotos": [
-      "/img/catalogo/super-pipa-1778069490846-0.jpg"
-    ]
   }
 ]
