@@ -273,5 +273,16 @@
     "fotos": [
       "/img/catalogo/mamba-petit-oliva-1778628324886-0.png"
     ]
+  },
+  {
+    "id": "condor-lectura-1778628527466",
+    "nombre": "condor lectura",
+    "categoria": "Cóndor",
+    "descripcion": "Hermoso ejemplar en cazoleta en raíz de olivo de la familia de las condor pero en este caso de lectura con un largo de 27 cm,,caño en acero quirurgico de alta calidad y su boquilla realizada en derlim blanco de alta calidad , con un peso total 50 grs, diametro de cazoleta de 36 mm, con una altura de 47,5 mm, una profundidad de hornillo de 26,5 mm y una apertura de boca de 17,5 mm terminando en 15 mm. este modelo brinda la posibilidad de adquirir otros modelos de cazoletas e intercambiarlo, consultar. el caño levemente inclinado que le da ese aspecto tan particular.",
+    "precio": 74000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/condor-lectura-1778628527466-0.png"
+    ]
   }
 ]
