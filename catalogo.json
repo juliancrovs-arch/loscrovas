@@ -152,5 +152,16 @@
     "fotos": [
       "/img/catalogo/dogo-stone-1778606590409-0.jpeg"
     ]
+  },
+  {
+    "id": "dogo-pasion-1778606743653",
+    "nombre": "Dogo pasion",
+    "categoria": "Dogo",
+    "descripcion": "\"Eleva tu ritual del tabaco con esta exclusiva pipa artesanal. El shape Dogo/Bull Dog, un clásico atemporal, se combina con una cazoleta de raíz de olivo tallada a mano y teñida en un llamativo negro y rojo, aportando un toque de distinción. La boquilla de acrílico negro, con su anillo de acrílico rojo y su diseño tallado que rinde homenaje a la familia Dogo, garantiza un confort excepcional. Cada pipa es una pieza única, resultado de la maestría artesanal.\"",
+    "precio": 110000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/dogo-pasion-1778606743653-0.jpeg"
+    ]
   }
 ]
