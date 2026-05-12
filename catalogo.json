@@ -185,5 +185,16 @@
     "fotos": [
       "/img/catalogo/dogo-tigre-1778607382883-0.jpeg"
     ]
+  },
+  {
+    "id": "dogo-patagonia-1778607583039",
+    "nombre": "Dogo Patagonia",
+    "categoria": "Dogo",
+    "descripcion": "\"Pipa artesanal de la familia Dogo/Bull Dog, confeccionada a mano con materiales de primera calidad. Su cazoleta en raíz de olivo, tallada y teñida en negro, ofrece una experiencia de fumado superior. La boquilla de derlim blanco con anillo de acrílico negro completa este ejemplar de diseño clásico y refinado. Un regalo perfecto para conocedores.\"",
+    "precio": 110000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/dogo-patagonia-1778607583039-0.jpeg"
+    ]
   }
 ]
