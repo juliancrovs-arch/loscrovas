@@ -174,5 +174,16 @@
     "fotos": [
       "/img/catalogo/dogo-cachorro-1778607036559-0.jpeg"
     ]
+  },
+  {
+    "id": "dogo-tigre-1778607382883",
+    "nombre": "Dogo tigre",
+    "categoria": "Dogo",
+    "descripcion": "\"Pipa artesanal de la familia Dogo/Bull Dog, confeccionada a mano con materiales de primera calidad. Su cazoleta en raíz de urunday, tallada a mano y bruñida , ofrece una experiencia de fumado superior. Los colores atifreados de sis vetas son los que le dan el nombre a esta pipa, tambien con anilla en su cazoleta de radal patagonico, La boquilla de acrílico negro ., también tallada a mano, completa este ejemplar de diseño clásico y refinado. Un regalo perfecto para conocedores.",
+    "precio": 110000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/dogo-tigre-1778607382883-0.jpeg"
+    ]
   }
 ]
