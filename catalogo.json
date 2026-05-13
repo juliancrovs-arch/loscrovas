@@ -783,5 +783,19 @@
       "/img/catalogo/martello-di-ciliegio-1778678734748-2.jpg",
       "/img/catalogo/martello-di-ciliegio-1778678734748-3.jpg"
     ]
+  },
+  {
+    "id": "luban-1778678926420",
+    "nombre": "Luban",
+    "categoria": "Cóndor",
+    "descripcion": "Textura Esculpida en Bruto: Cazoleta cilíndrica con un profundo trabajo de rusticado que emula la textura natural de la roca o la corteza arbórea, manteniendo un tono claro y orgánico.Caño de Bambú Seleccionado: El cuello de la pipa incorpora una sección de bambú natural, aprovechando sus nudos característicos para aportar un relieve táctil y visual único.Ingeniería y Contraste: Conexión mediante un núcleo de acero que garantiza frescura en la fumada, rematando en una boquilla oscura con textura rugosa a juego con la cazoleta.Ergonomía de Gran Carácter: Una pieza sumamente cómoda al tacto gracias a sus relieves naturales, ideal para coleccionistas de pipas con personalidad salvaje y rústica.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/luban-1778678926420-0.jpg",
+      "/img/catalogo/luban-1778678926420-1.jpg",
+      "/img/catalogo/luban-1778678926420-2.jpg",
+      "/img/catalogo/luban-1778678926420-3.jpg"
+    ]
   }
 ]
