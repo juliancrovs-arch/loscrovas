@@ -1092,5 +1092,18 @@
       "/img/catalogo/viraro-1778683618752-1.jpg",
       "/img/catalogo/viraro-1778683618752-2.jpg"
     ]
+  },
+  {
+    "id": "ciliegia-1778683804639",
+    "nombre": "Ciliegia",
+    "categoria": "Chalequera",
+    "descripcion": "Formato Poker Rústico: Cazoleta cilíndrica de base plana con un profundo e imponente trabajo de gubia que emula la textura de una corteza antigua.Tono Cereza Profundo: Acabado artesanal en un sofisticado color rojizo oscuro que resalta el relieve, los valles y las crestas del tallado.Boquilla Curva Orgánica: Boquilla corta con una caída pronunciada y ergonómica, texturizada a juego con la cazoleta para mantener la línea rústica.Agarre Sumamente Cómodo: Su relieve rugoso disipa de manera eficiente el calor y ofrece una experiencia táctil inigualable en la mano.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/ciliegia-1778683804639-0.jpg",
+      "/img/catalogo/ciliegia-1778683804639-1.jpg",
+      "/img/catalogo/ciliegia-1778683804639-2.jpg"
+    ]
   }
 ]
