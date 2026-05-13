@@ -743,5 +743,18 @@
       "/img/catalogo/tamburo-dautunno-1778677721007-2.jpg",
       "/img/catalogo/tamburo-dautunno-1778677721007-3.jpg"
     ]
+  },
+  {
+    "id": "chimuelo-1778678253572",
+    "nombre": "chimuelo",
+    "categoria": "Cóndor",
+    "descripcion": "Textura Orgánica Radical: Un tallado alucinante que imita una superficie mineral o coralina. Genera un relieve profundo que atrapa la luz de forma única.Destellos de Malaquita: El juego cromático fusiona un negro mate profundo de fondo con sutiles destellos e iluminaciones en verde malaquita sobre las crestas del tallado.Estética de Piedra Preciosa: El acabado emula una roca geomórfica o un mineral en bruto recién extraído de la tierra, rompiendo con lo convencional.Contraste de Vanguardia: El caño de metal pulido y recto aporta una línea de fuga limpia que equilibra la compleja e intensa textura de la cazoleta.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/chimuelo-1778678253572-0.jpg",
+      "/img/catalogo/chimuelo-1778678253572-1.jpg",
+      "/img/catalogo/chimuelo-1778678253572-2.jpg"
+    ]
   }
 ]
