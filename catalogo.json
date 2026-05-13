@@ -528,5 +528,18 @@
       "/img/catalogo/akita-1778673323384-2.jpg",
       "/img/catalogo/akita-1778673323384-3.jpg"
     ]
+  },
+  {
+    "id": "kalfu-1778673431883",
+    "nombre": "Kalfu",
+    "categoria": "Curva",
+    "descripcion": "Pipa de Curva Artesanal - Madera de Itín\n\nEsta pieza única destaca por su fabricación 100% a mano, combinando maderas nobles con un diseño ergonómico y elegante.\n\nCazoleta: Realizada en madera de Itín, conservando su color natural. Presenta un acabado tallado y lustrado que realza la veta original de la madera.\nBoquilla: Acrílico negro de alta calidad, diseñada para una fumada cómoda y duradera.\nDiseño: Modelo de curva clásica, ideal para quienes buscan equilibrio y estilo.\n¿Qué incluye tu compra?\n\n1 Pipa de Itín artesanal.\n1 Atacador con diseño \"Garra de Puma\".\n1 Blend herbal de regalo para disfrutar desde el primer momento.",
+    "precio": 120000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/kalfu-1778673431883-0.jpg",
+      "/img/catalogo/kalfu-1778673431883-1.jpg",
+      "/img/catalogo/kalfu-1778673431883-2.jpg"
+    ]
   }
 ]
