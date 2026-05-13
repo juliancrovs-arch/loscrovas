@@ -350,5 +350,16 @@
     "fotos": [
       "/img/catalogo/la-forja-de-erebor-1778630253387-0.jpg"
     ]
+  },
+  {
+    "id": "frodo-1778631105572",
+    "nombre": "Frodo",
+    "categoria": "Gandalf",
+    "descripcion": "Esta especial pipa de un largo de 28 cm, su cazoleta en olivo tallado y teñido en diferentes tonos, amarillos, negro , y rojo;para despues realizar un bruñido, con su boquilla en babu,. levemente inclinada la hace simplemente ESPECTACULAR: largo 27 cm, peso 84 grs, profundidad 31 mm, apertura de boca 18 mm terminando en 14 mm en la base, 48 mm de altura 52 mm de diametro, incluye de regalo un atacador garra de puma.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/frodo-1778631105572-0.jpg"
+    ]
   }
 ]
