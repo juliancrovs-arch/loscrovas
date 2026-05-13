@@ -472,5 +472,19 @@
     "fotos": [
       "/img/catalogo/nicolas-father-1778672426062-0.jpg"
     ]
+  },
+  {
+    "id": "work-1778672567132",
+    "nombre": "Work",
+    "categoria": "Curva",
+    "descripcion": "Esta pipa se confecciono para honrar a aquellos galenses que bajaron de la limosa y a fuerza de sacrificio y trabajo rudo, marcaron parte de la historia de chubut, es una pipa con cuerpo ideal para llevar al travajo, con un tinte en guinda , marrones y rojo, con su boquilla en blanco y dando un laqueado para avejentarla,, muy comoda a l amano, buen shape muy buena carga, peso: 95 grs; largo 15 cm, dimenciones de la cazoleta 5m mm x 52 mm; hornillo con una apertura de boca de 19 mm y 46 mm de profundidad.",
+    "precio": 110000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/work-1778672567132-0.jpg",
+      "/img/catalogo/work-1778672567132-1.jpg",
+      "/img/catalogo/work-1778672567132-2.jpg",
+      "/img/catalogo/work-1778672567132-3.jpg"
+    ]
   }
 ]
