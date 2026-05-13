@@ -384,5 +384,16 @@
     "fotos": [
       "/img/catalogo/elfo-ceramica-1778632341304-0.jpg"
     ]
+  },
+  {
+    "id": "country-1778632731095",
+    "nombre": "Country",
+    "categoria": "Gandalf",
+    "descripcion": "Este ejemplar refleja la fuerza de la naturaleza en toda su expresion, realizada en guindo patagonico boquilla en fresno es una pipa muy comoda rustica y salvaje, con un largo de 25 cm, una altura promedio de 85 mm, diametro d e46 mm, profundidad de 35 mm y diametro d eboca de 19 mm, ideal para esas salidas de campo. con un peso de 99 grs y su cazoleta con una inclinacion que le da la particularidad de su shape.",
+    "precio": 85000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/country-1778632731095-0.png"
+    ]
   }
 ]
