@@ -1014,5 +1014,18 @@
       "/img/catalogo/murcielago-1778682454667-2.jpg",
       "/img/catalogo/murcielago-1778682454667-3.jpg"
     ]
+  },
+  {
+    "id": "alchimia-1778682594369",
+    "nombre": "Alchimia",
+    "categoria": "Chubby",
+    "descripcion": "Pipa Artesanal \"Chubby Dracula\" – Edición Especial\n\nUna pieza única que fusiona el misticismo del diseño Chubby Dracula con la fuerza de la tierra patagónica. Esta pipa no es solo un accesorio, es una obra de arte tallada íntegramente a mano, pensada para quienes buscan distinción y calidad en cada detalle. \n\n🌑 Atributos de la Pieza:\n\nCazoleta de Incienso: Elegida por su resistencia al calor y su aroma sutil que acompaña la experiencia sin invadirla. Posee un acabado teñido y tallado que resalta su carácter robusto.\nAnilla de Kolle Patagónico: Un detalle de lujo en madera nativa de nuestra región, que aporta una conexión directa con el entorno natural del sur.\nIncrustaciones de Piedras Semipreciosas: El contraste perfecto lo dan la Azurita y la Malaquita molidas, aplicadas artesanalmente para crear un brillo mineral único.\nBoquilla de Diseño: Realizada en una vibrante combinación de tonos rojos y negros. Presenta un tallado a mano que fluye con el resto del cuerpo, logrando una armonía visual y ergonómica excepcional. \neste modelo viene con un atacador modelo garra de puma y un blend herbal de regalo.",
+    "precio": 180000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/alchimia-1778682594369-0.jpg",
+      "/img/catalogo/alchimia-1778682594369-1.jpg",
+      "/img/catalogo/alchimia-1778682594369-2.jpg"
+    ]
   }
 ]
