@@ -986,5 +986,19 @@
       "/img/catalogo/chubby-vampiro-1778682191993-2.jpg",
       "/img/catalogo/chubby-vampiro-1778682191993-3.jpg"
     ]
+  },
+  {
+    "id": "bryum-1778682340668",
+    "nombre": "Bryum",
+    "categoria": "Chubby",
+    "descripcion": "Pipa Artesanal \"Chubby Musgo Bryim\" – Inspiración Patagónica\n\nInspirada en las texturas vibrantes de los bosques del sur, la Chubby Musgo Bryim es una pieza que captura la esencia de la naturaleza viva. Un diseño compacto, robusto y cargado de detalles orgánicos que la convierten en una verdadera pieza de colección.\n\n🌿 Detalles de Autor:\n\nCazoleta de Olivo: Tallada a mano en madera de olivo, reconocida por su veta exquisita y su gran resistencia térmica. Presenta un trabajo de color único en tonos negros que contrastan con verdes, anaranjados y amarillos, recreando la complejidad visual del musgo Bryim sobre la corteza húmeda.\nAnillo de Nogal: Un detalle de transición elegante en madera de nogal, que aporta sobriedad y un cierre perfecto entre la cazoleta y la boquilla.\nDiseño Chubby: Su forma compacta no solo es estéticamente atractiva, sino que ofrece una sensación al tacto sumamente cómoda y equilibrada.\nEsta pipa viene con un blend patagonico herbal y un atacador colmillo de puma de regalo.",
+    "precio": 180000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/bryum-1778682340668-0.jpg",
+      "/img/catalogo/bryum-1778682340668-1.jpg",
+      "/img/catalogo/bryum-1778682340668-2.jpg",
+      "/img/catalogo/bryum-1778682340668-3.jpg"
+    ]
   }
 ]
