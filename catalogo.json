@@ -1158,5 +1158,19 @@
       "/img/catalogo/forest-1778684571300-1.jpg",
       "/img/catalogo/forest-1778684571300-2.jpg"
     ]
+  },
+  {
+    "id": "barling-1778684739744",
+    "nombre": "barling",
+    "categoria": "Llao llao",
+    "descripcion": "Unico en su tipo por las caracteristicas de su confeccion y materiales, siendo la belleza del llao llao que resalta en sus ojos de perdiz, con un shape muy especial, un largo total de 12 cm, con ujn peso de 64 grs, su cazoleta con un ancho de 46 mm por un alto de 70 mm; hornillo con una profundidad de 44 mm, apertura en boca de 15 mm terminando en base en 12 mm, de diseño conico que no solo esta acompañando el shape de la pipa sino que tambien le da mayor vida a la misma",
+    "precio": 155000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/barling-1778684739744-0.jpg",
+      "/img/catalogo/barling-1778684739744-1.jpg",
+      "/img/catalogo/barling-1778684739744-2.jpg",
+      "/img/catalogo/barling-1778684739744-3.jpg"
+    ]
   }
 ]
