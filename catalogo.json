@@ -555,5 +555,17 @@
       "/img/catalogo/pichai-1778673655390-2.jpg",
       "/img/catalogo/pichai-1778673655390-3.jpg"
     ]
+  },
+  {
+    "id": "asian-egg-1778673819490",
+    "nombre": "asian egg",
+    "categoria": "Curva",
+    "descripcion": "Hermoso ejemplar de curva, con una altura en su cazoleta de 6 cm un largo total de 12 cm, en madera de guayacan , boquilla en derlim blanca para denotar y contrastar con la belleza de sus vetas, peso de 67 grs, un largo total de 13 cm, su cazoleta con una altura de 55mm, y un diametro de 42mm x46 mm, su hornillo con u na apertura d ebona de 19mm una profundidad de 37 mm .",
+    "precio": 120000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/asian-egg-1778673819490-0.jpg",
+      "/img/catalogo/asian-egg-1778673819490-1.jpg"
+    ]
   }
 ]
