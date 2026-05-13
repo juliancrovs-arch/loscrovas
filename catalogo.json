@@ -959,5 +959,18 @@
       "/img/catalogo/tentation-1778681864240-1.jpg",
       "/img/catalogo/tentation-1778681864240-2.jpg"
     ]
+  },
+  {
+    "id": "syrac-1778681985284",
+    "nombre": "Syrac",
+    "categoria": "Chubby",
+    "descripcion": "Chubby syrac es un ejemplar en olivo tallado tenido en 3 tonos distintos laqueado con técnicas francesas para darle ese aspecto único, su boquilla blanca hace resaltar más aún este ejemplar, peso de 70 grs, su cazoleta es de 45 mm por 48 mm, con una altura de 50 mm, su hornullo con una profundidad de 30 mm y apertura d eboca de 19 mm.",
+    "precio": 105000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/syrac-1778681985284-0.jpg",
+      "/img/catalogo/syrac-1778681985284-1.jpg",
+      "/img/catalogo/syrac-1778681985284-2.jpg"
+    ]
   }
 ]
