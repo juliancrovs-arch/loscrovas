@@ -74,6 +74,16 @@ header{background:var(--deep);padding:1rem 1.5rem;display:flex;justify-content:s
 .btn-accion.activar{border-color:var(--green);color:var(--green)}
 .btn-accion.eliminar{border-color:var(--smoke);color:var(--smoke)}
 .empty-state{text-align:center;padding:3rem;color:var(--smoke);font-style:italic}
+.btn-primary:disabled,.btn-primary.loading{background:var(--smoke);cursor:not-allowed;opacity:0.7}
+.btn-primary.loading{position:relative}
+.publish-overlay{position:fixed;inset:0;background:rgba(20,14,6,0.85);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.publish-overlay.show{display:flex}
+.publish-box{background:var(--parch);padding:2.5rem 2rem;max-width:340px;width:90%;text-align:center;border:1px solid var(--border)}
+.publish-spinner{width:48px;height:48px;border:4px solid var(--parch2);border-top-color:var(--ember);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1.2rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+.publish-title{font-style:italic;color:var(--ember);font-size:1.2rem;margin-bottom:0.5rem}
+.publish-msg{font-size:0.95rem;color:var(--ink);line-height:1.5}
+.publish-warn{font-size:0.8rem;color:var(--smoke);margin-top:1rem;font-style:italic}
 .config-info{padding:1rem;background:var(--parch2);border:1px solid var(--border);font-size:0.85rem;color:var(--smoke);line-height:1.7;margin-bottom:1.5rem}
 .config-info strong{color:var(--ink)}
 .config-actions{display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap}
@@ -184,6 +194,15 @@ header{background:var(--deep);padding:1rem 1.5rem;display:flex;justify-content:s
       <div class="token-status" id="token-status"></div>
       <p style="font-size:0.8rem;color:var(--smoke);font-style:italic;margin-top:1rem">Esta config se guarda en este dispositivo por 1 año.</p>
     </div>
+  </div>
+</div>
+
+<div class="publish-overlay" id="publish-overlay">
+  <div class="publish-box">
+    <div class="publish-spinner"></div>
+    <div class="publish-title" id="publish-title">Publicando pipa</div>
+    <div class="publish-msg" id="publish-msg">Subiendo fotos...</div>
+    <div class="publish-warn">No cierres esta página ni toques nada</div>
   </div>
 </div>
 
@@ -366,8 +385,52 @@ function describirErrorGH(res){
   return 'Error de GitHub (código '+res.status+'). Reintentá en un minuto.';
 }
 
+// ========= COMPRESIÓN DE IMÁGENES =========
+// Reduce fotos grandes de celu (5-10MB) a ~300KB sin perder calidad visual
+function comprimirImagen(dataUrl){
+  return new Promise(function(resolve, reject){
+    var img = new Image();
+    img.onload = function(){
+      var maxW = 1600; // max ancho/alto para que no sea gigante
+      var w = img.width, h = img.height;
+      if (w > maxW || h > maxW) {
+        if (w > h) { h = Math.round(h * maxW / w); w = maxW; }
+        else { w = Math.round(w * maxW / h); h = maxW; }
+      }
+      var canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h;
+      var ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, w, h);
+      // calidad 0.82 = balance bueno entre tamaño y calidad
+      var compressed = canvas.toDataURL('image/jpeg', 0.82);
+      resolve(compressed);
+    };
+    img.onerror = function(){ reject(new Error('No se pudo procesar la imagen')); };
+    img.src = dataUrl;
+  });
+}
+
+// ========= OVERLAY DE PROGRESO =========
+function mostrarOverlay(titulo, msg){
+  document.getElementById('publish-title').textContent = titulo;
+  document.getElementById('publish-msg').textContent = msg;
+  document.getElementById('publish-overlay').classList.add('show');
+}
+function actualizarOverlay(msg){
+  document.getElementById('publish-msg').textContent = msg;
+}
+function ocultarOverlay(){
+  document.getElementById('publish-overlay').classList.remove('show');
+}
+
 // ========= PUBLICAR PIPA =========
+var publicandoAhora = false; // lock para evitar doble-click
+
 async function publicarPipa(){
+  // LOCK: si ya está publicando, no hacer nada
+  if (publicandoAhora) return;
+
   var nombre=document.getElementById('pip-nombre').value.trim();
   var cat=document.getElementById('pip-cat').value;
   var desc=document.getElementById('pip-desc').value.trim();
@@ -375,42 +438,74 @@ async function publicarPipa(){
   var disponible=document.getElementById('pip-disponible').checked;
   var token=getStored('gh_token');
   var repo=getStored('gh_repo')||REPO;
+
+  // validaciones
   if(!nombre)return mostrarStatus('nueva','Falta el nombre','err');
   if(!cat)return mostrarStatus('nueva','Elegí una categoría','err');
   if(fotosSeleccionadas.length===0)return mostrarStatus('nueva','Agregá al menos una foto','err');
   if(!token){ mostrarStatus('nueva','Falta el token. Andá a ⚙ Config para cargarlo.','err'); switchTab('config'); return; }
-  mostrarStatus('nueva','Subiendo fotos...','loading');
+
+  // ACTIVAR LOCK + desactivar botón + mostrar overlay
+  publicandoAhora = true;
+  var btn = document.querySelector('#tab-nueva .btn-primary');
+  if (btn) { btn.disabled = true; btn.classList.add('loading'); btn.textContent = 'Publicando...'; }
+  mostrarOverlay('Publicando pipa', 'Preparando fotos...');
+
   try{
     var slug=nombre.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
     var ts=Date.now();
     var fotosUrls=[];
+
     for(var i=0;i<fotosSeleccionadas.length;i++){
       var f=fotosSeleccionadas[i];
-      var ext=(f.file.name.split('.').pop()||'jpg').toLowerCase();
-      var fn=slug+'-'+ts+'-'+i+'.'+ext;
-      var b64=f.dataUrl.split(',')[1];
+      actualizarOverlay('Optimizando foto '+(i+1)+' de '+fotosSeleccionadas.length+'...');
+      // comprimir antes de subir
+      var compressed = await comprimirImagen(f.dataUrl);
+      actualizarOverlay('Subiendo foto '+(i+1)+' de '+fotosSeleccionadas.length+'...');
+      var fn=slug+'-'+ts+'-'+i+'.jpg'; // siempre jpg porque comprimimos a jpeg
+      var b64=compressed.split(',')[1];
       var res=await fetch('https://api.github.com/repos/'+repo+'/contents/img/catalogo/'+fn,{
         method:'PUT',headers:{'Authorization':'token '+token,'Content-Type':'application/json'},
         body:JSON.stringify({message:'Foto de '+nombre,content:b64})
       });
       if(!res.ok) throw new Error(describirErrorGH(res));
       fotosUrls.push('/img/catalogo/'+fn);
-      mostrarStatus('nueva','Subiendo fotos... ('+(i+1)+'/'+fotosSeleccionadas.length+')','loading');
     }
-    mostrarStatus('nueva','Guardando en el catálogo...','loading');
+
+    actualizarOverlay('Guardando en el catálogo...');
     var catRes=await fetch('https://api.github.com/repos/'+repo+'/contents/catalogo.json?ref=main&t='+Date.now(),{
       headers:{'Authorization':'token '+token}
     });
     if(!catRes.ok) throw new Error(describirErrorGH(catRes));
     var catData=await catRes.json();
     var pipas=JSON.parse(decodeURIComponent(escape(atob(catData.content.replace(/\n/g,'')))));
+
+    // ANTI-DUPLICADO: si en los últimos 30 segundos se cargó una pipa con el mismo nombre, no duplicar
+    var nombreLower = nombre.toLowerCase().trim();
+    var hace30s = Date.now() - 30000;
+    var yaExiste = pipas.some(function(p){
+      if (!p.id) return false;
+      var pNombre = (p.nombre||'').toLowerCase().trim();
+      // extraer timestamp del id (formato: slug-timestamp)
+      var match = p.id.match(/-(\d{13})$/);
+      var pTs = match ? parseInt(match[1]) : 0;
+      return pNombre === nombreLower && pTs > hace30s;
+    });
+    if (yaExiste) {
+      // ya se publicó hace muy poco — probablemente un click duplicado anterior que sí funcionó
+      throw new Error('Esta pipa ya fue publicada hace unos segundos. Andá a "Mis pipas" para verla.');
+    }
+
     pipas.push({id:slug+'-'+ts,nombre:nombre,categoria:cat,descripcion:desc,precio:precio?parseInt(precio):null,disponible:disponible?'SI':'NO',fotos:fotosUrls});
     var saveRes=await fetch('https://api.github.com/repos/'+repo+'/contents/catalogo.json',{
       method:'PUT',headers:{'Authorization':'token '+token,'Content-Type':'application/json'},
       body:JSON.stringify({message:'Agregar pipa: '+nombre,content:btoa(unescape(encodeURIComponent(JSON.stringify(pipas,null,2)))),sha:catData.sha})
     });
     if(!saveRes.ok) throw new Error(describirErrorGH(saveRes));
-    mostrarStatus('nueva','✅ '+nombre+' publicada! Aparece en 2 minutos.','ok');
+
+    // ÉXITO
+    ocultarOverlay();
+    mostrarStatus('nueva','✅ '+nombre+' publicada! Aparece en la web en 2 minutos.','ok');
     fotosSeleccionadas=[];renderFotoPreview();
     document.getElementById('pip-nombre').value='';
     document.getElementById('pip-cat').value='';
@@ -418,7 +513,12 @@ async function publicarPipa(){
     document.getElementById('pip-precio').value='';
     document.getElementById('pip-disponible').checked=true;
   }catch(err){
+    ocultarOverlay();
     mostrarStatus('nueva','Error: '+err.message,'err');
+  }finally{
+    // LIBERAR LOCK siempre, haya error o no
+    publicandoAhora = false;
+    if (btn) { btn.disabled = false; btn.classList.remove('loading'); btn.textContent = 'Publicar pipa en la web'; }
   }
 }
 
