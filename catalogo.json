@@ -825,5 +825,19 @@
       "/img/catalogo/zenit-1778679265326-2.jpg",
       "/img/catalogo/zenit-1778679265326-3.jpg"
     ]
+  },
+  {
+    "id": "chewke-1778679527101",
+    "nombre": "Chewke",
+    "categoria": "Cóndor",
+    "descripcion": "Esta pipa esta totalmente tallada a mano, en su color natural de raiz de virari, grabado a mano de imagen de chewke o ñandu , con inserto en bambu bicolor, anilla en acrilico negro caño en acero quirurgico y boquilla negra totalmente tallada a mano",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/chewke-1778679527101-0.jpg",
+      "/img/catalogo/chewke-1778679527101-1.jpg",
+      "/img/catalogo/chewke-1778679527101-2.jpg",
+      "/img/catalogo/chewke-1778679527101-3.jpg"
+    ]
   }
 ]
