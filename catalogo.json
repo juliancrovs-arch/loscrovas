@@ -608,5 +608,18 @@
       "/img/catalogo/zafiro-1778674634752-2.jpg",
       "/img/catalogo/zafiro-1778674634752-3.jpg"
     ]
+  },
+  {
+    "id": "ciliegio-1778674873948",
+    "nombre": "Ciliegio",
+    "categoria": "Cóndor",
+    "descripcion": "cazoleta confeccionada con con madero de cerezo patagonico, teñido sufondo suave en negro y con base de rojo , boquilla confeccionada enmadera de itin, caño en acero quirurjico de alta calidad, peso 0,35 grs, largo 15 cm, cazoleta 5x3, hornillo1,9 x 3 cm.",
+    "precio": 80000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/ciliegio-1778674873948-0.jpg",
+      "/img/catalogo/ciliegio-1778674873948-1.jpg",
+      "/img/catalogo/ciliegio-1778674873948-2.jpg"
+    ]
   }
 ]
