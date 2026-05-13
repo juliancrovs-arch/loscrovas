@@ -797,5 +797,19 @@
       "/img/catalogo/luban-1778678926420-2.jpg",
       "/img/catalogo/luban-1778678926420-3.jpg"
     ]
+  },
+  {
+    "id": "zait-1778679140921",
+    "nombre": "Zait",
+    "categoria": "Cóndor",
+    "descripcion": "Textura Esculpida Artesanal: Cazoleta cilíndrica con un imponente trabajo de rusticado que resalta las fibras de la madera en un tono ocre natural y dorado muy cálido.Detalle de Caño Orgánico: El cuello de la pipa incorpora un segmento de bambú natural que conserva sus nudos, aportando continuidad al concepto rústico.Fumada Limpia y Fresca: Eje central de acero quirúrgico expuesto que garantiza un enfriamiento rápido del humo y una limpieza sumamente sencilla.Boquilla de Alto Contraste: Rematada en una boquilla blanca de líneas anatómicas que quiebra la paleta orgánica y le otorga un aire moderno y exclusivo.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/zait-1778679140921-0.jpg",
+      "/img/catalogo/zait-1778679140921-1.jpg",
+      "/img/catalogo/zait-1778679140921-2.jpg",
+      "/img/catalogo/zait-1778679140921-3.jpg"
+    ]
   }
 ]
