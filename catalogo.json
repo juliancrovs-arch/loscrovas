@@ -486,5 +486,19 @@
       "/img/catalogo/work-1778672567132-2.jpg",
       "/img/catalogo/work-1778672567132-3.jpg"
     ]
+  },
+  {
+    "id": "torrontes-1778672800891",
+    "nombre": "Torrontes",
+    "categoria": "Curva",
+    "descripcion": "Esta hermosa pipa esta confeccionada en raiz de olivo y mediante un prceso de blanqueamiento del taco para despues de darles los tonos buscados, que en su base inicial fueron teñidos con tintes mezclados con vino torrontes logrando un color unico que segun su veta fue adquiriendo diferntes tonalidades, tiene en su base un trabajo detallado y de realizado sobrerelieve; peso 74 grs; largo 12 cm, cazxoleta don un diametro de 48 mm x 53 mm , su hornillo con una profundidad de 30 mm, una apertura de boca de 18,5 mm termninando en su base en 14 mm, permitiendo en su formato conico mayor durabilidad a la vida de la cazoleta. de diseño propio.",
+    "precio": 120000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/torrontes-1778672800891-0.jpg",
+      "/img/catalogo/torrontes-1778672800891-1.jpg",
+      "/img/catalogo/torrontes-1778672800891-2.jpg",
+      "/img/catalogo/torrontes-1778672800891-3.jpg"
+    ]
   }
 ]
