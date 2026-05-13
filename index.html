@@ -25,12 +25,14 @@
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Los Crovas","description":"Pipas artesanales hechas a mano en el Alto Río Percy, Esquel, Patagonia Argentina","url":"https://loscrovas.com.ar","image":"https://loscrovas.com.ar/img/pipa_oto1.jpg","address":{"@type":"PostalAddress","streetAddress":"Alto Río Percy","addressLocality":"Esquel","addressRegion":"Chubut","addressCountry":"AR"},"geo":{"@type":"GeoCoordinates","latitude":-42.9,"longitude":-71.3},"telephone":"+5492945555812","sameAs":["https://www.instagram.com/los.crovas/"],"openingHours":"Mo-Su 09:00-20:00","priceRange":"$$"}
 </script>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#1A1208;--parch:#F0E9D6;--parch2:#E4D9BC;--parch3:#D9CBA8;--ember:#9E3A12;--gold:#A67820;--moss:#3D5228;--smoke:#7A6A54;--border:rgba(80,50,20,0.15);--deep:#140E06}
 html{scroll-behavior:smooth}
-body{background:var(--parch);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;line-height:1.75;overflow-x:hidden}
+body{background:var(--parch);color:var(--ink);font-family:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:17px;line-height:1.7;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1rem 4rem;background:rgba(240,233,214,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
 .nav-brand{font-family:'IM Fell English',serif;font-size:1.25rem;color:var(--ink);text-decoration:none}
 .nav-brand em{font-style:italic;color:var(--ember)}
@@ -47,12 +49,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .hero-h1 em{font-style:italic;color:var(--ember);display:block;font-size:0.65em}
 .hero-lugar{font-size:0.7rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--smoke);margin-bottom:2.2rem;opacity:0.7;display:flex;align-items:center;gap:0.7rem}
 .hero-lugar::before{content:'◆';font-size:0.42rem;color:var(--gold)}
-.hero-p{font-size:1.08rem;font-style:italic;color:#5C4838;max-width:450px;line-height:2;margin-bottom:3rem}
-.hero-p strong{font-style:normal;color:var(--ink)}
+.hero-p{font-size:1rem;color:#3D2914;max-width:480px;line-height:1.75;margin-bottom:3rem;font-weight:400;letter-spacing:-0.005em}
+.hero-p strong{color:var(--ink);font-weight:600}
 .btn-group{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-ink{display:inline-flex;align-items:center;gap:0.8rem;padding:1rem 2.2rem;background:var(--ink);color:var(--parch);font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;transition:background 0.25s}
+.btn-ink{display:inline-flex;align-items:center;gap:0.8rem;padding:1rem 2.2rem;background:var(--ink);color:var(--parch);font-family:'Inter',sans-serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;transition:background 0.25s;font-weight:500}
 .btn-ink:hover{background:var(--ember)}
-.btn-out{display:inline-flex;align-items:center;gap:0.8rem;padding:1rem 2.2rem;border:1px solid var(--border);color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;transition:all 0.25s}
+.btn-out{display:inline-flex;align-items:center;gap:0.8rem;padding:1rem 2.2rem;border:1px solid var(--border);color:var(--ink);font-family:'Inter',sans-serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;font-weight:500}
 .btn-out:hover{border-color:var(--ember);color:var(--ember)}
 .hero-r{position:relative;overflow:hidden;background:var(--deep)}
 .hero-r img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
@@ -68,8 +70,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .hist-body{padding:5rem 5rem 5rem 4rem}
 .hist-body h2{font-family:'IM Fell English',serif;font-size:clamp(1.9rem,3vw,2.9rem);line-height:1.15;margin-bottom:1.8rem;color:var(--ink)}
 .hist-body h2 em{font-style:italic;color:var(--ember)}
-.hist-body p{font-size:1rem;color:#5C4838;max-width:580px;margin-bottom:1.2rem;line-height:2}
-.pull{margin:2rem 0;padding:1.5rem 2rem;background:var(--parch2);border-left:3px solid var(--ember);font-family:'IM Fell English',serif;font-size:1.1rem;font-style:italic;color:var(--ink);line-height:1.75;max-width:560px}
+.hist-body p{font-size:1rem;color:#3D2914;max-width:600px;margin-bottom:1.3rem;line-height:1.75;font-weight:400;letter-spacing:-0.005em}
+.pull{margin:2rem 0;padding:1.5rem 2rem;background:var(--parch2);border-left:3px solid var(--ember);font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--ink);line-height:1.6;max-width:600px;font-weight:500}
 .tags{display:flex;gap:0.7rem;flex-wrap:wrap;margin-top:2rem}
 .tag{padding:0.3rem 1rem;border:1px solid var(--border);font-size:0.67rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--smoke)}
 .tag-g{border-color:rgba(166,120,32,0.35);color:var(--gold)}
@@ -80,7 +82,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .galeria-header{padding:3rem 5rem 2rem;display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--border)}
 .galeria-header h2{font-family:'IM Fell English',serif;font-size:clamp(1.9rem,3vw,2.9rem);color:var(--ink)}
 .galeria-header h2 em{font-style:italic;color:var(--ember)}
-.galeria-header p{font-size:0.8rem;font-style:italic;color:var(--smoke);max-width:300px;text-align:right}
+.galeria-header p{font-size:0.85rem;color:var(--smoke);max-width:320px;text-align:right;font-weight:400}
 .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:300px 300px;gap:0}
 .gal-item{overflow:hidden;border:1px solid var(--border);margin:-1px 0 0 -1px;position:relative}
 .gal-item.big{grid-column:span 2}
@@ -104,7 +106,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .pip-precio{font-family:'IM Fell English',serif;font-style:italic;color:var(--ember);font-size:0.95rem}
 .pip-badge{font-size:0.62rem;letter-spacing:0.13em;text-transform:uppercase;padding:0.2rem 0.65rem;border:1px solid var(--border);color:var(--smoke)}
 .cat-cta{text-align:center;padding:3rem 0 1rem;border-top:1px solid var(--border);margin-top:0}
-.cat-cta a{display:inline-flex;align-items:center;gap:0.8rem;padding:1.1rem 2.8rem;background:var(--ink);color:var(--parch);font-family:'Cormorant Garamond',serif;font-size:0.82rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;transition:background 0.25s,gap 0.25s}
+.cat-cta a{display:inline-flex;align-items:center;gap:0.8rem;padding:1.1rem 2.8rem;background:var(--ink);color:var(--parch);font-family:'Inter',sans-serif;font-size:0.74rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;transition:background 0.25s,gap 0.25s;font-weight:500}
 .cat-cta a:hover{background:var(--ember);gap:1.2rem}
 .pagos{background:var(--parch2);border-bottom:1px solid var(--border);padding:4rem 5rem}
 .pagos h2{font-family:'IM Fell English',serif;font-size:clamp(1.6rem,2.5vw,2.2rem);color:var(--ink);margin-bottom:2rem}
@@ -116,8 +118,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .pago-bloque ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-top:0.8rem}
 .pago-bloque ul li{font-size:0.88rem;color:var(--smoke);display:flex;align-items:center;gap:0.6rem}
 .pago-bloque ul li::before{content:'◆';font-size:0.4rem;color:var(--gold)}
-.pagos-nota{margin-top:1.5rem;padding:1.2rem 1.8rem;border-left:3px solid var(--moss);font-size:0.88rem;font-style:italic;color:var(--smoke);line-height:1.8}
-.pagos-nota strong{font-style:normal;color:var(--moss)}
+.pagos-nota{margin-top:1.5rem;padding:1.2rem 1.8rem;border-left:3px solid var(--moss);font-size:0.92rem;color:#3D2914;line-height:1.7;font-weight:400}
+.pagos-nota strong{color:var(--moss);font-weight:600}
 .proceso{display:grid;grid-template-columns:220px 1fr;border-bottom:1px solid var(--border)}
 .proc-body{padding:5rem 5rem 5rem 4rem}
 .proc-body h2{font-family:'IM Fell English',serif;font-size:clamp(1.9rem,3vw,2.8rem);line-height:1.15;margin-bottom:3rem;color:var(--ink)}
@@ -126,14 +128,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .step{display:grid;grid-template-columns:52px 1fr;gap:1.5rem;align-items:start;padding:1.8rem 0;border-top:1px solid var(--border)}
 .step:last-child{border-bottom:1px solid var(--border)}
 .step-n{font-family:'IM Fell English',serif;font-size:2.2rem;color:var(--gold);opacity:0.28;line-height:1}
-.step-t{font-family:'IM Fell English',serif;font-size:1rem;color:var(--ink);margin-bottom:0.4rem}
-.step-d{font-size:0.9rem;color:var(--smoke);font-style:italic;line-height:1.7}
-.step-sub{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--moss);margin-top:0.5rem;opacity:0.8}
+.step-t{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--ink);margin-bottom:0.4rem;font-weight:600}
+.step-d{font-size:0.95rem;color:#3D2914;line-height:1.7;font-weight:400}
+.step-sub{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--moss);margin-top:0.5rem;opacity:0.85;font-weight:500}
 .contacto{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
 .cont-l{padding:5rem;border-right:1px solid var(--border)}
 .cont-l h2{font-family:'IM Fell English',serif;font-size:clamp(1.9rem,3vw,2.8rem);line-height:1.15;margin-bottom:1.2rem;color:var(--ink)}
 .cont-l h2 em{font-style:italic;color:var(--ember)}
-.cont-l>p{font-size:1rem;color:var(--smoke);font-style:italic;line-height:1.9;margin-bottom:2.5rem;max-width:400px}
+.cont-l>p{font-size:1rem;color:#3D2914;line-height:1.7;margin-bottom:2.5rem;max-width:420px;font-weight:400}
 .clinks{display:flex;flex-direction:column;gap:0.8rem}
 .clink{display:flex;align-items:center;gap:1.2rem;padding:1.1rem 1.4rem;border:1px solid var(--border);text-decoration:none;color:var(--ink);transition:all 0.2s}
 .clink:hover{border-color:var(--ember);background:var(--parch2)}
@@ -146,11 +148,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .cont-r{padding:5rem;background:var(--parch2);display:flex;flex-direction:column;gap:2rem;justify-content:center}
 .gran-cita{padding:2.8rem;background:var(--parch);border:1px solid var(--border);position:relative}
 .gran-cita::before{content:'\201C';font-family:'IM Fell English',serif;font-size:7rem;color:var(--ember);opacity:0.08;position:absolute;top:-2rem;left:1.5rem;line-height:1;pointer-events:none}
-.gran-cita blockquote{font-family:'IM Fell English',serif;font-size:1.15rem;font-style:italic;line-height:1.8;color:var(--ink);position:relative;z-index:1;margin-bottom:1.2rem}
+.gran-cita blockquote{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;line-height:1.6;color:var(--ink);position:relative;z-index:1;margin-bottom:1.2rem;font-weight:500}
 .gran-cita cite{font-size:0.67rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ember);font-style:normal}
 .familia-note{padding:1.5rem 2rem;border-left:3px solid var(--moss)}
-.familia-note p{font-size:0.88rem;color:var(--smoke);line-height:1.85;font-style:italic}
-.familia-note strong{font-style:normal;color:var(--moss)}
+.familia-note p{font-size:0.92rem;color:#3D2914;line-height:1.7;font-weight:400}
+.familia-note strong{color:var(--moss);font-weight:600}
 footer{background:var(--deep);padding:2rem 5rem;display:flex;justify-content:space-between;align-items:center}
 .foot-brand{font-family:'IM Fell English',serif;font-size:1.05rem;color:rgba(240,233,214,0.55)}
 .foot-brand em{font-style:italic;color:#C8922A}
@@ -198,7 +200,7 @@ img.loaded{opacity:1}
   footer{flex-direction:column;gap:1rem;text-align:center;padding:2rem 1.5rem}
 }
 .cat-filtros{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:2rem}
-.filtro{padding:0.4rem 1.1rem;border:1px solid var(--border);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--smoke);cursor:pointer;transition:all 0.2s;background:transparent;font-family:'Cormorant Garamond',serif}
+.filtro{padding:0.4rem 1.1rem;border:1px solid var(--border);font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--smoke);cursor:pointer;transition:all 0.2s;background:transparent;font-family:'Inter',sans-serif;font-weight:500}
 .filtro:hover,.filtro.active{border-color:var(--ember);color:var(--ember);background:rgba(158,58,18,0.04)}
 .cat-loading{grid-column:span 3;text-align:center;padding:4rem;font-style:italic;color:var(--smoke)}
 .pip-vendida{opacity:0.5;pointer-events:none}
@@ -208,9 +210,22 @@ img.loaded{opacity:1}
 .hist-fotos-grid .javier-foto{margin-top:0}
 .gal-panorama{grid-column:span 3;height:220px !important}
 .gal-panorama img{object-position:center 35%}
+.trayectoria{padding:4rem 5rem;border-bottom:1px solid var(--border);background:var(--parch2)}
+.trayectoria-head{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:2.5rem}
+.trayectoria-head h2{font-family:'IM Fell English',serif;font-size:clamp(1.7rem,2.5vw,2.3rem);color:var(--ink)}
+.trayectoria-head h2 em{font-style:italic;color:var(--ember)}
+.trayectoria-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+.tray-item{padding:1.4rem 1.6rem;border:1px solid var(--border);background:var(--parch);margin:-1px 0 0 -1px;display:flex;flex-direction:column;gap:0.4rem}
+.tray-item .tray-icon{font-size:1.4rem;color:var(--ember);margin-bottom:0.2rem}
+.tray-item .tray-titulo{font-family:'IM Fell English',serif;font-size:1.05rem;color:var(--ink);line-height:1.3}
+.tray-item .tray-desc{font-size:0.9rem;color:#3D2914;line-height:1.6;font-weight:400}
+.tray-hashtags{margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid var(--border);display:flex;gap:0.8rem;flex-wrap:wrap}
+.tray-hashtag{font-family:'IM Fell English',serif;font-style:italic;font-size:0.95rem;color:var(--ember)}
 @media(max-width:900px){
   .hist-fotos-grid{grid-template-columns:1fr}
   .gal-panorama{grid-column:span 2;height:160px !important}
+  .trayectoria{padding:3rem 1.8rem}
+  .trayectoria-grid{grid-template-columns:1fr}
 }
 .pip-thumb{position:relative;overflow:hidden;background:var(--parch2);line-height:0}
 .pip-thumb img{width:100%;height:280px;object-fit:contain;background:var(--parch2);display:block;transition:transform 0.35s;padding:10px}
@@ -240,9 +255,9 @@ img.loaded{opacity:1}
 .modal-detail{padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1rem;overflow-y:auto}
 .modal-cat{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--smoke)}
 .modal-name{font-family:'IM Fell English',serif;font-size:1.8rem;color:var(--ink);line-height:1.15}
-.modal-desc{font-size:0.95rem;color:#5C4838;font-style:italic;line-height:1.8}
+.modal-desc{font-size:0.95rem;color:#3D2914;line-height:1.65;font-weight:400}
 .modal-precio{font-family:'IM Fell English',serif;font-size:1.4rem;font-style:italic;color:var(--ember)}
-.modal-wa{display:inline-flex;align-items:center;gap:0.7rem;padding:0.9rem 2rem;background:var(--ink);color:var(--parch);font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;border:none;cursor:pointer;margin-top:0.5rem}
+.modal-wa{display:inline-flex;align-items:center;gap:0.7rem;padding:0.9rem 2rem;background:var(--ink);color:var(--parch);font-family:'Inter',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;border:none;cursor:pointer;margin-top:0.5rem;font-weight:500}
 .modal-wa:hover{background:var(--ember)}
 .modal-pagos{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
 .modal-pagos-title{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--smoke);margin-bottom:0.7rem}
@@ -264,6 +279,7 @@ img.loaded{opacity:1}
   <a class="nav-brand" href="/" aria-label="Los Crovas - Inicio"><img src="img/logo.png" alt="Los Crovas logo" style="width:32px;height:32px;object-fit:contain;vertical-align:middle;margin-right:0.5rem;opacity:0.9;flex-shrink:0">Los <em>Crovas</em></a>
   <ul class="nav-links">
     <li><a href="#historia">Historia</a></li>
+    <li><a href="#trayectoria">Trayectoria</a></li>
     <li><a href="#galeria">Galería</a></li>
     <li><a href="#catalogo">Catálogo</a></li>
     <li><a href="#pagos">Cómo comprar</a></li>
@@ -299,16 +315,18 @@ img.loaded{opacity:1}
   <div class="hist-side"><span class="side-n">01</span><span class="side-lbl">Nuestra historia</span></div>
   <div class="hist-body">
     <h2>Vine de Mar del Plata<br>y me quedé <em>para siempre</em></h2>
-    <p>Llegué a la Patagonia en el '91 y me enamoré. En 2001 me quedé definitivamente en el Alto Río Percy con mi esposa Teresita y nuestros tres hijos. Acá trabajé como docente, en el SENASA, en el INTA. Este lugar es nuestro mundo.</p>
-    <p>En la pandemia le pedí prestada una pipa a mi cuñado y quise imitarla. Empecé a jugar en el taller. Lo que nació como un hobby se fue convirtiendo de a poco en un oficio. Hoy cada pipa me lleva entre 6 y 8 días. Las herramientas que uso —desde la fragua hasta la lijadora— las hice yo mismo.</p>
+    <p>Llegué a la Patagonia en el '91 y supe que este era mi lugar. Desde 2001, el Alto Río Percy es el hogar donde echamos raíces con mi esposa Teresita y nuestros tres hijos; es nuestro mundo.</p>
+    <p>Mi camino con las pipas empezó casi por curiosidad, como un juego en el taller que terminó despertando un oficio profundo. Hoy, cada pieza es un proceso de paciencia y dedicación que me toma entre 6 y 8 días de trabajo minucioso.</p>
+    <p>Lo que hace especial a mis pipas es que nacen desde el origen: yo mismo diseñé y construí mis propias herramientas, desde la fragua hasta la lijadora. Cada pipa que sale de mi taller lleva un pedacito de este rincón patagónico y el orgullo de lo hecho íntegramente a mano.</p>
     <div class="pull">"Todo es artesanal en todo sentido. No trabajamos en serie. Yo no solamente hago la pipa, sino que hago todo lo que está alrededor de la pipa."</div>
     <p>Teresita cose las bolsitas. Los chicos, cuando vienen, se ponen a hacer boquillas y a lijar. Esto es de toda la familia, nacido en el fondo de casa, a 13 km de Esquel.</p>
     <div class="tags">
-      <span class="tag tag-g">3.° en Fumada Lenta</span>
-      <span class="tag">Asociación de Piperos Latinos</span>
+      <span class="tag tag-g">Artesano matriculado · Chubut</span>
+      <span class="tag tag-g">Expositor · Amsterdam Pipe Museum</span>
+      <span class="tag">Pipemaker Latinos</span>
+      <span class="tag">Pipa Club Fumadas Hobbit</span>
+      <span class="tag">3.° en Fumada Lenta</span>
       <span class="tag">Envíos al exterior</span>
-      <span class="tag">Herramientas propias</span>
-      <span class="tag">Familia</span>
     </div>
     <div class="hist-fotos-grid">
       <figure class="javier-foto">
@@ -320,9 +338,53 @@ img.loaded{opacity:1}
         <figcaption>Javier y Julián · El taller</figcaption>
       </figure>
     </div>
-    <a href="/historia.html" style="display:inline-flex;align-items:center;gap:0.7rem;margin-top:2rem;padding:0.9rem 2rem;background:var(--ink);color:var(--parch);font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;transition:background 0.2s" onmouseover="this.style.background='var(--ember)'" onmouseout="this.style.background='var(--ink)'">
+    <a href="/historia.html" style="display:inline-flex;align-items:center;gap:0.7rem;margin-top:2rem;padding:0.9rem 2rem;background:var(--ink);color:var(--parch);font-family:'Inter',sans-serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;font-weight:500" onmouseover="this.style.background='var(--ember)'" onmouseout="this.style.background='var(--ink)'">
       Ver el taller completo →
     </a>
+  </div>
+</section>
+
+<div class="sep"><div class="sep-line"></div><span class="sep-glyph">✦ ✦ ✦</span><div class="sep-line"></div></div>
+
+<section class="trayectoria reveal" id="trayectoria">
+  <div class="trayectoria-head">
+    <h2>Trayectoria <em>y reconocimientos</em></h2>
+  </div>
+  <div class="trayectoria-grid">
+    <div class="tray-item">
+      <div class="tray-icon">🏛️</div>
+      <p class="tray-titulo">Amsterdam Pipe Museum</p>
+      <p class="tray-desc">Expositor en el museo de Ámsterdam que reúne pipas y objetos del tabaquismo a lo largo de 25 siglos.</p>
+    </div>
+    <div class="tray-item">
+      <div class="tray-icon">🎨</div>
+      <p class="tray-titulo">Centro Cultural Melipal</p>
+      <p class="tray-desc">Expositor en Esquel, Chubut, Argentina.</p>
+    </div>
+    <div class="tray-item">
+      <div class="tray-icon">📜</div>
+      <p class="tray-titulo">Artesano matriculado</p>
+      <p class="tray-desc">Reconocido como artesano por la provincia del Chubut, Argentina.</p>
+    </div>
+    <div class="tray-item">
+      <div class="tray-icon">🌎</div>
+      <p class="tray-titulo">Pipemaker Latinos</p>
+      <p class="tray-desc">Integrante del grupo internacional de fabricantes de pipas latinoamericanos.</p>
+    </div>
+    <div class="tray-item">
+      <div class="tray-icon">🌿</div>
+      <p class="tray-titulo">Pipa Club Fumadas Hobbit</p>
+      <p class="tray-desc">Integrante del club. 3.° puesto en la competencia de Fumada Lenta.</p>
+    </div>
+    <div class="tray-item">
+      <div class="tray-icon">🤝</div>
+      <p class="tray-titulo">Auspiciante</p>
+      <p class="tray-desc">Apoyo activo a la comunidad pipera argentina.</p>
+      <div class="tray-hashtags">
+        <span class="tray-hashtag">#pipaclubargentina</span>
+        <span class="tray-hashtag">#elabrazo</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -370,7 +432,7 @@ img.loaded{opacity:1}
     </div>
     <div class="pago-bloque">
       <h3><span>📦</span> Envíos</h3>
-      <ul><li>Correo Argentino — todo el país</li><li>Envíos al exterior — consultá</li><li>Entrega en mano — Esquel y zona</li></ul>
+      <ul><li>Correo Argentino</li><li>OCA</li><li>Andreani</li><li>Vía Cargo</li><li>Envíos al exterior — consultá</li><li>Entrega en mano — Esquel y zona</li></ul>
     </div>
   </div>
   <div class="pagos-nota"><strong>¿Cómo funciona?</strong> Escribime por WhatsApp o Instagram, elegimos la pipa juntos, y te cuento el precio con el envío incluido. Javier responde personalmente cada consulta.</div>
