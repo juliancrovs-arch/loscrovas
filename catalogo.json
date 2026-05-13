@@ -514,5 +514,19 @@
       "/img/catalogo/curva-sottile-1778673078679-2.jpg",
       "/img/catalogo/curva-sottile-1778673078679-3.jpg"
     ]
+  },
+  {
+    "id": "akita-1778673323384",
+    "nombre": "Akita",
+    "categoria": "Llao llao",
+    "descripcion": "Cazoleta en Llao llao tallada, laqueado y bruñido, boquilla en derlim blanco todo realizado a mano, el diseño es em honor a la casa Japonesa Tsuge del cual soy gran admirador de sus trabajos, Peso:82 grs; largo15 cm; cazoleta de diametro de 45 mm x 53 mm, de un shape muy especial con difrentes relieves un trabajo de tallado sobre reliene entre el caño y la cazoleta donde se busco emular la lava del volcan Sakurajima, la cazoleta confeccionada en bloque de llao llao patagonico de produccion propia, tiene una belleza inigualable entre las maderas nacionales , puesto que en sus diferentes trazas el juego de las vetas forman fijuras muy similar a el ojo d eperdiz del brezo, cariñosamente que he llamado ojo de codorniz. es una pipa para aquellos amantes de ejemplates de diseño de edicion limitada. Su hornillo con una profundidad de 30 mm ; apertura de boca de 18 mm terminando en 15 mm el la base de la misma lo que le permite una mayor durabilidad a la cazoleta por su dieño.",
+    "precio": 150000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/akita-1778673323384-0.jpg",
+      "/img/catalogo/akita-1778673323384-1.jpg",
+      "/img/catalogo/akita-1778673323384-2.jpg",
+      "/img/catalogo/akita-1778673323384-3.jpg"
+    ]
   }
 ]
