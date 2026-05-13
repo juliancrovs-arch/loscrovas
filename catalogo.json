@@ -946,5 +946,18 @@
       "/img/catalogo/stile-degustazione-1778681639786-2.jpg",
       "/img/catalogo/stile-degustazione-1778681639786-3.jpg"
     ]
+  },
+  {
+    "id": "tentation-1778681864240",
+    "nombre": "Tentation",
+    "categoria": "Chubby",
+    "descripcion": "Ejemplar en raíz de olivo, tallada a mano, teñida en verde y negro dando esa tonalidad por sus vetas, boquilla blanca confección a mano, en diseño pocket de chubby, con un peso d e 80 grs, una altura de 54 mm un ancho de 40 mm un largo total de 12 cm, su hornillo 19 mm de apertura d eboca con una profundidad de 28 mm.",
+    "precio": 105000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/tentation-1778681864240-0.jpg",
+      "/img/catalogo/tentation-1778681864240-1.jpg",
+      "/img/catalogo/tentation-1778681864240-2.jpg"
+    ]
   }
 ]
