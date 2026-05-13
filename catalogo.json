@@ -373,5 +373,16 @@
       "/img/catalogo/legolas-1778631922502-0.jpeg",
       "/img/catalogo/legolas-1778631922502-1.jpeg"
     ]
+  },
+  {
+    "id": "elfo-ceramica-1778632341304",
+    "nombre": "Elfo ceramica",
+    "categoria": "Gandalf",
+    "descripcion": "Esta pieza unica esta confeccionbada en la combinacion de la tierra y la naturaleza de sus arboles, puesto que esta realizada su cazoleta con arcillas naturales de la costa del Rio Percy, donde se la estrae naturalmente y haciendo todos sus procesos de amasado modelado y cocido para logras esta forma de carga generosa y con su boquilla en fresno realizada en una sola pieza tal cual lo realizaban los antigus Celtas,, su cazoleta tiene un bruñido que cierra el poro y le da ese aspecto deseado, largo 31 cm peso, 82 grs. altura 63 mm, ancho 46 mmapertura de boca 29 mmprofundidad 30 mm.",
+    "precio": 110000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/elfo-ceramica-1778632341304-0.jpg"
+    ]
   }
 ]
