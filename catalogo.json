@@ -1145,5 +1145,18 @@
       "/img/catalogo/blacky-1778684415288-1.jpg",
       "/img/catalogo/blacky-1778684415288-2.jpg"
     ]
+  },
+  {
+    "id": "forest-1778684571300",
+    "nombre": "Forest",
+    "categoria": "Billard",
+    "descripcion": "Tal cual lo describe su nombre es un apipa rustica de caño grues boquilla dracula en tonos rojos y negro, anilla de acrilico rojo cazoleta yallada a mano en laurel patagonico, , queriendo lograr ese efecto en la pipa con un largo de 17 cm, un peso de 59 grs, su cazoleta de 4 cm por 4 cm, su hornillo de 18 mm en la boca terminando en 15 mm en la base y una profundidad de 30 mm, queriendo lograr una pipa de trabajo",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/forest-1778684571300-0.jpg",
+      "/img/catalogo/forest-1778684571300-1.jpg",
+      "/img/catalogo/forest-1778684571300-2.jpg"
+    ]
   }
 ]
