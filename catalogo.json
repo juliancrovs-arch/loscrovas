@@ -756,5 +756,18 @@
       "/img/catalogo/chimuelo-1778678253572-1.jpg",
       "/img/catalogo/chimuelo-1778678253572-2.jpg"
     ]
+  },
+  {
+    "id": "terra-calda-1778678497489",
+    "nombre": "Terra Calda",
+    "categoria": "Cóndor",
+    "descripcion": "Pipa de autor de formato contemporáneo que equilibra el diseño rústico con la ingeniería moderna. Su cazoleta ovalada texturizada ofrece un agarre sumamente cómodo y firme. La combinación de Viraró nativo y acero quirúrgico asegura una pieza robusta, duradera y de fácil mantenimiento, ideal para coleccionistas exigentes.Especificaciones Técnicas:Material de la Cazoleta: Madera de Viraró nativo tallada a mano.Material de la Boquilla: Raíz de Viraró torneada de forma ergonómica.Material del Caño: Conductor rígido de acero quirúrgico.Peso Total: 70 gramos (consistente y con excelente balance en mano).Dimensiones de la Cazoleta: 4 cm de ancho x 5 cm de largo.Diámetro del Hornillo: 1.8 cm (18 mm).Profundidad del Hornillo: 3.5 cm (35 mm).",
+    "precio": 85000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/terra-calda-1778678497489-0.jpg",
+      "/img/catalogo/terra-calda-1778678497489-1.jpg",
+      "/img/catalogo/terra-calda-1778678497489-2.jpg"
+    ]
   }
 ]
