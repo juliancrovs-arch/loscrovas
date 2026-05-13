@@ -1118,5 +1118,19 @@
       "/img/catalogo/nux-nucis-1778684238314-1.jpg",
       "/img/catalogo/nux-nucis-1778684238314-2.jpg"
     ]
+  },
+  {
+    "id": "elaios-1778684321483",
+    "nombre": "Elaios",
+    "categoria": "Chalequera",
+    "descripcion": "Creada totalmente a mano, esta pipa destaca por su elegante color caramelos en degrade que los da la raiz de olivo, que aporta un toque natural y sofisticado. La boquilla en acrílico negro tallado le da un acabado único y refinado. Una pieza hecha con pasión, ideal para disfrutar de momentos de relajación y sabor. Su altura es de 44 mm, con un ancho de 33 mm y una profundidad en su hornillo de 30 mm",
+    "precio": 90000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/elaios-1778684321483-0.jpg",
+      "/img/catalogo/elaios-1778684321483-1.jpg",
+      "/img/catalogo/elaios-1778684321483-2.jpg",
+      "/img/catalogo/elaios-1778684321483-3.jpg"
+    ]
   }
 ]
