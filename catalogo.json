@@ -450,5 +450,16 @@
     "fotos": [
       "/img/catalogo/mamba-tentation-1778671958915-0.jpg"
     ]
+  },
+  {
+    "id": "chaiten-1778672224750",
+    "nombre": "Chaiten",
+    "categoria": "Curva",
+    "descripcion": "Diseño exclusivo: Silueta curva y estilizada de gran categoría.Cazoleta: Raíz de olivo de veta única y excelente resistencia térmica.Boquilla: Acrílico negro de alta calidad con un elegante anillo metálico.Acabado: Líneas delicadas que garantizan una fumada cómoda y con estilo.Opción 3: Emocional y Sofisticada (Ideal para Web de Lujo)",
+    "precio": 120000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/chaiten-1778672224750-0.jpg"
+    ]
   }
 ]
