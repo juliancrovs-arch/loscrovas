@@ -580,5 +580,19 @@
       "/img/catalogo/tomas-father-1778674314492-1.jpg",
       "/img/catalogo/tomas-father-1778674314492-2.jpg"
     ]
+  },
+  {
+    "id": "condor-murcielago-1778674460918",
+    "nombre": "Condor murcielago",
+    "categoria": "Cóndor",
+    "descripcion": "Cazoleta en raiz de guayubera, con hermosas vetas en tonos marrones, pulida y tallada a mano; caño en acero quirujico de alta calidad; boquilla de diseño perteneciente a la familia de las murcielago, en tonos amaillos y negros; larlo15 cm; peso80 grs; cazloeta 5,5 x 4 cm; hornillo 19 mm en la base y 14 en el fondo, con una profundidad de 3,5 cm. Peso",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/condor-murcielago-1778674460918-0.jpg",
+      "/img/catalogo/condor-murcielago-1778674460918-1.jpg",
+      "/img/catalogo/condor-murcielago-1778674460918-2.jpg",
+      "/img/catalogo/condor-murcielago-1778674460918-3.jpg"
+    ]
   }
 ]
