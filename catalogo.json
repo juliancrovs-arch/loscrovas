@@ -1027,5 +1027,18 @@
       "/img/catalogo/alchimia-1778682594369-1.jpg",
       "/img/catalogo/alchimia-1778682594369-2.jpg"
     ]
+  },
+  {
+    "id": "dogo-1778682706116",
+    "nombre": "Dogo",
+    "categoria": "Chubby",
+    "descripcion": "Esta pipa tiene un tratamiento especial en su cazoleta para poder llegar a ese tono natural de la madera que lo denominamos Dogo argentino, por su pureza en el blanco alcanzado, esta dentro del segmento Bull dog , con su base de cazoleta pulida y una leve conicidad hacia el hornillo : toda su cazoleta tallada hasta conectarse con su boquilla especialmente realizada para esta pipa en tono azul. haciendola Bien Argento, que tambièn esta tallada, cuenta comn una camara de aire que es la particularidad de los modelos chubby que confeccionamos que le da frescura en su fumada. peso 95 grs, cazoleta de 47 mm por 47 mm una altura de 57 mm, su hornillo de 21mm de boca terminando en su base en 16 mm, y un acapacidad de carga con una profundidad de 35 mm.",
+    "precio": 140000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/dogo-1778682706116-0.jpg",
+      "/img/catalogo/dogo-1778682706116-1.jpg",
+      "/img/catalogo/dogo-1778682706116-2.jpg"
+    ]
   }
 ]
