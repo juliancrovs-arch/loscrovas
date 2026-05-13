@@ -702,5 +702,18 @@
       "/img/catalogo/mictlan-1778677100548-2.jpg",
       "/img/catalogo/mictlan-1778677100548-3.jpg"
     ]
+  },
+  {
+    "id": "infierno-negro-1778677267954",
+    "nombre": "Infierno negro",
+    "categoria": "Cóndor",
+    "descripcion": "Diseño industrial minimalista: Una pieza rupturista con cazoleta cilíndrica que emula la forma de un mazo, rompiendo con las líneas tradicionales de la tabaquería.Textura rústica profunda: El cuerpo posee un acabado rusticado en color negro mate que ofrece un agarre firme, excelente aislamiento térmico y gran carácter visual.Eje de acero inoxidable: Un caño metálico largo, esbelto y pulido que enfría eficazmente el humo y aporta un contraste metálico limpio y sofisticado.Boquilla anatómica: Rematada en una boquilla negra mate sutilmente torneada para garantizar una mordida cómoda, ligera y un gran balance en mano.",
+    "precio": 85000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/infierno-negro-1778677267954-0.jpg",
+      "/img/catalogo/infierno-negro-1778677267954-1.jpg",
+      "/img/catalogo/infierno-negro-1778677267954-2.jpg"
+    ]
   }
 ]
