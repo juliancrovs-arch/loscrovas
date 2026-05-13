@@ -1053,5 +1053,18 @@
       "/img/catalogo/apple-1778682816859-1.jpg",
       "/img/catalogo/apple-1778682816859-2.jpg"
     ]
+  },
+  {
+    "id": "malbec-1778683176027",
+    "nombre": "Malbec",
+    "categoria": "Chubby",
+    "descripcion": "Ejemplar de la familia de las chubby pocket con tonos vino tinto que dan una combinación única dado el dibujo que hace la naturaleza con sus vetas, y la definicion de trazos en su tallado a mano; tiene la particularidad de ser una chubby de boquilla larga llegando a medir toda la pipa 15 cm, siempre respetando el diseño propio que nos caracteriza en este modelo, con su camara de airea que le hace una fumada refrescante, la misma esta confeccionada en acrilico negro, su cazoleta con una altura de 56 mm y un ancho de 442 mm su hornillo de apertura de boca de 19 mm y una profundidad de 30 mm; con un peso de 104 gramos es unas de las demomunadas pipas de mano, para toda la vida.",
+    "precio": 110000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/malbec-1778683176027-0.jpg",
+      "/img/catalogo/malbec-1778683176027-1.jpg",
+      "/img/catalogo/malbec-1778683176027-2.jpg"
+    ]
   }
 ]
