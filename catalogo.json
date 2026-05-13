@@ -406,5 +406,16 @@
     "fotos": [
       "/img/catalogo/dublin-llao-llao-1778633481382-0.png"
     ]
+  },
+  {
+    "id": "cutty-black-1778633662300",
+    "nombre": "cutty black",
+    "categoria": "Cutty",
+    "descripcion": "Hermosos ejemplares en cazoleta de grapia teñida en black intenso, laqueado, con un shape especial en una sola pieza, con la caracteristica de este modelo (cutty ) pero en una vercion de bolsillo, hermosa pipa, con un peso de 48 grs, su cazoleta con una altura de 50 mm, un diametro de 38 mm, su hornillo con una profundidad de 34 mm, una apertura de boca de 20 mm terminando en forma conica con 15 mm, respeta el shape y la mayor durabilidad en la cazolta.",
+    "precio": 78000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/cutty-black-1778633662300-0.png"
+    ]
   }
 ]
