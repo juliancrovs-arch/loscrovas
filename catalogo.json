@@ -361,5 +361,17 @@
     "fotos": [
       "/img/catalogo/frodo-1778631105572-0.jpg"
     ]
+  },
+  {
+    "id": "legolas-1778631922502",
+    "nombre": "Legolas",
+    "categoria": "Gandalf",
+    "descripcion": "Esta es una pipa espacial porque interpreta la naturaleza de los Elfos, representada en los tintes naturales extraidos de corteza de arboles d enogal que hemos desarrollado, y su boquilla en fresno trabajada en un apieza para brindar esta hermosa pipa; largo 23 cm, altura 6,1 cm; ancho 42 mm x 44 mm; profundidad 40 mm, apertura de boca 19 mm. Peso 89 grs.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/legolas-1778631922502-0.jpeg",
+      "/img/catalogo/legolas-1778631922502-1.jpeg"
+    ]
   }
 ]
