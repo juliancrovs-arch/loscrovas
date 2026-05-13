@@ -1000,5 +1000,19 @@
       "/img/catalogo/bryum-1778682340668-2.jpg",
       "/img/catalogo/bryum-1778682340668-3.jpg"
     ]
+  },
+  {
+    "id": "murcielago-1778682454667",
+    "nombre": "Murcielago",
+    "categoria": "Chubby",
+    "descripcion": "Pipa Artesanal \"Chubby Murcielago\" – Edición Especial\n\nElevá tu ritual con una pieza única que fusiona el misticismo del diseño de la familia Chubby Dracula, Murcielago y Vampiro con la fuerza de la tierra patagónica. Esta pipa no es solo un accesorio, es una obra de arte tallada íntegramente a mano, pensada para quienes buscan distinción y calidad en cada detalle. \n\n🌑 Atributos de la Pieza:\n\nCazoleta de Incienso: Elegida por su resistencia al calor y su aroma sutil que acompaña la experiencia sin invadirla. Posee un acabado teñido y tallado que resalta su carácter robusto.\nAnilla de olivo : Un detalle de lujo en madera de nuestra región, que aporta una conexión directa con el entorno natural y brinda un diseño de excelencia.\nIncrustaciones de Piedras Semipreciosas: El contraste perfecto lo dan la Azurita y la Malaquita molidas, aplicadas artesanalmente para crear un brillo mineral único.\nBoquilla de Diseño: Realizada en una vibrante combinación de tonos amarillos y negros. Presenta un tallado a mano que fluye con el resto del cuerpo, logrando una armonía visual y ergonómica excepcional. \nEsta pipa viene con un blend patagonico herbal y un atacador colmillo de puma de regalo.",
+    "precio": 180000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/murcielago-1778682454667-0.jpg",
+      "/img/catalogo/murcielago-1778682454667-1.jpg",
+      "/img/catalogo/murcielago-1778682454667-2.jpg",
+      "/img/catalogo/murcielago-1778682454667-3.jpg"
+    ]
   }
 ]
