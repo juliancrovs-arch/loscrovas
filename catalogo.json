@@ -729,5 +729,19 @@
       "/img/catalogo/olivo-dracula-1778677475843-2.jpg",
       "/img/catalogo/olivo-dracula-1778677475843-3.jpg"
     ]
+  },
+  {
+    "id": "tamburo-dautunno-1778677721007",
+    "nombre": "Tamburo d'Autunno",
+    "categoria": "Cóndor",
+    "descripcion": "Madera exótica y exclusiva: Cazoleta cilíndrica torneada en raíz de plátano, un material muy valorado en tabaquería por sus finas vetas moteadas y alta tolerancia al calor.Detalles geométricos: El cuerpo presenta sutiles anillos concéntricos grabados en la parte superior e inferior, enmarcando la belleza natural de la madera.Contraste cromático: Un caño recto de tono oscuro une la cazoleta con una boquilla de madera clara a juego, logrando una estética simétrica, limpia y elegante.Fumada equilibrada: Su formato tipo mazo o tambor ofrece paredes gruesas que mantienen la cazoleta fresca al tacto durante toda la sesión.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/tamburo-dautunno-1778677721007-0.jpg",
+      "/img/catalogo/tamburo-dautunno-1778677721007-1.jpg",
+      "/img/catalogo/tamburo-dautunno-1778677721007-2.jpg",
+      "/img/catalogo/tamburo-dautunno-1778677721007-3.jpg"
+    ]
   }
 ]
