@@ -879,5 +879,19 @@
       "/img/catalogo/red-manke-1778680077924-2.jpg",
       "/img/catalogo/red-manke-1778680077924-3.jpg"
     ]
+  },
+  {
+    "id": "vulcano-1778680260627",
+    "nombre": "vulcano",
+    "categoria": "Cóndor",
+    "descripcion": "Nueva linea de las consor toda tallada en su cazoleta con un tono unico en convinaciones de negros y verdes esmeralda, caño en bambu negro, con anilla de acrilico y caño en acero quirurgico.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/vulcano-1778680260627-0.jpg",
+      "/img/catalogo/vulcano-1778680260627-1.jpg",
+      "/img/catalogo/vulcano-1778680260627-2.jpg",
+      "/img/catalogo/vulcano-1778680260627-3.jpg"
+    ]
   }
 ]
