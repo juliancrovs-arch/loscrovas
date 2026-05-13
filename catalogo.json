@@ -635,5 +635,18 @@
       "/img/catalogo/presidente-1778675761645-2.jpg",
       "/img/catalogo/presidente-1778675761645-3.jpg"
     ]
+  },
+  {
+    "id": "punta-de-ala-1778676093955",
+    "nombre": "punta de ala",
+    "categoria": "Cóndor",
+    "descripcion": "Cazoleta en madera de raiz de guindo patagonico, teñida en mismo tono;tallada tanto en la base como en la boca; caño en acero quirurgico de alta calidad, boquilla de derlim blanco de diseño propio. Peso 54 grs; largo16,5 cm; cazoleta de 5 cm x 4 cm; hornillo en la base 19 mm; profundidad 30 mm.",
+    "precio": 80000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/punta-de-ala-1778676093955-0.jpg",
+      "/img/catalogo/punta-de-ala-1778676093955-1.jpg",
+      "/img/catalogo/punta-de-ala-1778676093955-2.jpg"
+    ]
   }
 ]
