@@ -567,5 +567,18 @@
       "/img/catalogo/asian-egg-1778673819490-0.jpg",
       "/img/catalogo/asian-egg-1778673819490-1.jpg"
     ]
+  },
+  {
+    "id": "tomas-father-1778674314492",
+    "nombre": "Tomas father",
+    "categoria": "Curva",
+    "descripcion": "Una pipa de alta gama que fusiona la rudeza estética de la raíz de olivo rusticada con una ingeniería interna impecable. Su cazoleta presenta un relieve profundamente esculpido que otorga un carácter único a cada pieza. La boquilla curva, anatómica y de alto brillo, garantiza una mordida cómoda y un flujo de humo fresco.Especificaciones Técnicas:Material de la Cazoleta: Raíz de olivo natural con acabado rústico/esculpido.Tipo de Hornillo: Cónico (diseño óptimo para combustión progresiva).Diámetro de la Boca: 20 mm.Profundidad del Hornillo: 3.5 cm (35 mm).Fondo del Hornillo: Termina en 15 mm.Boquilla: Acrílico negro de alta resistencia con acabado pulido brillante. incluye un atacador garra de puma d eregalo",
+    "precio": 120000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/tomas-father-1778674314492-0.jpg",
+      "/img/catalogo/tomas-father-1778674314492-1.jpg",
+      "/img/catalogo/tomas-father-1778674314492-2.jpg"
+    ]
   }
 ]
