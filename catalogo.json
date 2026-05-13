@@ -1079,5 +1079,18 @@
       "/img/catalogo/viridiana-1778683299040-1.jpg",
       "/img/catalogo/viridiana-1778683299040-2.jpg"
     ]
+  },
+  {
+    "id": "viraro-1778683618752",
+    "nombre": "Viraro",
+    "categoria": "Chalequera",
+    "descripcion": "Creada totalmente a mano, esta pipa destaca por sus elegantes tonos de sus veras , su cazoleta en viraro tallada a mano y laqueada para resaltar aun mas su belleza , que aporta un toque natural y sofisticado. La boquilla en acrílico negro tallado le da un acabado único y refinado. Una pieza hecha con pasión.; su hornillo en 26 mm, una altura de 39 mm.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/viraro-1778683618752-0.jpg",
+      "/img/catalogo/viraro-1778683618752-1.jpg",
+      "/img/catalogo/viraro-1778683618752-2.jpg"
+    ]
   }
 ]
