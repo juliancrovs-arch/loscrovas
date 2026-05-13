@@ -865,5 +865,19 @@
       "/img/catalogo/red-stone-1778679947270-1.jpg",
       "/img/catalogo/red-stone-1778679947270-2.jpg"
     ]
+  },
+  {
+    "id": "red-manke-1778680077924",
+    "nombre": "Red manke",
+    "categoria": "Cóndor",
+    "descripcion": "Toda tallada en su cazoleta con un tono unico en convinaciones de rojos negros , caño en bambu , con anilla de acrilico rojo y acero quirurgico boquilla en rojo escarlata",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/red-manke-1778680077924-0.jpg",
+      "/img/catalogo/red-manke-1778680077924-1.jpg",
+      "/img/catalogo/red-manke-1778680077924-2.jpg",
+      "/img/catalogo/red-manke-1778680077924-3.jpg"
+    ]
   }
 ]
