@@ -769,5 +769,19 @@
       "/img/catalogo/terra-calda-1778678497489-1.jpg",
       "/img/catalogo/terra-calda-1778678497489-2.jpg"
     ]
+  },
+  {
+    "id": "martello-di-ciliegio-1778678734748",
+    "nombre": "Martello di Ciliegio",
+    "categoria": "Cóndor",
+    "descripcion": "Shape de esta familia condor origenes, su cazoleta esta realizada en madera de raiz de olivo, totalmente tallas a mano, teñida en rojo intenso , con inserto en bambu , anilla en acrilico rojo caño en acero quirurgico y boquill anegra totalmente tallada a mano",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/martello-di-ciliegio-1778678734748-0.jpg",
+      "/img/catalogo/martello-di-ciliegio-1778678734748-1.jpg",
+      "/img/catalogo/martello-di-ciliegio-1778678734748-2.jpg",
+      "/img/catalogo/martello-di-ciliegio-1778678734748-3.jpg"
+    ]
   }
 ]
