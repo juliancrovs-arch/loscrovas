@@ -541,5 +541,19 @@
       "/img/catalogo/kalfu-1778673431883-1.jpg",
       "/img/catalogo/kalfu-1778673431883-2.jpg"
     ]
+  },
+  {
+    "id": "pichai-1778673655390",
+    "nombre": "Pichai",
+    "categoria": "Curva",
+    "descripcion": "Madera exótica de colección: Esculpida en madera selecta de Urunday Gateado, reconocida por su extrema dureza, durabilidad y excepcional veta atigrada.Respeto por la materia prima: Una pieza de autor tallada siguiendo orgánicamente el recorrido natural de su veta, logrando un patrón visual único e irrepetible.Elegancia integrada: Cuenta con una boquilla curva diseñada en perfecta armonía con el cuerpo, complementada por una anilla del mismo tono que unifica la pieza.Experiencia de fumada: Ideal para los amantes del buen fumar que buscan maderas nativas de alta densidad que garantizan frescura y resistencia térmica superior.",
+    "precio": 120000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/pichai-1778673655390-0.jpg",
+      "/img/catalogo/pichai-1778673655390-1.jpg",
+      "/img/catalogo/pichai-1778673655390-2.jpg",
+      "/img/catalogo/pichai-1778673655390-3.jpg"
+    ]
   }
 ]
