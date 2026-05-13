@@ -594,5 +594,19 @@
       "/img/catalogo/condor-murcielago-1778674460918-2.jpg",
       "/img/catalogo/condor-murcielago-1778674460918-3.jpg"
     ]
+  },
+  {
+    "id": "zafiro-1778674634752",
+    "nombre": "zafiro",
+    "categoria": "Pocket",
+    "descripcion": "Esta pipa es de diseño exclusivo siguiendo la familia de las pócket,con tallado a mano tanto en su cazoleta como en la boquilla que ambas son confeccionadas y diseño propio del Los Crova. Siguiendo las tradiciones de confección de pipas hechas a mano, la madera de canelo del cual se hace esta cazoleta es el árbol sagrado mapuche, tratando con mucho respeto de dar a conocer maderas de nuestro país que son espectaculares para la confección de pipas. peso 47 grs, altura de cazoleta 54 mm, ancho 39 mm, profundidad de hornillo 36 mm, aperetura de boca 19 mm. largo 15 mm.",
+    "precio": 120000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/zafiro-1778674634752-0.jpg",
+      "/img/catalogo/zafiro-1778674634752-1.jpg",
+      "/img/catalogo/zafiro-1778674634752-2.jpg",
+      "/img/catalogo/zafiro-1778674634752-3.jpg"
+    ]
   }
 ]
