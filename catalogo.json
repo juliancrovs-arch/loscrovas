@@ -839,5 +839,18 @@
       "/img/catalogo/chewke-1778679527101-2.jpg",
       "/img/catalogo/chewke-1778679527101-3.jpg"
     ]
+  },
+  {
+    "id": "manke-1778679803909",
+    "nombre": "Manke",
+    "categoria": "Cóndor",
+    "descripcion": "Toda tallada en su cazoleta con un tono unico en raiz de oliva, con detalle de grabado a mano imagen del condor como lo representaban los mapuches en sus dibujos, caño en bambu , con anulla de acrilico y acero quirurgico",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/manke-1778679803909-0.jpg",
+      "/img/catalogo/manke-1778679803909-1.jpg",
+      "/img/catalogo/manke-1778679803909-2.jpg"
+    ]
   }
 ]
