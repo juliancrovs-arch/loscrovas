@@ -439,5 +439,16 @@
     "fotos": [
       "/img/catalogo/cutty-oliva-1778634067341-0.png"
     ]
+  },
+  {
+    "id": "mamba-tentation-1778671958915",
+    "nombre": "Mamba tentation",
+    "categoria": "Mamba",
+    "descripcion": "Cazoleta en raiz de itin, tallada a mano, con anilla murcielago y boquilla curva( ELAVORADA EN UNA SOLA PIEZA)en raiz de viraro,. 16 cm de largo, con la particularidad de aquellos que son amantes de la buena carga, con hornillo especialmente confeccionado para darle armonia a la pieza. ancho 45 mm, alto 55 mm, peso 93 grs, profundidad de hornillo 39 mm, ancho de boca de hornillo de formaro oval, 29 mm x 26 mm.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/mamba-tentation-1778671958915-0.jpg"
+    ]
   }
 ]
