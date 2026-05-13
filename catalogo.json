@@ -852,5 +852,18 @@
       "/img/catalogo/manke-1778679803909-1.jpg",
       "/img/catalogo/manke-1778679803909-2.jpg"
     ]
+  },
+  {
+    "id": "red-stone-1778679947270",
+    "nombre": "Red stone",
+    "categoria": "Cóndor",
+    "descripcion": "Contraste de Gran Fuerza: Una cazoleta cilíndrica de tonos oscuros y profundos que se quiebra radicalmente con una boquilla blanca y pulida.Caño de Bambú Auténtico: Incorpora un segmento robusto de bambú natural con nudos marcados que aporta textura, carácter y un excelente agarre.Detalle Cromático Sutil: Un pequeño anillo de tono rojizo une la cazoleta con el bambú, funcionando como un acento visual refinado y artesanal.Ingeniería Interna: Núcleo metálico expuesto que asegura una fumada fresca, flujo de aire directo y un desarme rápido para un mantenimiento sencillo.",
+    "precio": 90000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/red-stone-1778679947270-0.jpg",
+      "/img/catalogo/red-stone-1778679947270-1.jpg",
+      "/img/catalogo/red-stone-1778679947270-2.jpg"
+    ]
   }
 ]
