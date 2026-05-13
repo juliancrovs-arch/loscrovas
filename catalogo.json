@@ -972,5 +972,19 @@
       "/img/catalogo/syrac-1778681985284-1.jpg",
       "/img/catalogo/syrac-1778681985284-2.jpg"
     ]
+  },
+  {
+    "id": "chubby-vampiro-1778682191993",
+    "nombre": "Chubby vampiro",
+    "categoria": "Chubby",
+    "descripcion": "Pipa Artesanal \"Chubby Vampiro\" – Edición Especial\n\nElevá tu ritual con una pieza única que fusiona el misticismo del diseño de la familia Chubby Dracula, Murcielago y Vampiro con la fuerza de la tierra patagónica. Esta pipa no es solo un accesorio, es una obra de arte tallada íntegramente a mano, pensada para quienes buscan distinción y calidad en cada detalle. \n\n🌑 Atributos de la Pieza:\n\nCazoleta de Incienso: Elegida por su resistencia al calor y su aroma sutil que acompaña la experiencia sin invadirla. Posee un acabado teñido y tallado que resalta su carácter robusto.\nAnilla de Nogal Patagónico: Un detalle de lujo en madera nativa de nuestra región, que aporta una conexión directa con el entorno natural del sur.\nBoquilla de Diseño: Realizada en una vibrante combinación de tonos naranjas y cristal. Presenta un diseño a mano que fluye con el resto del cuerpo, logrando una armonía visual y ergonómica excepcional. \nEstq pipa viene con un blendherbal patagonico y un atacador modelo garra de puma de regalo",
+    "precio": 160000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/chubby-vampiro-1778682191993-0.jpg",
+      "/img/catalogo/chubby-vampiro-1778682191993-1.jpg",
+      "/img/catalogo/chubby-vampiro-1778682191993-2.jpg",
+      "/img/catalogo/chubby-vampiro-1778682191993-3.jpg"
+    ]
   }
 ]
