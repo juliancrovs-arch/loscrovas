@@ -1066,5 +1066,18 @@
       "/img/catalogo/malbec-1778683176027-1.jpg",
       "/img/catalogo/malbec-1778683176027-2.jpg"
     ]
+  },
+  {
+    "id": "viridiana-1778683299040",
+    "nombre": "Viridiana",
+    "categoria": "Chalequera",
+    "descripcion": "Creada totalmente a mano, esta pipa destaca por su elegante color caracteristico del olivo en sus diferentes tonos, con una decoracion en madera de guayuver,totalmente tallada a mano que aporta un toque natural y sofisticado. La boquilla en acrílico negro tallado le da un acabado único y refinado. Una pieza hecha con pasión, ideal para disfrutar de momentos de relajación y sabor.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/viridiana-1778683299040-0.jpg",
+      "/img/catalogo/viridiana-1778683299040-1.jpg",
+      "/img/catalogo/viridiana-1778683299040-2.jpg"
+    ]
   }
 ]
