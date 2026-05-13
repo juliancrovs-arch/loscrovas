@@ -675,5 +675,18 @@
       "/img/catalogo/dracula-1778676454379-2.jpg",
       "/img/catalogo/dracula-1778676454379-3.jpg"
     ]
+  },
+  {
+    "id": "negro-pasion-1778676651259",
+    "nombre": "Negro pasion",
+    "categoria": "Cóndor",
+    "descripcion": "Cazoleta en raiz de olivo teñido en tres tonos diferentes de negros, tallada a mano en profundidad y sobre relieve, pulida y laqueada; caño en acero quirúrgico de alta calidad; boquilla en raíz de viraro. peso 60 grs; largo 14,5 cm; cazoleta 3,5 x 5,5 cm; hornillo 1,85 cm en la base y en el fondo 1,4 cm; (conico) de diseño propio para permitir mayor durabilidad a la vida de la cazoleta, profundidad 3,5 cm.",
+    "precio": 80000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/negro-pasion-1778676651259-0.jpg",
+      "/img/catalogo/negro-pasion-1778676651259-1.jpg",
+      "/img/catalogo/negro-pasion-1778676651259-2.jpg"
+    ]
   }
 ]
