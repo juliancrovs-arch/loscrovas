@@ -3,29 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Catalogo - Los Crovas</title>
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<title>Catálogo — Los Crovas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#1A1208;--parch:#F0E9D6;--parch2:#E4D9BC;--ember:#9E3A12;--smoke:#7A6A54;--border:rgba(80,50,20,0.15);--deep:#140E06}
 html{scroll-behavior:smooth}
-body{background:var(--parch);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;min-height:100vh}
+body{background:var(--parch);color:var(--ink);font-family:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;min-height:100vh;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 img{opacity:0;transition:opacity 0.4s}
 img.loaded{opacity:1}
 nav{position:sticky;top:0;z-index:100;background:rgba(240,233,214,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0.9rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
 .nav-brand{font-family:'IM Fell English',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:0.4rem;flex-shrink:0}
 .nav-brand em{font-style:italic;color:var(--ember)}
-.nav-back{font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--smoke);text-decoration:none;white-space:nowrap}
+.nav-back{font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--smoke);text-decoration:none;white-space:nowrap;font-weight:500}
 .nav-back:hover{color:var(--ember)}
-.nav-ig{display:flex;align-items:center;gap:0.35rem;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ember);text-decoration:none;white-space:nowrap}
-.cat-header{padding:2rem 1.5rem 1rem;border-bottom:1px solid var(--border)}
-.cat-header h1{font-family:'IM Fell English',serif;font-size:clamp(1.8rem,6vw,3rem);line-height:1;color:var(--ink)}
-.cat-header h1 em{font-style:italic;color:var(--ember)}
-.cat-header p{font-size:0.85rem;font-style:italic;color:var(--smoke);margin-top:0.5rem}
+.nav-ig{display:flex;align-items:center;gap:0.35rem;font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ember);text-decoration:none;white-space:nowrap;font-weight:500}
+.cat-header{padding:2.5rem 1.5rem 1.2rem;border-bottom:1px solid var(--border)}
+.cat-header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,7vw,3.4rem);line-height:1;color:var(--ink);font-weight:600}
+.cat-header h1 em{font-style:italic;color:var(--ember);font-weight:500}
+.cat-header p{font-size:0.92rem;color:#3D2914;margin-top:0.7rem;font-weight:400}
 .filtros-wrap{position:sticky;top:57px;z-index:90;background:rgba(240,233,214,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0.75rem 1.5rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .filtros-wrap::-webkit-scrollbar{display:none}
 .filtros-inner{display:flex;gap:0.5rem;width:max-content}
-.filtro{padding:0.35rem 1rem;border:1px solid var(--border);font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--smoke);cursor:pointer;background:transparent;font-family:'Cormorant Garamond',serif;border-radius:2px;transition:all 0.2s;white-space:nowrap}
+.filtro{padding:0.4rem 1rem;border:1px solid var(--border);font-size:0.66rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--smoke);cursor:pointer;background:transparent;font-family:'Inter',sans-serif;border-radius:2px;transition:all 0.2s;white-space:nowrap;font-weight:500}
 .filtro:hover,.filtro.active{border-color:var(--ember);color:var(--ember);background:rgba(158,58,18,0.06)}
 .cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
 .pip{background:var(--parch);cursor:pointer;transition:background 0.2s;overflow:hidden}
@@ -35,18 +37,18 @@ nav{position:sticky;top:0;z-index:100;background:rgba(240,233,214,0.97);backdrop
 .pip:hover .pip-thumb img{transform:scale(1.03)}
 .pip-thumb-overlay{position:absolute;inset:0;background:rgba(20,14,6,0);transition:background 0.2s}
 .pip:hover .pip-thumb-overlay{background:rgba(20,14,6,0.08)}
-.pip-info{padding:0.75rem 0.85rem;border-top:1px solid var(--border)}
-.pip-cat{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--smoke);margin-bottom:0.2rem}
-.pip-name{font-family:'IM Fell English',serif;font-size:0.95rem;color:var(--ink);line-height:1.2}
-.pip-price{font-family:'IM Fell English',serif;font-style:italic;color:var(--ember);font-size:0.82rem;margin-top:0.2rem}
+.pip-info{padding:0.85rem 0.95rem;border-top:1px solid var(--border)}
+.pip-cat{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--smoke);margin-bottom:0.25rem;font-weight:500}
+.pip-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--ink);line-height:1.2;font-weight:600}
+.pip-price{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ember);font-size:0.95rem;margin-top:0.3rem;font-weight:500}
 .pip-vendida{opacity:0.5}
-.cat-empty{grid-column:span 2;text-align:center;padding:4rem 2rem;font-style:italic;color:var(--smoke)}
-.ig-cta{padding:2rem 1.5rem;text-align:center;border-top:1px solid var(--border);background:var(--parch2)}
-.ig-cta p{font-size:0.85rem;font-style:italic;color:var(--smoke);margin-bottom:1rem}
-.ig-btn{display:inline-flex;align-items:center;gap:0.6rem;padding:0.8rem 2rem;border:1px solid var(--border);font-family:'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ember);text-decoration:none;transition:all 0.2s}
+.cat-empty{grid-column:span 2;text-align:center;padding:4rem 2rem;color:var(--smoke);font-weight:400}
+.ig-cta{padding:2.5rem 1.5rem;text-align:center;border-top:1px solid var(--border);background:var(--parch2)}
+.ig-cta p{font-size:0.95rem;color:#3D2914;margin-bottom:1.2rem;font-weight:400}
+.ig-btn{display:inline-flex;align-items:center;gap:0.6rem;padding:0.85rem 2.2rem;border:1px solid var(--border);font-family:'Inter',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ember);text-decoration:none;transition:all 0.2s;font-weight:500}
 .ig-btn:hover{border-color:var(--ember);background:var(--parch)}
 footer{padding:1.5rem;text-align:center;background:var(--deep)}
-footer p{font-size:0.65rem;letter-spacing:0.12em;color:rgba(240,233,214,0.2);text-transform:uppercase}
+footer p{font-size:0.62rem;letter-spacing:0.16em;color:rgba(240,233,214,0.25);text-transform:uppercase;font-weight:400}
 .modal-overlay{position:fixed;inset:0;background:rgba(20,14,6,0.8);z-index:1000;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.25s;backdrop-filter:blur(4px)}
 .modal-overlay.open{opacity:1;pointer-events:all}
 .modal-box{background:var(--parch);width:100%;max-width:600px;max-height:92vh;overflow-y:auto;border-radius:12px 12px 0 0;position:relative}
@@ -64,20 +66,20 @@ footer p{font-size:0.65rem;letter-spacing:0.12em;color:rgba(240,233,214,0.2);tex
 .modal-dot{width:5px;height:5px;border-radius:50%;background:rgba(26,18,8,0.25);cursor:pointer;border:none;transition:background 0.2s}
 .modal-dot.active{background:var(--ember)}
 .modal-detail{padding:1.5rem}
-.modal-cat{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--smoke);margin-bottom:0.3rem}
-.modal-name{font-family:'IM Fell English',serif;font-size:1.6rem;color:var(--ink);line-height:1.1;margin-bottom:0.5rem}
-.modal-desc{font-size:0.9rem;color:#5C4838;font-style:italic;line-height:1.8;margin-bottom:0.75rem}
-.modal-precio{font-family:'IM Fell English',serif;font-size:1.3rem;font-style:italic;color:var(--ember);margin-bottom:1rem}
-.modal-wa{display:flex;align-items:center;justify-content:center;gap:0.7rem;padding:1rem 2rem;background:var(--ink);color:var(--parch);font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;border:none;cursor:pointer;width:100%}
+.modal-cat{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--smoke);margin-bottom:0.3rem;font-weight:500}
+.modal-name{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--ink);line-height:1.1;margin-bottom:0.6rem;font-weight:600}
+.modal-desc{font-size:0.95rem;color:#3D2914;line-height:1.65;margin-bottom:0.9rem;font-weight:400}
+.modal-precio{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;color:var(--ember);margin-bottom:1.1rem;font-weight:500}
+.modal-wa{display:flex;align-items:center;justify-content:center;gap:0.7rem;padding:1rem 2rem;background:var(--ink);color:var(--parch);font-family:'Inter',sans-serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;border:none;cursor:pointer;width:100%;font-weight:500}
 .modal-wa:hover,.modal-wa:active{background:var(--ember)}
-.modal-vendida-txt{padding:0.8rem 1rem;background:var(--parch2);border-left:3px solid var(--smoke);font-size:0.85rem;font-style:italic;color:var(--smoke);margin-bottom:1rem}
-.modal-pagos{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
-.modal-pagos-title{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--smoke);margin-bottom:0.6rem}
-.modal-pagos-items{display:flex;flex-wrap:wrap;gap:0.5rem}
-.modal-pago-item{display:flex;align-items:center;gap:0.35rem;font-size:0.75rem;color:var(--smoke);font-style:italic}
+.modal-vendida-txt{padding:0.9rem 1.2rem;background:var(--parch2);border-left:3px solid var(--smoke);font-size:0.9rem;color:var(--smoke);margin-bottom:1rem;font-weight:400}
+.modal-pagos{margin-top:1rem;padding-top:1.1rem;border-top:1px solid var(--border)}
+.modal-pagos-title{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--smoke);margin-bottom:0.7rem;font-weight:500}
+.modal-pagos-items{display:flex;flex-wrap:wrap;gap:0.6rem}
+.modal-pago-item{display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;color:#3D2914;font-weight:400}
 @media(min-width:700px){
   nav{padding:1rem 3rem}
-  .cat-header{padding:3rem 3rem 1.5rem}
+  .cat-header{padding:3.5rem 3rem 1.8rem}
   .filtros-wrap{padding:0.75rem 3rem;top:61px}
   .cat-grid{grid-template-columns:repeat(3,1fr)}
   .cat-empty{grid-column:span 3}
@@ -101,8 +103,8 @@ footer p{font-size:0.65rem;letter-spacing:0.12em;color:rgba(240,233,214,0.2);tex
 </nav>
 
 <div class="cat-header">
-  <h1>Cat&#225;logo <em>actual</em></h1>
-  <p>Todas las pipas disponibles &middot; Alto R&#237;o Percy, Patagonia</p>
+  <h1>Cat&aacute;logo <em>actual</em></h1>
+  <p>Todas las pipas disponibles &middot; Alto R&iacute;o Percy, Patagonia</p>
 </div>
 
 <div class="filtros-wrap">
@@ -116,7 +118,7 @@ footer p{font-size:0.65rem;letter-spacing:0.12em;color:rgba(240,233,214,0.2);tex
 </div>
 
 <div class="ig-cta">
-  <p>&#191;Quer&#233;s ver m&#225;s? Segu&#237; a Javier en Instagram</p>
+  <p>&iquest;Quer&eacute;s ver m&aacute;s? Segu&iacute; a Javier en Instagram</p>
   <a class="ig-btn" href="https://www.instagram.com/los.crovas/" target="_blank" rel="noopener">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg>
     Ver Instagram &#8594;
@@ -142,7 +144,7 @@ footer p{font-size:0.65rem;letter-spacing:0.12em;color:rgba(240,233,214,0.2);tex
       <p class="modal-precio" id="modal-precio"></p>
       <div id="modal-action"></div>
       <div class="modal-pagos">
-        <p class="modal-pagos-title">M&#233;todos de pago</p>
+        <p class="modal-pagos-title">M&eacute;todos de pago</p>
         <div class="modal-pagos-items">
           <div class="modal-pago-item"><svg width="18" height="18" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#009EE3"/><text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="8" font-family="Arial" font-weight="bold">MP</text></svg><span>Mercado Pago</span></div>
           <div class="modal-pago-item"><svg width="18" height="18" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#2C3E50"/><path d="M8 20h24M20 8v24" stroke="white" stroke-width="3" stroke-linecap="round"/></svg><span>Transferencia</span></div>
@@ -155,7 +157,6 @@ footer p{font-size:0.65rem;letter-spacing:0.12em;color:rgba(240,233,214,0.2);tex
 </div>
 
 <script>
-
 var WA = '5492945555812';
 var todasLasPipas = [];
 var pipasStore = [];
@@ -219,7 +220,7 @@ function renderCatalogo(filtro) {
     return p.categoria && p.categoria.toLowerCase() === filtro.toLowerCase();
   });
   if (!pipas.length) {
-    grid.innerHTML = '<div class="cat-empty">No hay pipas en esta categoria.</div>';
+    grid.innerHTML = '<div class="cat-empty">No hay pipas en esta categor&iacute;a.</div>';
     return;
   }
   var disponibles = pipas.filter(function(p){ return p.disponible && p.disponible.toString().toUpperCase().trim() === 'SI'; });
@@ -240,7 +241,7 @@ function cargarCatalogo() {
     .then(function(res){ return res.json(); })
     .then(function(pipas) {
       if (!pipas || !pipas.length) {
-        grid.innerHTML = '<div class="cat-empty">El catalogo se esta actualizando.</div>';
+        grid.innerHTML = '<div class="cat-empty">El cat&aacute;logo se est&aacute; actualizando.</div>';
         return;
       }
       todasLasPipas = pipas.filter(function(p){ return p.nombre; });
@@ -308,7 +309,7 @@ function abrirModal(index) {
   document.getElementById('modal-next').style.display = fotos.length > 1 ? 'flex' : 'none';
   var actionEl = document.getElementById('modal-action');
   if (vendida) {
-    actionEl.innerHTML = '<div class="modal-vendida-txt">Esta pipa ya encontro dueno. Escribinos para ver opciones similares.</div>';
+    actionEl.innerHTML = '<div class="modal-vendida-txt">Esta pipa ya encontr&oacute; due&ntilde;o. Escribinos para ver opciones similares.</div>';
   } else {
     var a = document.createElement('a');
     a.href = mensajeWA(pipa.nombre, pipa.descripcion);
@@ -346,7 +347,6 @@ function irModalSlide(i) {
 
 document.addEventListener('keydown', function(e){ if(e.key === 'Escape') cerrarModal(); });
 cargarCatalogo();
-
 </script>
 </body>
 </html>
