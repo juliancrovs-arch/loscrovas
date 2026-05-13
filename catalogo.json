@@ -906,5 +906,18 @@
       "/img/catalogo/radica-chiara-1778680733770-1.jpg",
       "/img/catalogo/radica-chiara-1778680733770-2.jpg"
     ]
+  },
+  {
+    "id": "radica-oro-1778680890214",
+    "nombre": "Radica Oro",
+    "categoria": "Cóndor",
+    "descripcion": "Esculpido a Mano Exclusivo: Cazoleta cilíndrica con un profundo labrado artesanal que genera facetas asimétricas, resaltando los tonos dorados y ocres de la madera de raiz de peral.Caño de Caña Corona: El cuello de la pipa incorpora un tramo de caña seleccionado con un nudo perimetral muy vistoso que actúa como anillo decorativo natural.Boquilla Esculpida Oscura: Remata en una boquilla negra de terminación rústica y rugosa que rompe las líneas pulidas de los modelos anteriores.Núcleo de Acero Quirúrgico: Conductor metálico expuesto que asegura una fumada fresca, flujo de aire limpio y un desarme rápido para su mantenimiento.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/radica-oro-1778680890214-0.jpg",
+      "/img/catalogo/radica-oro-1778680890214-1.jpg",
+      "/img/catalogo/radica-oro-1778680890214-2.jpg"
+    ]
   }
 ]
