@@ -1132,5 +1132,18 @@
       "/img/catalogo/elaios-1778684321483-2.jpg",
       "/img/catalogo/elaios-1778684321483-3.jpg"
     ]
+  },
+  {
+    "id": "blacky-1778684415288",
+    "nombre": "Blacky",
+    "categoria": "Chalequera",
+    "descripcion": "Creada totalmente a mano, esta pipa destaca por su elegante color negro intenso y su cazoleta en olivo teñido, que aporta un toque natural y sofisticado. La boquilla en acrílico negro tallado le da un acabado único y refinado. Una pieza hecha con pasión, ideal para disfrutar de momentos de relajación y sabor. ideal para una salida de pesca. con un hornillo de 2,5 cm de profundidad y su cazoleta con una altura de 3,5 cm.",
+    "precio": 80000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/blacky-1778684415288-0.jpg",
+      "/img/catalogo/blacky-1778684415288-1.jpg",
+      "/img/catalogo/blacky-1778684415288-2.jpg"
+    ]
   }
 ]
