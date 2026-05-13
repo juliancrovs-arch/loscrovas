@@ -811,5 +811,19 @@
       "/img/catalogo/zait-1778679140921-2.jpg",
       "/img/catalogo/zait-1778679140921-3.jpg"
     ]
+  },
+  {
+    "id": "zenit-1778679265326",
+    "nombre": "Zenit",
+    "categoria": "Cóndor",
+    "descripcion": "Cazoleta esta realizada en raiz de peral patagonico, la cual esta tallada a mano y laqueada con inserto de bambu y acrilico negro, caño en acero quirurjico y boquilla negra tallada a mano",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/zenit-1778679265326-0.jpg",
+      "/img/catalogo/zenit-1778679265326-1.jpg",
+      "/img/catalogo/zenit-1778679265326-2.jpg",
+      "/img/catalogo/zenit-1778679265326-3.jpg"
+    ]
   }
 ]
