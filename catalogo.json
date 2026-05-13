@@ -919,5 +919,18 @@
       "/img/catalogo/radica-oro-1778680890214-1.jpg",
       "/img/catalogo/radica-oro-1778680890214-2.jpg"
     ]
+  },
+  {
+    "id": "carbone-rstico-1778681220475",
+    "nombre": "Carbone Rústico",
+    "categoria": "Cóndor",
+    "descripcion": "Negro Mineral Profundo: Cazoleta cilíndrica con un acabado rusticado extremo en color negro mate que emula la textura rugosa del carbón o la roca volcánica.Inserción de Caña Natural: Un tramo corto y estilizado de caña clara con nudo marcado interrumpe la oscuridad, aportando un quiebre orgánico perfecto.Boquilla Arquitectónica: Boquilla oscura con acabado texturizado antideslizante, diseñada con líneas rectas y una forma anatómica que garantiza una mordida firme.Flujo de Aire Directo: El largo caño conductor de acero quirúrgico expuesto enfría el humo de forma eficiente antes de llegar a la boca, asegurando una fumada limpia.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/carbone-rstico-1778681220475-0.jpg",
+      "/img/catalogo/carbone-rstico-1778681220475-1.jpg",
+      "/img/catalogo/carbone-rstico-1778681220475-2.jpg"
+    ]
   }
 ]
