@@ -1040,5 +1040,18 @@
       "/img/catalogo/dogo-1778682706116-1.jpg",
       "/img/catalogo/dogo-1778682706116-2.jpg"
     ]
+  },
+  {
+    "id": "apple-1778682816859",
+    "nombre": "Apple",
+    "categoria": "Chubby",
+    "descripcion": "Este ejemplar realizado en maderas patagonica de Chacay unico por su confeccion, su diseño barrel en tonos marrones, con su boquilla en derlim blanco, una altura de 56 mm; un peso de 54 grs;un ancho de 45 mm su hornillo con un aprofundidad de 35 mm y apertura de boca ded 19 mm.",
+    "precio": 90000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/apple-1778682816859-0.jpg",
+      "/img/catalogo/apple-1778682816859-1.jpg",
+      "/img/catalogo/apple-1778682816859-2.jpg"
+    ]
   }
 ]
