@@ -1215,5 +1215,18 @@
       "/img/catalogo/flanders-1778685413556-2.jpg",
       "/img/catalogo/flanders-1778685413556-3.jpg"
     ]
+  },
+  {
+    "id": "calafate-1778685505505",
+    "nombre": "Calafate",
+    "categoria": "Apple",
+    "descripcion": "Esta hermosa pipa elavoraca en raiz de itin que esta suavemente arenada, laqueada y resaltando los tonos que son naturales de la madera, su boquilla realizada a ano para este modelo en derlim blanco, la longitud total es de 16 cm. con un peso de 84 grs, un diametro de cazoleta de 45 mm, una altura de 47 mm, una profundida de hernillo de 35 mm, y una apertura de boca de 19 mm.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/calafate-1778685505505-0.jpg",
+      "/img/catalogo/calafate-1778685505505-1.jpg",
+      "/img/catalogo/calafate-1778685505505-2.jpg"
+    ]
   }
 ]
