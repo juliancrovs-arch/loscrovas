@@ -893,5 +893,18 @@
       "/img/catalogo/vulcano-1778680260627-2.jpg",
       "/img/catalogo/vulcano-1778680260627-3.jpg"
     ]
+  },
+  {
+    "id": "radica-chiara-1778680733770",
+    "nombre": "Radica Chiara",
+    "categoria": "Cóndor",
+    "descripcion": "Monocromía Orgánica: Una pieza excepcional que unifica toda su composición bajo una cálida paleta de tonos ocre, madera natural y tierra.Cazoleta Esculpida a Mano: Cuerpo cilíndrico facetado con un minucioso trabajo de gubia que aporta una textura rugosa, un agarre firme y excelente disipación térmica.Caño de Caña con Carácter: El cuello de la pipa destaca por un nudo natural muy pronunciado y un veteado lineal oscuro que realza su origen rústico.Boquilla de Madera a Juego: A diferencia de otros modelos, remata en una boquilla torneada en madera clara que mantiene la armonía visual de toda la pieza.Núcleo Conductor Metálico: Eje central rígido que enfría el flujo de aire y simplifica por completo las tareas de limpieza profunda.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/radica-chiara-1778680733770-0.jpg",
+      "/img/catalogo/radica-chiara-1778680733770-1.jpg",
+      "/img/catalogo/radica-chiara-1778680733770-2.jpg"
+    ]
   }
 ]
