@@ -1105,5 +1105,18 @@
       "/img/catalogo/ciliegia-1778683804639-1.jpg",
       "/img/catalogo/ciliegia-1778683804639-2.jpg"
     ]
+  },
+  {
+    "id": "nux-nucis-1778684238314",
+    "nombre": "Nux nucis",
+    "categoria": "Chalequera",
+    "descripcion": "Creada totalmente a mano, esta pipa destaca por sus hermosos trazos en tonos marromes d elas vetas de raiz de nogal, pulida, bruñida y laqueada a mano, que aporta un toque natural y sofisticado. La boquilla en acrílico negro tallado le da un acabado único y refinado. Una pieza hecha con pasión, ideal para disfrutar de momentos de relajación y sabor. Su cazoleta con una altura de 45 mm, un ancho de 30 mm y la profundidad de su hornillo de 27,8 mm.",
+    "precio": 90000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/nux-nucis-1778684238314-0.jpg",
+      "/img/catalogo/nux-nucis-1778684238314-1.jpg",
+      "/img/catalogo/nux-nucis-1778684238314-2.jpg"
+    ]
   }
 ]
