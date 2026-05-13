@@ -661,5 +661,19 @@
       "/img/catalogo/egg-1778676307572-1.jpg",
       "/img/catalogo/egg-1778676307572-2.jpg"
     ]
+  },
+  {
+    "id": "dracula-1778676454379",
+    "nombre": "dracula",
+    "categoria": "Cóndor",
+    "descripcion": "Cazoleta en guayabera tallada caño en acero quirúrgico y boquilla Drácula, negra y roja. Peso 72 grs, largo 15 cm, cazoleta 5,5 x 3,5 cm, hornillo 1,9 x 3 cm profundidad.",
+    "precio": 80000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/dracula-1778676454379-0.jpg",
+      "/img/catalogo/dracula-1778676454379-1.jpg",
+      "/img/catalogo/dracula-1778676454379-2.jpg",
+      "/img/catalogo/dracula-1778676454379-3.jpg"
+    ]
   }
 ]
