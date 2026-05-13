@@ -500,5 +500,19 @@
       "/img/catalogo/torrontes-1778672800891-2.jpg",
       "/img/catalogo/torrontes-1778672800891-3.jpg"
     ]
+  },
+  {
+    "id": "curva-sottile-1778673078679",
+    "nombre": "Curva Sottile",
+    "categoria": "Curva",
+    "descripcion": "Descripción:Una pieza de autor que destaca por su ergonomía y curvas sutiles. Su diseño está pensado para un agarre natural, ofreciendo una experiencia cómoda y una estética delicada. Cuenta con una boquilla de acrílico negro fabricada a medida de forma exclusiva para este modelo.Especificaciones Técnicas:Largo total: 15 cm.Peso: 56 gramos (excelente balance).Dimensiones exteriores: 41 mm de ancho x 46 mm de largo.Altura de la cazoleta: 45 mm.Diámetro del hornillo: 19 mm.",
+    "precio": 120000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/curva-sottile-1778673078679-0.jpg",
+      "/img/catalogo/curva-sottile-1778673078679-1.jpg",
+      "/img/catalogo/curva-sottile-1778673078679-2.jpg",
+      "/img/catalogo/curva-sottile-1778673078679-3.jpg"
+    ]
   }
 ]
