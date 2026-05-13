@@ -688,5 +688,19 @@
       "/img/catalogo/negro-pasion-1778676651259-1.jpg",
       "/img/catalogo/negro-pasion-1778676651259-2.jpg"
     ]
+  },
+  {
+    "id": "mictlan-1778677100548",
+    "nombre": "Mictlan",
+    "categoria": "Cóndor",
+    "descripcion": "Escultura de Colección: Cazoleta meticulosamente tallada a mano en raíz de olivo con forma de calavera, luciendo un impactante tono rojizo y grietas realistas de estilo gótico.Fusión de Materiales Nobles: El caño combina la resistencia industrial del acero quirúrgico con la calidez orgánica y el texturizado natural de un anillo de bambú.Boquilla de Itín: Rematada con una boquilla de madera de Itín (caranday), una de las maderas nativas más duras, densas y exclusivas del mundo.Carácter y Ergonomía: Una pieza de gran peso visual que se adapta cómodamente a la mano, ideal para fumadores que buscan un diseño transgresor y materiales indestructibles.",
+    "precio": 95000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/mictlan-1778677100548-0.jpg",
+      "/img/catalogo/mictlan-1778677100548-1.jpg",
+      "/img/catalogo/mictlan-1778677100548-2.jpg",
+      "/img/catalogo/mictlan-1778677100548-3.jpg"
+    ]
   }
 ]
