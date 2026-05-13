@@ -715,5 +715,19 @@
       "/img/catalogo/infierno-negro-1778677267954-1.jpg",
       "/img/catalogo/infierno-negro-1778677267954-2.jpg"
     ]
+  },
+  {
+    "id": "olivo-dracula-1778677475843",
+    "nombre": "olivo dracula",
+    "categoria": "Cóndor",
+    "descripcion": "Cazoleta en raiz de olivo, caño en acero quirúrgico y boquilla Drácula en dos tonos, rojo sangre y negro. Peso 61 grs; largo 16,5 cm; cazoleta 5,5 x 3,7 cm; hornillo 1,95 x 1,4 cm; profundidad 3,5 cm",
+    "precio": 85000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/olivo-dracula-1778677475843-0.jpg",
+      "/img/catalogo/olivo-dracula-1778677475843-1.jpg",
+      "/img/catalogo/olivo-dracula-1778677475843-2.jpg",
+      "/img/catalogo/olivo-dracula-1778677475843-3.jpg"
+    ]
   }
 ]
