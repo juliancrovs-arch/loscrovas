@@ -90,10 +90,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .gal-item:hover img{transform:scale(1.04)}
 .gal-caption{position:absolute;bottom:0;left:0;right:0;padding:0.7rem 1rem;background:linear-gradient(transparent,rgba(20,14,6,0.65));font-size:0.67rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,233,214,0.7)}
 .catalogo{padding:5rem;border-bottom:1px solid var(--border)}
-.cat-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3rem;border-bottom:1px solid var(--border);padding-bottom:2rem}
+.cat-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3rem;border-bottom:1px solid var(--border);padding-bottom:2rem;gap:1.5rem;flex-wrap:wrap}
 .cat-head h2{font-family:'IM Fell English',serif;font-size:clamp(1.9rem,3vw,2.9rem);color:var(--ink)}
 .cat-head h2 em{font-style:italic;color:var(--ember)}
-.cat-head a{font-size:0.73rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ember);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:gap 0.2s}
+.cat-head-links{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.cat-head-links .cat-link-sep{width:1px;height:14px;background:var(--border)}
+.cat-head a{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ember);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:gap 0.2s;font-weight:500;font-family:'Inter',sans-serif}
 .cat-head a:hover{gap:0.9rem}
 .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .pip{border:1px solid var(--border);margin:-1px 0 0 -1px;overflow:hidden;transition:background 0.2s;cursor:pointer}
@@ -186,6 +188,9 @@ img.loaded{opacity:1}
   .gal-item{min-height:200px}
   .gal-item.big{grid-column:span 2}
   .catalogo{padding:3rem 1.8rem}
+  .cat-head{flex-direction:column;align-items:flex-start;gap:1rem}
+  .cat-head-links{flex-direction:column;align-items:flex-start;gap:0.7rem;width:100%}
+  .cat-head-links .cat-link-sep{display:none}
   .cat-grid{grid-template-columns:1fr 1fr}
   .pip-body{padding:1rem}
   .pip-name{font-size:1rem}
@@ -298,7 +303,7 @@ img.loaded{opacity:1}
     <p class="hero-lugar">Esquel, Chubut · 13 km de la ciudad · en el fin del mundo</p>
     <p class="hero-p">Soy Javier. Vivo con mi familia a 13 km de Esquel, en el Alto Río Percy. Acá, en el taller del fondo de casa, hago pipas a mano. <strong>Cada una me lleva entre 6 y 8 días.</strong> Sin apuro. Sin serie. Con las herramientas que yo mismo fabriqué.</p>
     <div class="btn-group">
-      <a href="#catalogo" class="btn-ink">Ver catálogo →</a>
+      <a href="/catalogo.html" class="btn-ink">Ver catálogo →</a>
       <a href="#historia" class="btn-out">Nuestra historia</a>
     </div>
   </div>
@@ -334,8 +339,8 @@ img.loaded{opacity:1}
         <figcaption>Javier · Alto Río Percy · Patagonia</figcaption>
       </figure>
       <figure class="javier-foto">
-        <img src="img/javier_julian.jpg" alt="Javier y Julián Crova en la puerta del taller" loading="lazy">
-        <figcaption>Javier y Julián · El taller</figcaption>
+        <img src="img/javier_julian.jpg" alt="Javier y Tomás Crova en la puerta del taller" loading="lazy">
+        <figcaption>Javier y Tomás · El taller</figcaption>
       </figure>
     </div>
     <a href="/historia.html" style="display:inline-flex;align-items:center;gap:0.7rem;margin-top:2rem;padding:0.9rem 2rem;background:var(--ink);color:var(--parch);font-family:'Inter',sans-serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;font-weight:500" onmouseover="this.style.background='var(--ember)'" onmouseout="this.style.background='var(--ink)'">
@@ -386,6 +391,9 @@ img.loaded{opacity:1}
       </div>
     </div>
   </div>
+  <div style="text-align:center;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)">
+    <a href="/catalogo.html" style="display:inline-flex;align-items:center;gap:0.6rem;font-family:'Inter',sans-serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ember);text-decoration:none;font-weight:500;transition:gap 0.2s" onmouseover="this.style.gap='0.95rem'" onmouseout="this.style.gap='0.6rem'">Ver el cat&aacute;logo de pipas &rarr;</a>
+  </div>
 </section>
 
 <div class="sep"><div class="sep-line"></div><span class="sep-glyph">✦ ✦ ✦</span><div class="sep-line"></div></div>
@@ -410,13 +418,18 @@ img.loaded{opacity:1}
 <section class="catalogo reveal" id="catalogo">
   <div class="cat-head">
     <h2>Catálogo <em>actual</em></h2>
-    <a href="https://www.instagram.com/los.crovas/" target="_blank" rel="noopener">Ver todo en Instagram →</a>
+    <div class="cat-head-links">
+      <a href="/catalogo.html">Ver catálogo completo →</a>
+      <span class="cat-link-sep"></span>
+      <a href="https://www.instagram.com/los.crovas/" target="_blank" rel="noopener">Ver todo en Instagram →</a>
+    </div>
   </div>
-  <div class="cat-filtros" id="cat-filtros"></div>
+  <div class="cat-filtros" id="cat-filtros" style="display:none"></div>
   <div class="cat-grid" id="cat-grid">
     <div class="cat-loading">Cargando catálogo...</div>
   </div>
   <div class="cat-cta">
+    <p style="font-size:0.9rem;color:#3D2914;margin-bottom:1.3rem;font-weight:400">Estas son algunas de las pipas disponibles. Vé&iacute; el cat&aacute;logo completo:</p>
     <a href="/catalogo.html">Ver catálogo completo →</a>
   </div>
 </section>
@@ -449,6 +462,10 @@ img.loaded{opacity:1}
       <div class="step"><div class="step-n">02</div><div><p class="step-t">Torneo y doy forma</p><p class="step-d">El torno va revelando lo que ya estaba adentro. Las herramientas las fabriqué yo mismo — acá no se consigue todo, así que uno aprende a inventar.</p><p class="step-sub">Torno propio · Herramientas hechas en casa</p></div></div>
       <div class="step"><div class="step-n">03</div><div><p class="step-t">Hago la boquilla y la caña</p><p class="step-d">Madera, acrílico, cuerno natural, bambú. La boquilla no la compro — la hago. Los chicos me ayudan con el lijado.</p><p class="step-sub">Todo artesanal · Trabajo en familia</p></div></div>
       <div class="step"><div class="step-n">04</div><div><p class="step-t">La presento y la mando</p><p class="step-d">La cajita, la etiqueta, la bolsita que cose Teresita. Cada pipa sale con su historia. Es un pedacito del Percy.</p><p class="step-sub">Envíos a todo el país · Uruguay · Exterior</p></div></div>
+    </div>
+    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--ink);margin-bottom:1.5rem;font-weight:500">As&iacute; nace cada una. ¿Quer&eacute;s ver las pipas disponibles?</p>
+      <a href="/catalogo.html" style="display:inline-flex;align-items:center;gap:0.8rem;padding:1.1rem 2.8rem;background:var(--ink);color:var(--parch);font-family:'Inter',sans-serif;font-size:0.74rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:background 0.25s,gap 0.25s" onmouseover="this.style.background='var(--ember)';this.style.gap='1.2rem'" onmouseout="this.style.background='var(--ink)';this.style.gap='0.8rem'">Ver cat&aacute;logo completo &rarr;</a>
     </div>
   </div>
 </section>
@@ -612,8 +629,12 @@ function renderCatalogo(filtro) {
   }
   var disponibles = pipas.filter(function(p){ return p.disponible && p.disponible.toString().toUpperCase().trim() === 'SI'; });
   var vendidas = pipas.filter(function(p){ return !p.disponible || p.disponible.toString().toUpperCase().trim() !== 'SI'; });
+  // En la home: solo preview (3 en desktop = 1 fila, 4 en mobile = 2 filas). El cat completo va en /catalogo.html
+  var esMobile = window.innerWidth <= 900;
+  var maxPreview = esMobile ? 4 : 3;
+  var preview = disponibles.slice(0, maxPreview);
   pipasStore = [];
-  grid.innerHTML = disponibles.concat(vendidas).map(function(p, i){ return crearTarjeta(p, i); }).join('');
+  grid.innerHTML = preview.map(function(p, i){ return crearTarjeta(p, i); }).join('');
   lazyLoad(grid);
 }
 
@@ -650,11 +671,7 @@ function cargarCatalogo() {
         return;
       }
       todasLasPipas = pipas.filter(function(p){ return p.nombre; });
-      var cats = [];
-      todasLasPipas.forEach(function(p){
-        if (p.categoria && cats.indexOf(p.categoria) === -1) cats.push(p.categoria);
-      });
-      if (cats.length > 1) renderFiltros(cats);
+      // En la home no mostramos filtros (van en /catalogo.html), solo 4 pipas preview
       renderCatalogo('todas');
     })
     .catch(function(err){
