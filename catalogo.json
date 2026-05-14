@@ -1228,5 +1228,19 @@
       "/img/catalogo/calafate-1778685505505-1.jpg",
       "/img/catalogo/calafate-1778685505505-2.jpg"
     ]
+  },
+  {
+    "id": "mamba-bambu-1778777848899",
+    "nombre": "Mamba bambu",
+    "categoria": "Mamba",
+    "descripcion": "Artesanía única: Cazoleta rústica con textura natural tallada a mano en raiz de caranda.Detalle exclusivo: Caño de bambú auténtico con nudos pronunciados.Contraste elegante: Anillos blancos que resaltan las uniones.Estilo orgánico: Ideal para coleccionistas y amantes de la naturaleza.Boquilla en acrilico negro.Fumada fresca: El bambú proporciona un canal de humo ligero.",
+    "precio": 120000,
+    "disponible": "SI",
+    "fotos": [
+      "/img/catalogo/mamba-bambu-1778777848899-0.jpg",
+      "/img/catalogo/mamba-bambu-1778777848899-1.jpg",
+      "/img/catalogo/mamba-bambu-1778777848899-2.jpg",
+      "/img/catalogo/mamba-bambu-1778777848899-3.jpg"
+    ]
   }
 ]
